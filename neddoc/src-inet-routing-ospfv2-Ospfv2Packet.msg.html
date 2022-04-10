@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Ospfv2Packet.msg</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Ospfv2Packet.msg</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">Msg File src/inet/routing/ospfv2/Ospfv2Packet.msg</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2TimerType.html">Ospfv2TimerType</a></td>
+      <td><i>enum</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2Options.html">Ospfv2Options</a></td>
+      <td><i>struct</i></td>
+      <td>
+<p>should be a byte long bitfield</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2Packet.html">Ospfv2Packet</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF packet header</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2HelloPacket.html">Ospfv2HelloPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Hello packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LsaType.html">Ospfv2LsaType</a></td>
+      <td><i>enum</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LsaHeader.html">Ospfv2LsaHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF LSA header</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2Lsa.html">Ospfv2Lsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>common ancestor type for all LSAs</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-LinkType.html">LinkType</a></td>
+      <td><i>enum</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2TosData.html">Ospfv2TosData</a></td>
+      <td><i>struct</i></td>
+      <td>
+<p>(RFC 1583 Section A.4.2.)</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2Link.html">Ospfv2Link</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Router(<a href="inet.node.inet.Router.html">1</a>,<a href="inet.tutorials.protocol.Router.html">2</a>) LSA Link section (RFC 1583 Section A.4.2.)</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2RouterLsa.html">Ospfv2RouterLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Router(<a href="inet.node.inet.Router.html">1</a>,<a href="inet.tutorials.protocol.Router.html">2</a>) LSA (RFC 1583 Section A.4.2.)</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2NetworkLsa.html">Ospfv2NetworkLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Network(<a href="inet.examples.inet.igmp.Network.html">1</a>,<a href="inet.examples.pim.dm.assert.Network.html">2</a>,<a href="inet.examples.pim.iptv.Network.html">3</a>) LSA</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2SummaryLsa.html">Ospfv2SummaryLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Summary LSA</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2ExternalTosInfo.html">Ospfv2ExternalTosInfo</a></td>
+      <td><i>struct</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2AsExternalLsaContents.html">Ospfv2AsExternalLsaContents</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents the contents of an OSPF AS External LSA</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2AsExternalLsa.html">Ospfv2AsExternalLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF AS External LSA</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2DdOptions.html">Ospfv2DdOptions</a></td>
+      <td><i>struct</i></td>
+      <td>
+<p>should be a byte long bitfield</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2DatabaseDescriptionPacket.html">Ospfv2DatabaseDescriptionPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Database Description packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LsaRequest.html">Ospfv2LsaRequest</a></td>
+      <td><i>struct</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LinkStateRequestPacket.html">Ospfv2LinkStateRequestPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Link State <a href="src-inet-common-packet-Request.html">Request</a> packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LinkStateUpdatePacket.html">Ospfv2LinkStateUpdatePacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Link State Update packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv2-Ospfv2LinkStateAcknowledgementPacket.html">Ospfv2LinkStateAcknowledgementPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF Link State Acknowledgement packet</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2006 Andras Babos and Andras Varga
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">INETDefs</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">chunk</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Chunk</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ipv4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">routing</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ospf_common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">OspfPacketBase</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">CrcMode</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ospfv2</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; "> {{
+</span><span style="color: #3d3d3d; ">using</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ospf</span><span style="color: #3d3d3d; ">;
+}}
+
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2TimerType</span><span style="color: #3d3d3d; "> {
+    </span><span style="color: #3d3d3d; ">INTERFACE_HELLO_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">INTERFACE_WAIT_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">INTERFACE_ACKNOWLEDGEMENT_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NEIGHBOR_INACTIVITY_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NEIGHBOR_POLL_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NEIGHBOR_DD_RETRANSMISSION_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">6</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NEIGHBOR_UPDATE_RETRANSMISSION_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">7</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NEIGHBOR_REQUEST_RETRANSMISSION_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">8</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">DATABASE_AGE_TIMER</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">9</span><span style="color: #3d3d3d; ">;
+};
+
+</span><span style="color: #808080; font-style: italic; ">// should be a byte long bitfield
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Options</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unused_1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">E_ExternalRoutingCapability</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">MC_MulticastForwarding</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NP_Type7LSA</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">EA_ForwardExternalLSAs</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">DC_DemandCircuits</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unused_2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unused_3</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF packet header
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ospf</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">OspfPacketBase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">chunkLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">24</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">version</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">authenticationType</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;   </span><span style="color: #808080; font-style: italic; ">// 2 bytes
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">authentication</span><span style="color: #3d3d3d; ">[</span><span style="color: #008000; ">8</span><span style="color: #3d3d3d; ">];         </span><span style="color: #808080; font-style: italic; ">// 8 bytes
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Hello packet
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2HelloPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">HELLO_PACKET</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">networkMask</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">helloInterval</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #3d3d3d; ">Ospfv2Options</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">options</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routerPriority</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routerDeadInterval</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">designatedRouter</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">backupDesignatedRouter</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">neighbor</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LsaType</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">ROUTERLSA_TYPE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">NETWORKLSA_TYPE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">SUMMARYLSA_NETWORKS_TYPE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">SUMMARYLSA_ASBOUNDARYROUTERS_TYPE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">AS_EXTERNAL_LSA_TYPE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF LSA header
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LsaHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsAge</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2Options</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsOptions</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2LsaType</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsType</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">static_cast</span><span style="color: #3d3d3d; ">&lt;</span><span style="color: #3d3d3d; ">Ospfv2LsaType</span><span style="color: #3d3d3d; ">&gt;(-</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">linkStateID</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">advertisingRouter</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsSequenceNumber</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsCrc</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">CrcMode</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsCrcMode</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">CRC_MODE_UNDEFINED</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsaLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// common ancestor type for all LSAs
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2LsaHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">LinkType</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">POINTTOPOINT_LINK</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">TRANSIT_LINK</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">STUB_LINK</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">VIRTUAL_LINK</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">// (RFC 1583 Section A.4.2.)
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2TosData</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tos</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tosMetric</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">// Router LSA Link section (RFC 1583 Section A.4.2.)
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Link</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">linkID</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">linkData</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">LinkType</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">POINTTOPOINT_LINK</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numberOfTOS</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">linkCost</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;     </span><span style="color: #808080; font-style: italic; ">// TOS 0 metric
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">Ospfv2TosData</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tosData</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Router LSA (RFC 1583 Section A.4.2.)
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2RouterLsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// header.lsType = ROUTERLSA_TYPE;
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved1</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;   </span><span style="color: #808080; font-style: italic; ">// 5 bit
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">V_VirtualLinkEndpoint</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">E_ASBoundaryRouter</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">B_AreaBorderRouter</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved2</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;   </span><span style="color: #808080; font-style: italic; ">// 8 bit
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numberOfLinks</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2Link</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">links</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Network LSA
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2NetworkLsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// header.lsType = NETWORKLSA_TYPE;
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">networkMask</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">attachedRouters</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Summary LSA
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2SummaryLsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// header.lsType = SUMMARYLSA_NETWORKS_TYPE;
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">networkMask</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routeCost</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2TosData</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tosData</span><span style="color: #3d3d3d; ">[];  </span><span style="color: #808080; font-style: italic; ">// 1 element required, count of tosData not stored, calculate it from length of LSA
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2ExternalTosInfo</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// TODO tosData (?)
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tos</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">E_ExternalMetricType</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routeCost</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">forwardingAddress</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">externalRouteTag</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents the contents of an OSPF AS External LSA
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2AsExternalLsaContents</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">networkMask</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2ExternalTosInfo</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">externalTOSInfo</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF AS External LSA
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2AsExternalLsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// header.lsType = AS_EXTERNAL_LSA_TYPE;
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">Ospfv2AsExternalLsaContents</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">contents</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">// should be a byte long bitfield
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2DdOptions</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unused</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;  </span><span style="color: #808080; font-style: italic; ">// 5 bit
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">I_Init</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">M_More</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">MS_MasterSlave</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Database Description packet
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2DatabaseDescriptionPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">interfaceMTU</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2Options</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">options</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2DdOptions</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ddOptions</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ddSequenceNumber</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv2LsaHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsaHeaders</span><span style="color: #3d3d3d; ">[];     </span><span style="color: #808080; font-style: italic; ">//TODO
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LsaRequest</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsType</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">linkStateID</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">advertisingRouter</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Link State Request packet
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LinkStateRequestPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">Ospfv2LsaRequest</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requests</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Link State Update packet
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LinkStateUpdatePacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">Ospfv2Lsa</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">ospfLSAs</span><span style="color: #3d3d3d; ">[] </span><span style="color: #3d3d3d; font-weight: bold; ">@owned</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@allowReplace</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an OSPF Link State Acknowledgement packet
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2LinkStateAcknowledgementPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv2Packet</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">Ospfv2LsaHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lsaHeaders</span><span style="color: #3d3d3d; ">[];     </span><span style="color: #808080; font-style: italic; ">//TODO
+</span><span style="color: #3d3d3d; ">}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

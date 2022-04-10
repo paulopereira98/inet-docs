@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>PimSm.ned</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">PimSm.ned</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">NED File src/inet/routing/pim/modes/PimSm.ned</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.routing.pim.modes.PimSm.html">PimSm</a></td>
+      <td><i>simple&nbsp;module</i></td>
+      <td>
+<p>Implementation of PIM-SM protocol (RFC 4601).</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #808080; font-style: italic; ">// Authors: Veronika Rybova, Vladimir Vesely (ivesely@fit.vutbr.cz),
+//          Tamas Borbely (tomi@omnetpp.org)
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">routing</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pim</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">modes</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Implementation of PIM-SM protocol (RFC 4601).
+//
+// PIM-SM is a multicast routing protocol which
+// build a shared multicast forwarding three rooted at a Rendezvous Point (RP)
+// per group, and a source specific forwarding trees from the sources to the RP.
+// It is also capable to switch to a shortest path tree, so that traffic from
+// sources to receivers do not have to pass through the RP.
+//
+// The module must access the ~PimInterfaceTable and ~PimNeighborTable
+// modules, their path is given as the 'pimInterfaceTableModule' and
+// 'pimNeighborTableModule' parameters.
+//
+// The 'RP' parameter specifies the address of the Rendezvous Point.
+// Currently only one global RP is supported.
+//
+// If there are multiple PIM routers on a multi-access LAN, only one
+// of them will be responsible for forwarding datagrams to the LAN.
+// This will be the router with the highest IP address except if
+// all routers has 'designatedRouterPriority' set, in which case
+// the highest priority wins (or highest IP address on ties).
+//
+// Other parameters set the time constants to the values specified
+// in RFC 4601. They should not be changed except for testing.
+//
+// Limitations:
+// - Only one global RP is supported and it must be specified statically.
+//   PIM Bootstrap and RP discovery is not yet implemented.
+// - Switchover to the shortest path tree is not supported.
+// - Source specific excludes in the shared tree are not supported.
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">PimSm</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;i=block/network2&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">interfaceTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routingTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">pimInterfaceTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">pimNeighborTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RP</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">designatedRouterPriority</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(-</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">triggeredHelloDelay</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800080; ">uniform</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">helloPeriod</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">30</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">holdTime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; "> * </span><span style="color: #3d3d3d; ">helloPeriod</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">joinPrunePeriod</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">60</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">); </span><span style="color: #808080; font-style: italic; ">// period between Join/Prune messages (called t_periodic in the RFC)
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">defaultOverrideInterval</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">defaultPropagationDelay</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">keepAlivePeriod</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">210</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rpKeepAlivePeriod</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; "> * </span><span style="color: #3d3d3d; ">registerSuppressionTime</span><span style="color: #3d3d3d; "> + </span><span style="color: #3d3d3d; ">registerProbeTime</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">registerSuppressionTime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">60</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">registerProbeTime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">assertTime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">180</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">assertOverrideInterval</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">;
+
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">sentHelloPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">rcvdHelloPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">sentRegisterPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">rcvdRegisterPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">sentRegisterStopPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">rcvdRegisterStopPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">sentJoinPrunePk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">rcvdJoinPrunePk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">sentAssertPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@signal</span><span style="color: #3d3d3d; ">[</span><span style="color: #3d3d3d; ">rcvdAssertPk</span><span style="color: #3d3d3d; ">](</span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">=</span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipOut</span><span style="color: #3d3d3d; ">;
+}
+
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

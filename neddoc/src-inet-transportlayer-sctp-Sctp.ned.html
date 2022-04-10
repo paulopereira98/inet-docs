@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Sctp.ned</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Sctp.ned</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">NED File src/inet/transportlayer/sctp/Sctp.ned</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.transportlayer.sctp.Sctp.html">Sctp</a></td>
+      <td><i>simple&nbsp;module</i></td>
+      <td>
+<p>Implements the SCTP protocol.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2005-2010 Irene Ruengeler
+// Copyright (C) 2009-2012 Thomas Dreibholz
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+
+</span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">sctp</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ISctp</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Implements the SCTP protocol.
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Sctp</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ISctp</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">interfaceTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">routingTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">crcMode</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@enum</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;declared&quot;</span><span style="color: #3d3d3d; ">, </span><span style="color: #008000; ">&quot;computed&quot;</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;declared&quot;</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== SCTP Association Parameters =================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numGapReports</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtoInitial</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtoMin</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtoMax</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">60</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtoAlpha</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">125</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtoBeta</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">250</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">maxBurst</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">maxBurstVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;maxBurst&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initialWindow</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">assocMaxRetrans</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">10</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">pathMaxRetrans</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">maxInitRetrans</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">8</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sackPeriod</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">200</span><span style="color: #3d3d3d; ">ms</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sackFrequency</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reactivatePrimaryPath</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sendQueueLimit</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">validCookieLifetime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">10</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Testing =====================================================
+</span><span style="color: #3d3d3d; ">
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Heartbeats ==================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">enableHeartbeats</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hbInterval</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">30</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sendHeartbeatsOnActivePaths</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Nagle Algorithm =============================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">nagleEnabled</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">naglePoint</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1468</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Fragmentation =============================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fragPoint</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1452</span><span style="color: #3d3d3d; ">);    </span><span style="color: #808080; font-style: italic; ">// size of a message that has to be fragmented, i.e. maximum size of a fragment
+</span><span style="color: #3d3d3d; ">
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Congestion Control ==========================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fastRecoverySupported</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sctpAlgorithmClass</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;SctpAlg&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ccModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);           </span><span style="color: #808080; font-style: italic; ">// RFC4960=0
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">osbWithHeader</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RTXMethod</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);        </span><span style="color: #808080; font-style: italic; ">// 0=Once after 3 Sacks; 1=once per RTT; 2=Switch off Fast Retransmit; 3=Always after 3 Sacks
+</span><span style="color: #3d3d3d; ">
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Other Parameters ============================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);           </span><span style="color: #808080; font-style: italic; ">// ROUND_ROBIN=0
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">arwnd</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">65535</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">swsLimit</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">3000</span><span style="color: #3d3d3d; ">);        </span><span style="color: #808080; font-style: italic; ">// Limit for SWS
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">udpEncapsEnabled</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">natFriendly</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bytesToAddPerRcvdChunk</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);        </span><span style="color: #808080; font-style: italic; ">// for flowcontrol
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bytesToAddPerPeerChunk</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);        </span><span style="color: #808080; font-style: italic; ">// for flowcontrol
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tellArwnd</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);            </span><span style="color: #808080; font-style: italic; ">// for flowcontrol
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">messageAcceptLimit</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);        </span><span style="color: #808080; font-style: italic; ">// for flowcontrol
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fairStart</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fairStop</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">streamsToPaths</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">startEndToEndDelay</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">stopEndToEndDelay</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">10</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">throughputInterval</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Chunk Authentication ========================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">auth</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">chunks</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">padding</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Add-IP ======================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addIP</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addTime</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addAddress</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addIpType</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;0&quot;</span><span style="color: #3d3d3d; ">);      </span><span style="color: #808080; font-style: italic; ">// SET_PRIMARY_ADDRESS=49156,ADD_IP_ADDRESS=49153,DELETE_IP_ADDRESS=49154
+</span><span style="color: #3d3d3d; ">
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== Packet Drop =================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">packetDrop</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== SACK Now ====================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sackNow</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== High-Speed CC ===============================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">highSpeedCC</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== SACK Sequence Numbers =======================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">checkSackSeqNumber</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== NR-SACK =====================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">nrSack</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">disableReneging</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">gapReportLimit</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">100000000</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">gapListOptimizationVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;none&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">smartOverfullSACKHandling</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== QoS-SCTP ====================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">allowQoSTracking</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">qosTrackingInterval</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">s</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== CMT-SCTP ====================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSendAllVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;normal&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtRetransmissionVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;normal&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtCUCVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;normal&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtBufferSplitVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;none&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtBufferSplittingUsesOSB</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtUseSFR</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtUseDAC</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtUseFRC</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSmartT3Reset</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSmartFastRTX</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSmartReneging</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSlowPathRTTUpdate</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtChunkReschedulingVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;none&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtChunkReschedulingThreshold</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtMovedChunksReduceCwnd</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">true</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">movedChunkFastRTXFactor</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtSackPath</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;standard&quot;</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #cccccc; font-style: italic; ">//#====== CMT/RP-SCTP =================================================
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">strictCwndBooking</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #808080; font-style: italic; ">// CMT Congestion Control Variant
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #808080; font-style: italic; ">// off     = use over every path the default RFC4960 CC (New Reno)
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #808080; font-style: italic; ">// lia     = First resource pooling congestion control RFC6356 adapted for SCTP - https://datatracker.ietf.org/doc/rfc6356/
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #808080; font-style: italic; ">// olia    = alternative MPTCP CC, adapted for SCTP- https://tools.ietf.org/html/draft-khalili-mptcp-congestion-control-05
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #808080; font-style: italic; ">// cmtrpv1 = First resource pooling based CC for SCTP - https://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/SCTP/Paper/AINA2010.pdf
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #808080; font-style: italic; ">// cmtrpv2 = Updated version of cmtrpv1 - https://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/SCTP/Paper/ConTEL2011.pdf
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtCCVariant</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;off&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cmtCCPathGroups</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rpPathBlocking</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rpScaleBlockingTimeout</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rpMinCwnd</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;i=block/wheelbarrow&quot;</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">appIn</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@messageKinds</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">SctpCommandCode</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">appOut</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@labels</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">SctpCommand</span><span style="color: #3d3d3d; ">/</span><span style="color: #3d3d3d; ">up</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; font-weight: bold; ">@messageKinds</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">SctpStatusInd</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipOut</span><span style="color: #3d3d3d; ">;
+}
+
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

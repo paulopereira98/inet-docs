@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>AodvControlPackets.msg</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">AodvControlPackets.msg</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">Msg File src/inet/routing/aodv/AodvControlPackets.msg</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-AodvControlPacketType.html">AodvControlPacketType</a></td>
+      <td><i>enum</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-AodvControlPacket.html">AodvControlPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base packet for AODV Control Packets</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-Rreq.html">Rreq</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an AODV Route <a href="src-inet-common-packet-Request.html">Request</a></p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-Rrep.html">Rrep</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an AODV Route Reply</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-UnreachableNode.html">UnreachableNode</a></td>
+      <td><i>struct</i></td>
+      <td>
+<p>Helper struct to represent (<a href="src-inet-networklayer-common-L3Address.html">L3Address</a>, sequence number) pairs in a RERR message</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-Rerr.html">Rerr</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an AODV Route Error</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-RrepAck.html">RrepAck</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an AODV Route Reply ACK</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-WaitForRrep.html">WaitForRrep</a></td>
+      <td><i>message</i></td>
+      <td>
+<p>Represents an internal timer for a Route Reply packet in <a href="inet.routing.aodv.Aodv.html">Aodv</a> module</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-PacketHolderMessage.html">PacketHolderMessage</a></td>
+      <td><i>message</i></td>
+      <td>
+<p>Represents a timer for delayed sending</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2014 OpenSim Ltd.
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">INETDefs</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">chunk</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Chunk</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Packet</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">aodv</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacketType</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">RREQ</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RREP</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RERR</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RREPACK</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RREQ_IPv6</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">16</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RREP_IPv6</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">17</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RERR_IPv6</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">18</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RREPACK_IPv6</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">19</span><span style="color: #3d3d3d; ">;
+};
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Base packet for AODV Control Packets
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">FieldsChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">AodvControlPacketType</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">packetType</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">static_cast</span><span style="color: #3d3d3d; ">&lt;</span><span style="color: #3d3d3d; ">AodvControlPacketType</span><span style="color: #3d3d3d; ">&gt;(-</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);       </span><span style="color: #808080; font-style: italic; ">// packet type, stored in one byte
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an AODV Route Request
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Rreq</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// chunkLength = B(24) or B(48)
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// packetType = RREQ or RREQ_IPv6
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">joinFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Join flag; reserved for multicast.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">repairFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Repair flag; reserved for multicast.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">gratuitousRREPFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Gratuitous RREP flag; indicates whether a gratuitous RREP should be unicast to the node specified in the Destination IP Address field
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destOnlyFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Destination only flag; indicates only the destination may respond to this RREQ
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unknownSeqNumFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Unknown sequence number; indicates the destination sequence number is unknown
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Sent as 0; ignored on reception.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hopCount</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The number of hops from the Originator IP Address to the node handling the request.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rreqId</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// A sequence number uniquely identifying the particular RREQ when taken in conjunction with the originating node's IP address.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destAddr</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The IP address of the destination for which a route is desired.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destSeqNum</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The latest sequence number received in the past by the originator for any route towards the destination.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">originatorAddr</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The IP address of the node which originated the Route Request.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">originatorSeqNum</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The current sequence number to be used in the route entry pointing towards the originator of the route request.
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an AODV Route Reply
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Rrep</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// chunkLength = B(20) or B(44)
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// packetType = RREP or RREP_IPv6
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">repairFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Repair flag; used for multicast.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ackRequiredFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Acknowledgment required.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Sent as 0; ignored on reception.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">prefixSize</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// If nonzero, the 5-bit Prefix Size specifies that the indicated next hop may be used for any nodes with the same routing prefix (as defined by the Prefix Size) as the requested destination.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hopCount</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The number of hops from the Originator IP Address to the Destination IP Address.  For multicast route requests this indicates the number of hops to the multicast tree member sending the RREP.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destAddr</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The IP address of the destination for which a route is supplied.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destSeqNum</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The destination sequence number associated to the route.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">originatorAddr</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The IP address of the node which originated the RREQ for which the route is supplied.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lifeTime</span><span style="color: #3d3d3d; ">;     </span><span style="color: #808080; font-style: italic; ">// The time in milliseconds for which nodes receiving the RREP consider the route to be valid.
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Helper struct to represent (L3Address, sequence number) pairs in a RERR message
+//
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">UnreachableNode</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addr</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The IP address of the destination that has become unreachable due to a link break.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">seqNum</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// The sequence number in the route table entry for the destination listed in the previous Unreachable Destination IP Address field.
+</span><span style="color: #3d3d3d; ">};
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an AODV Route Error
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Rerr</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// chunkLength = B(4 + N * (4+4)) or B(4 + N * (4+16))
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// packetType = RERR or RERR_IPv6
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">noDeleteFlag</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// No delete flag; set when a node has performed a local repair of a link, and upstream nodes should not delete the route.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// Sent as 0; ignored on reception.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">UnreachableNode</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unreachableNodes</span><span style="color: #3d3d3d; ">[];    </span><span style="color: #808080; font-style: italic; ">// The unreachable destinations included in the message; MUST be at least 1.
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an AODV Route Reply ACK
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RrepAck</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">AodvControlPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">chunkLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #808080; font-style: italic; ">// packetType = RREPACK or RREPACK_IPv6
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents an internal timer for a Route Reply packet in Aodv module
+//
+</span><span style="color: #800000; font-weight: bold; ">message</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">WaitForRrep</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destAddr</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lastTTL</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fromInvalidEntry</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Represents a timer for delayed sending
+//
+</span><span style="color: #800000; font-weight: bold; ">message</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">PacketHolderMessage</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">Packet</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">ownedPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@owned</span><span style="color: #3d3d3d; ">;
+}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

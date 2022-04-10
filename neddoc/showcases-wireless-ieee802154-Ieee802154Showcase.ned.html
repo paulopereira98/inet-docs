@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Ieee802154Showcase.ned</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Ieee802154Showcase.ned</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">NED File showcases/wireless/ieee802154/Ieee802154Showcase.ned</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.ieee802154.Ieee802154Showcase.html">Ieee802154Showcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #800000; font-weight: bold; ">package</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">showcases</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ieee802154</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ipv4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethernet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">WirelessHost</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">physicallayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">apsk</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">packetlevel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ApskScalarRadioMedium</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">physicallayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ieee802154</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">bitlevel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ieee802154UwbIrRadioMedium</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">physicallayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ieee802154</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">packetlevel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ieee802154NarrowbandScalarRadioMedium</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">IntegratedMultiVisualizer</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">IntegratedVisualizer</span><span style="color: #3d3d3d; ">;
+
+
+</span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ieee802154Showcase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgb=20,20;bgi=showcases/floorplan,s&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">sensor1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=9.5,3.5;i=misc/sensor&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">sensor2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=9.5,16.5;i=misc/sensor&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">sensor3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=10.75,10.75;i=misc/sensor&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">sensor4</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=2.5,17.5;i=misc/sensor&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">sensor5</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=2.5,7;i=misc/sensor&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=8,5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=8.75,13.5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=13.5,8.5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp4</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=16.5,9.5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp5</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=13.5,14;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp6</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=4,13;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp7</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=4,10.5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lamp8</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=4,5;i=status/bulb&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">controller</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">SensorNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=6.5,10.5;i=misc/sensorgateway&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=18,0.75&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">radioMedium</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ieee802154NarrowbandScalarRadioMedium</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=18,2.25&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">IntegratedMultiVisualizer</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=18,3.75&quot;</span><span style="color: #3d3d3d; ">);
+        }
+}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

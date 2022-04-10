@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Ospfv3Lsa</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Ospfv3Lsa</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle" style="float: left;">Ospfv3Lsa</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #dedede;">
+    <span class="mdl-chip__text">class</span>
+</span><div style="clear: both;"/>
+<p><a class="reference-cpp" href="../doxy/classinet_1_1ospfv3_1_1_ospfv3_lsa.html">C++ definition</a></p>
+<p>(no description)</p>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-routing-ospfv3-Ospfv3Lsa-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-routing-ospfv3-Ospfv3Lsa-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td>cObject</td>
+      <td><i>(unknown -- not in documented files)</i></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Known subclasses</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3AsExternalLsa.html">Ospfv3AsExternalLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>AS-External-LSAs</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3InterAreaPrefixLsa.html">Ospfv3InterAreaPrefixLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Inter-Area-Prefix-LSAs</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3InterAreaRouterLsa.html">Ospfv3InterAreaRouterLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Inter-Area-Router(<a href="inet.node.inet.Router.html">1</a>,<a href="inet.tutorials.protocol.Router.html">2</a>)-LSAs</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3IntraAreaPrefixLsa.html">Ospfv3IntraAreaPrefixLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Intra-Area-Prefix-LSAs</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3LinkLsa.html">Ospfv3LinkLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Link-LSAs
+A link-local only LSA for OSPFv3. A Type 8 LSA is used to give
+information about link-local addresses and a list of IPv6 addresses on the link.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3NetworkLsa.html">Ospfv3NetworkLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Network(<a href="inet.examples.inet.igmp.Network.html">1</a>,<a href="inet.examples.pim.dm.assert.Network.html">2</a>,<a href="inet.examples.pim.iptv.Network.html">3</a>) LSA</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3NssaLsa.html">Ospfv3NssaLsa</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>NSSA-LSAs
+Routers in a Not-so-stubby-area (NSSA) do not receive external LSAs from Area Border Routers,
+but are allowed to send external routing information for redistribution.
+They use type 7 LSAs to tell the ABRs about these external routes,
+which the Area Border Router(<a href="inet.node.inet.Router.html">1</a>,<a href="inet.tutorials.protocol.Router.html">2</a>) then translates to type 5 external LSAs and floods as normal to the rest of the OSPF network</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3RouterLsa.html">Ospfv3RouterLsa</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Fields</h3>
+<table class="fieldstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="local">
+      <td>header</td>
+      <td><a class="reference-ned" href="src-inet-routing-ospfv3-Ospfv3LsaHeader.html">Ospfv3LsaHeader</a></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ospfv3Lsa</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ospfv3LsaHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; ">;
+}
+
+</span></pre>
+File: <a href="src-inet-routing-ospfv3-Ospfv3Packet.msg.html">src/inet/routing/ospfv3/Ospfv3Packet.msg</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

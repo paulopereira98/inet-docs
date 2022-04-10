@@ -1,0 +1,640 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>SctpHeader.msg</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">SctpHeader.msg</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">Msg File src/inet/transportlayer/sctp/SctpHeader.msg</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpHeader.html">SctpHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpChunk.html">SctpChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpInitChunk.html">SctpInitChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpInitAckChunk.html">SctpInitAckChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpCookieEchoChunk.html">SctpCookieEchoChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpCookie.html">SctpCookie</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpCookieAckChunk.html">SctpCookieAckChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpDataMsg.html">SctpDataMsg</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpDataChunk.html">SctpDataChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpForwardTsnChunk.html">SctpForwardTsnChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSackChunk.html">SctpSackChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAbortChunk.html">SctpAbortChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpHeartbeatChunk.html">SctpHeartbeatChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpHeartbeatAckChunk.html">SctpHeartbeatAckChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpShutdownChunk.html">SctpShutdownChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpShutdownAckChunk.html">SctpShutdownAckChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpShutdownCompleteChunk.html">SctpShutdownCompleteChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpErrorChunk.html">SctpErrorChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpParameter.html">SctpParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpPacketDropChunk.html">SctpPacketDropChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpStreamResetChunk.html">SctpStreamResetChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpOutgoingSsnResetRequestParameter.html">SctpOutgoingSsnResetRequestParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpIncomingSsnResetRequestParameter.html">SctpIncomingSsnResetRequestParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSsnTsnResetRequestParameter.html">SctpSsnTsnResetRequestParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpStreamResetResponseParameter.html">SctpStreamResetResponseParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAddStreamsRequestParameter.html">SctpAddStreamsRequestParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpResetTimer.html">SctpResetTimer</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAuthenticationChunk.html">SctpAuthenticationChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAsconfChunk.html">SctpAsconfChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAsconfAckChunk.html">SctpAsconfAckChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpAddIPParameter.html">SctpAddIPParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpDeleteIPParameter.html">SctpDeleteIPParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSetPrimaryIPParameter.html">SctpSetPrimaryIPParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSupportedExtensionsParameter.html">SctpSupportedExtensionsParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpErrorCauseParameter.html">SctpErrorCauseParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSimpleErrorCauseParameter.html">SctpSimpleErrorCauseParameter</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-SctpSuccessIndication.html">SctpSuccessIndication</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-sctp-NatMessage.html">NatMessage</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2008 Irene Ruengeler
+// Copyright (C) 2009-2012 Thomas Dreibholz
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">INETDefs</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">TransportHeaderBase</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">CrcMode</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Message</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">sctp</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">TransportHeaderBase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Source Port
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srcPort</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Destination Port
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destPort</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Verification Tag
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">vTag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">checksumOk</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">crc</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">CrcMode</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">crcMode</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">CRC_MODE_UNDEFINED</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">headerLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">12</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">sctpChunks</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Chunk Type
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sctpChunkType</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">flags</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">length</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">chunkName</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpInitChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Initiate Tag
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initTag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Advertised Receiver Window
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">a_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Outbound Streams
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">noOutStreams</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Inbound Streams
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">noInStreams</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Initial TSN
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initTsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">forwardTsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipv4Supported</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipv6Supported</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addresses</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unrecognizedParameters</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Will be filled by the Parser, if unrecognized Parameters arrive.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">msg_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sctpChunkTypes</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Chunk list parameter, i.e. for SCTP AUTH
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sepChunks</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Supported extensions parameter, i.e. for StreamReset
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hmacTypes</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//HMAC Identifier for HMAC algorithm parameter
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">random</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Random Parameter for SCTP AUTH
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpInitAckChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Initiate Tag
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initTag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Advertised Receiver Window
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">a_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Outbound Streams
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">noOutStreams</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Inbound Streams
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">noInStreams</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Initial TSN
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initTsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">forwardTsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipv4Supported</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ipv6Supported</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addresses</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cookie</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unrecognizedParameters</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #3d3d3d; ">SctpCookie</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">stateCookie</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">msg_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">random</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Random Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sctpChunkTypes</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sepChunks</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//Supported extensions parameter, i.e. for StreamReset
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hmacTypes</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpCookieEchoChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cookie</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #3d3d3d; ">SctpCookie</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">stateCookie</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unrecognizedParameters</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">//for the serializer to send an Error chunk bundled with a Cookie-Echo
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpCookie</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cNamedObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">creationTime</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">localTag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">peerTag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">localTieTag</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">peerTieTag</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">length</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpCookieAckChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpDataMsg</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Chunk Flags
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">eBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">enqueuingTime</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">expiryTime</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ppid</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initialDestination</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">msgNum</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sid</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ordered</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">booksize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtx</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fragment</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">prMethod</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">priority</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">strReset</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sackNow</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpDataChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Chunk Flags
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">eBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">uBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">iBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Transmission Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Stream identifier
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sid</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Stream Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Payload Protocol Identifier
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ppid</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">enqueuingTime</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">firstSendTime</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpForwardTsnChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">newCumTsn</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sid</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssn</span><span style="color: #3d3d3d; ">[]; </span><span style="color: #808080; font-style: italic; ">// set -1 in case of unordered delivery
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSackChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Cumulative TSN Ack
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cumTsnAck</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Advertised Receiver Window Credit
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">a_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Gap Ack Blocks
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numGaps</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Non-Revokable Gap Ack Blocks
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numNrGaps</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Number of Duplicate TSNs
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numDupTsns</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #808080; font-style: italic; ">// Start and End of Gap Ack Blocks
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; ">   </span><span style="color: #3d3d3d; ">isNrSack</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">gapStart</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">gapStop</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">dupTsns</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sackSeqNum</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">nrGapStart</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">nrGapStop</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">msg_rwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; ">  </span><span style="color: #3d3d3d; ">dacPacketsRcvd</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; ">   </span><span style="color: #3d3d3d; ">nrSubtractRGaps</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">false</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAbortChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// Chunk Flags
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">T_Bit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpHeartbeatChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">remoteAddr</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">timeField</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">info</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpHeartbeatAckChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">remoteAddr</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">simtime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">timeField</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">info</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpShutdownChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cumTsnAck</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpShutdownAckChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpShutdownCompleteChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">TBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpErrorChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">TBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">MBit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">parameters</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">parameterType</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpPacketDropChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cFlag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">tFlag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bFlag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mFlag</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">maxRwnd</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">queuedData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">truncLength</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpStreamResetChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">parameters</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpOutgoingSsnResetRequestParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srReqSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Request Sequence Number: initialized with the initial TSN, then incremented
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srResSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Response Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lastTsn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Senders last assigned TSN
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">streamNumbers</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpIncomingSsnResetRequestParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srReqSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Request Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">streamNumbers</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSsnTsnResetRequestParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srReqSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Request Sequence Number
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpStreamResetResponseParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srResSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Response Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">result</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sendersNextTsn</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">receiversNextTsn</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAddStreamsRequestParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srReqSn</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Request Sequence Number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">numberOfStreams</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">reserved</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpResetTimer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inSN</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Response Sequence Number for Incoming Reset Request
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inAcked</span><span style="color: #3d3d3d; ">;   </span><span style="color: #808080; font-style: italic; ">// false, when timer is running for the Reset Response Sequence Number, true otherwise
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">outSN</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//Stream Reset Response Sequence Number for Outgoing Reset Request
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">outAcked</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAuthenticationChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sharedKey</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hMacIdentifier</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hMacOk</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">HMAC</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAsconfChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">serialNumber</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addressParam</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">peerVTag</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//for NAT
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">asconfParams</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAsconfAckChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@customize</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">serialNumber</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">asconfResponse</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpAddIPParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requestCorrelationId</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//assigned by the sender to identify each request parameter
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addressParam</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpDeleteIPParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requestCorrelationId</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//assigned by the sender to identify each request parameter
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addressParam</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSetPrimaryIPParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requestCorrelationId</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">//assigned by the sender to identify each request parameter
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addressParam</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSupportedExtensionsParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sctpChunkTypes</span><span style="color: #3d3d3d; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpErrorCauseParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">responseCorrelationId</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">errorCauseType</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSimpleErrorCauseParameter</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">value</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpSuccessIndication</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">SctpParameter</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">responseCorrelationId</span><span style="color: #3d3d3d; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NatMessage</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cMessage</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; ">        </span><span style="color: #3d3d3d; ">multi</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; ">      </span><span style="color: #3d3d3d; ">peer1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">     </span><span style="color: #3d3d3d; ">peer1Addresses</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; ">      </span><span style="color: #3d3d3d; ">portPeer1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; ">      </span><span style="color: #3d3d3d; ">peer2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">     </span><span style="color: #3d3d3d; ">peer2Addresses</span><span style="color: #3d3d3d; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; ">      </span><span style="color: #3d3d3d; ">portPeer2</span><span style="color: #3d3d3d; ">;
+}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

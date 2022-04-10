@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>TagBase</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">TagBase</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle" style="float: left;">TagBase</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #dedede;">
+    <span class="mdl-chip__text">class</span>
+</span><div style="clear: both;"/>
+<p><a class="reference-cpp" href="../doxy/classinet_1_1_tag_base.html">C++ definition</a></p>
+
+<p>This is an abstract base class that should not be directly added to a message as a tag.
+It is used as the base class of all tags, thus it doesn't have any fields.</p>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-common-TagBase-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td>cObject</td>
+      <td><i>(unknown -- not in documented files)</i></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Known subclasses</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-CreationTimeTag.html">CreationTimeTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag specifies the creation time. It can be attached to a specific
+region of a packet in order to store the time when that region was created.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-queueing-gate-CreditGateTag.html">CreditGateTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag carries the module id of the ~<a href="inet.queueing.gate.CreditBasedGate.html">CreditBasedGate</a> which the packet passed
+through.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-DirectionTag.html">DirectionTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag specifies the intended direction of the packet as one of inbound,
+outbound, or undefined. The direction should be set to:</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-DscpTagBase.html">DscpTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-EcnTagBase.html">EcnTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-shaper-EligibilityTimeTag.html">EligibilityTimeTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag specifies the simulation time after which the packet becomes eligible
+for transmission according to the asynchronous shaper.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-FlowTag.html">FlowTag</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-FragmentationReq.html">FragmentationReq</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Determines the fragmentation</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-fragmentation-tag-FragmentTag.html">FragmentTag</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-GptpIngressTimeInd.html">GptpIngressTimeInd</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-HopLimitTagBase.html">HopLimitTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-IdentityTag.html">IdentityTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag provides a bit level identity for binary data. It must attached to
+a packet or chunk as a region tag. The identity of a bit in the region can be
+calculated by adding the offset of said bit to the identityStart field of the
+tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-ieee80211-packetlevel-Ieee80211ChannelTagBase.html">Ieee80211ChannelTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-ieee80211-packetlevel-Ieee80211ModeTagBase.html">Ieee80211ModeTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mac-Ieee80211SubtypeTagBase.html">Ieee80211SubtypeTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-Ieee802SapTagBase.html">Ieee802SapTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-InterfaceTagBase.html">InterfaceTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv4-Ipv4OptionsTagBase.html">Ipv4OptionsTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv6-Ipv6ExtHeaderTagBase.html">Ipv6ExtHeaderTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-L3AddressTagBase.html">L3AddressTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-common-L4PortTagBase.html">L4PortTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-queueing-common-LabelsTag.html">LabelsTag</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-llc-LlcProtocolTag.html">LlcProtocolTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Marks the packet's LLC protocol
+NOTE: No packet field indicates the LLC protocol, it depends on the used band!</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-MacAddressTagBase.html">MacAddressTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-MulticastReq.html">MulticastReq</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Determines the multicast loop mode</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-NextHopAddressReq.html">NextHopAddressReq</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-PacketEventTag.html">PacketEventTag</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-PcpTagBase.html">PcpTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-queueing-common-ProgressTag.html">ProgressTag</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-ProtocolListTagBase.html">ProtocolListTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-ProtocolTagBase.html">ProtocolTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-queueing-common-RateTag.html">RateTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag can be attached to individual packets the specify the data rate and
+packet rate. The values are meaningful for a stream of packets which this
+packet is part of.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-ResidenceTimeTag.html">ResidenceTimeTag</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This tag specifies the network node residence start and end times. It can be
+attached to a specific region of a packet in order to store when that region
+entered and left the network node.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-contract-sctp-SctpCommandReq.html">SctpCommandReq</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-SequenceNumberTagBase.html">SequenceNumberTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-common-contract-packetlevel-SignalTagBase.html">SignalTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-socket-SocketTagBase.html">SocketTagBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-redundancy-StreamTagBase.html">StreamTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-TimeTagBase.html">TimeTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is a base class for various time measurement tags.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-TosTagBase.html">TosTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-UserPriorityTagBase.html">UserPriorityTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-common-VlanTagBase.html">VlanTagBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is an abstract base class that should not be directly added as a tag.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// This is an abstract base class that should not be directly added to a message as a tag.
+// It is used as the base class of all tags, thus it doesn't have any fields.
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">TagBase</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@existingClass</span><span style="color: #3d3d3d; ">;
+}
+</span></pre>
+File: <a href="src-inet-common-TagBase.msg.html">src/inet/common/TagBase.msg</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Ieee80211Interface</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Ieee80211Interface</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <p>Package: <a class="reference-ned" href="packages.html#inet_linklayer_ieee80211">inet.linklayer.ieee80211</a></p>
+<h2 class="comptitle" style="float: left;">Ieee80211Interface</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #00ff0040;">
+    <span class="mdl-chip__text">compound module</span>
+</span><div style="clear: both;"/>
+
+<p>This module implements an IEEE 802.11 network interface.</p>
+<p>It can be configured via the mgmt.typename parameter to act
+as an AP or a STA, or for ad-hoc mode.</p>
+<p>Potential mgmType values: ~<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtStaSimplified.html">Ieee80211MgmtStaSimplified</a>, ~<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a>,
+~<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAp.html">Ieee80211MgmtAp</a>, ~<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtApSimplified.html">Ieee80211MgmtApSimplified</a>, ~<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc.html">Ieee80211MgmtAdhoc</a>.</p>
+<p>A classifier is needed if you want to use QoS.</p>
+<img src="inet.linklayer.ieee80211.Ieee80211Interface-type.svg" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.common.packet.recorder.PcapRecorder.html" title="PcapRecorder" alt="PcapRecorder" coords="-16,128,220,173">
+<area shape="rect" href="inet.clock.contract.IClock.html" title="IClock" alt="IClock" coords="85,228,120,273">
+<area shape="rect" href="inet.linklayer.ieee80211.mib.Ieee80211Mib.html" title="Ieee80211Mib" alt="Ieee80211Mib" coords="89,328,118,373">
+<area shape="rect" href="inet.linklayer.ieee80211.llc.IIeee80211Llc.html" title="IIeee80211Llc" alt="IIeee80211Llc" coords="282,220,326,281">
+<area shape="rect" href="inet.linklayer.common.IIeee8021dQosClassifier.html" title="IIeee8021dQosClassifier" alt="IIeee8021dQosClassifier" coords="472,120,532,181">
+<area shape="rect" href="inet.linklayer.ieee80211.mgmt.IIeee80211Agent.html" title="IIeee80211Agent" alt="IIeee80211Agent" coords="682,320,726,381">
+<area shape="rect" href="inet.linklayer.ieee80211.mgmt.IIeee80211Mgmt.html" title="IIeee80211Mgmt" alt="IIeee80211Mgmt" coords="482,320,526,381">
+<area shape="rect" href="inet.linklayer.ieee80211.IIeee80211Mac.html" title="IIeee80211Mac" alt="IIeee80211Mac" coords="282,320,326,381">
+<area shape="rect" href="inet.physicallayer.wireless.common.contract.packetlevel.IRadio.html" title="IRadio" alt="IRadio" coords="282,420,326,481">
+</map>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.linklayer.ieee80211.Ieee80211Interface-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.linklayer.ieee80211.Ieee80211Interface-inheritance.svg"></object>
+<h3 class="subtitle">Used in compound modules</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.ratecontrol.Client.html">Client</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.hiddennode.Node.html">Node</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.ratecontrol.SinkClient.html">SinkClient</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.hiddennode.SinkNode.html">SinkNode</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.hosttohost.ThroughputClient.html">ThroughputClient</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.testnewmac.ThroughputClient.html">ThroughputClient</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.throughput.ThroughputClient.html">ThroughputClient</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.hosttohost.ThroughputServer.html">ThroughputServer</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.testnewmac.ThroughputServer.html">ThroughputServer</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.throughput.WirelessAPWithSink.html">WirelessAPWithSink</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td>
+<p>Well, this models a 802.11 Access Point with a Sink.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.networklayer.common.NetworkInterface.html">NetworkInterface</a></td>
+      <td><i>compound&nbsp;module</i></td>
+      <td>
+<p>This module serves as the base module for all network interfaces.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Parameters</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="inherited">
+      <td>displayStringTextFormat</td>
+      <td>string</td>
+      <td>"%a (%i)\n%m"</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>recordPcap</td>
+      <td>bool</td>
+      <td>false</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>numPcapRecorders</td>
+      <td>int</td>
+      <td>recordPcap ? 1 : 0</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>interfaceTableModule</td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>energySourceModule</td>
+      <td>string</td>
+      <td>""</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>opMode</td>
+      <td>string</td>
+      <td>"g(mixed)"</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>address</td>
+      <td>string</td>
+      <td>"auto"</td>
+      <td>
+<p>MAC address as hex string (12 hex digits), or
+"auto". "auto" values will be replaced by
+a generated MAC address in init stage 0.</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>protocol</td>
+      <td>string</td>
+      <td>""</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>bitrate</td>
+      <td>double</td>
+      <td>-1bps</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Properties</h3>
+<table class="propertiestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="value">Value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td>networkInterface</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>lifecycleSupport</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>class</td>
+      <td>NetworkInterface</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>display</td>
+      <td>i=block/ifcard</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Gates</h3>
+<table class="gatestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Direction</th>
+      <th class="gatesize">Size</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="local">
+      <td>upperLayerIn</td>
+      <td>input</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>upperLayerOut</td>
+      <td>output</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>radioIn</td>
+      <td>input</td>
+      <td></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Signals</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+   <tr class="local">
+      <td>packetDropped</td>
+      <td><a class="reference-cpp" href="../doxy/classinet_1_1_packet.html">inet::Packet</a></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Statistics</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+   <tr class="local">
+      <td>packetDropInterfaceDown</td>
+      <td>packet drops: interface down</td>
+      <td>packetDropReasonIsInterfaceDown(packetDropped)</td>
+      <td>count, sum(packetBytes), vector(packetBytes)</td>
+      <td></td>
+      <td>none</td>
+   </tr>
+   <tr class="local">
+      <td>packetDropNoCarrier</td>
+      <td>packet drops: no carrier</td>
+      <td>packetDropReasonIsNoCarrier(packetDropped)</td>
+      <td>count, sum(packetBytes), vector(packetBytes)</td>
+      <td></td>
+      <td>none</td>
+   </tr>
+</table>
+<h3 class="subtitle">Unassigned submodule parameters</h3>
+<table class="deepparamstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+      <td>bool</td>
+      <td>true</td>
+      <td>
+<p>whether to log packets on the module output</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+      <td>string</td>
+      <td>""</td>
+      <td>
+<p>the PCAP file to be written</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.fileFormat</td>
+      <td>string</td>
+      <td>"pcapng"</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
+      <td>int</td>
+      <td>65535</td>
+      <td>
+<p>maximum number of bytes to record per packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+      <td>bool</td>
+      <td>true</td>
+      <td>
+<p>enable dump of frames with hasBitError</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+      <td>string</td>
+      <td>"packetSentToLower"</td>
+      <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+      <td>string</td>
+      <td>"packetReceivedFromLower"</td>
+      <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.dumpProtocols</td>
+      <td>string</td>
+      <td>"ethernetmac ppp ieee80211mac"</td>
+      <td>
+<p>space-separated list of protocol names as defined in the <a href="src-inet-common-Protocol.html">Protocol</a> class</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.packetFilter</td>
+      <td>object</td>
+      <td>"*"</td>
+      <td>
+<p>which packets are considered, matches all packets by default</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.helpers</td>
+      <td>string</td>
+      <td>""</td>
+      <td>
+<p>usable <a href="inet.common.packet.recorder.PcapRecorder.html">PcapRecorder</a>::IHelper helpers for accept packettype and store/convert packet as specified linktype
+currently available: "inet::AckingMacToEthernetPcapRecorderHelper"</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.alwaysFlush</td>
+      <td>bool</td>
+      <td>false</td>
+      <td>
+<p>flush the pcapFile after each write to ensure that all packets are captured in case of a crash</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.displayStringTextFormat</td>
+      <td>string</td>
+      <td>"rec: %n pks"</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.linklayer.ieee80211.mgmt.IIeee80211Mgmt.html">mgmt</a>.macModule</td>
+      <td>string</td>
+      <td></td>
+      <td>
+<p>The path to the MAC module</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// This module implements an IEEE 802.11 network interface.
+//
+// It can be configured via the mgmt.typename parameter to act
+// as an AP or a STA, or for ad-hoc mode.
+//
+// Potential mgmType values: ~Ieee80211MgmtStaSimplified, ~Ieee80211MgmtSta,
+// ~Ieee80211MgmtAp, ~Ieee80211MgmtApSimplified, ~Ieee80211MgmtAdhoc.
+//
+// A classifier is needed if you want to use QoS.
+//
+</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ieee80211Interface</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkInterface</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IWirelessInterface</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">interfaceTableModule</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">energySourceModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">opMode</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@enum</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;a&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;b&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;g(erp)&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;g(mixed)&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;n(mixed-2.4Ghz)&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;p&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;ac&quot;</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;g(mixed)&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@mutable</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #3d3d3d; ">); </span><span style="color: #808080; font-style: italic; ">// MAC address as hex string (12 hex digits), or
+</span><span style="color: #3d3d3d; ">                                                   </span><span style="color: #808080; font-style: italic; ">// &quot;auto&quot;. &quot;auto&quot; values will be replaced by
+</span><span style="color: #3d3d3d; ">                                                   </span><span style="color: #808080; font-style: italic; ">// a generated MAC address in init stage 0.
+</span><span style="color: #3d3d3d; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">protocol</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bitrate</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@unit</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">bps</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(-</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">bps</span><span style="color: #3d3d3d; ">);
+        **.</span><span style="color: #3d3d3d; ">opMode</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">opMode</span><span style="color: #3d3d3d; ">;
+        **.</span><span style="color: #3d3d3d; ">bitrate</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">bitrate</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">modeSet</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">opMode</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.*.</span><span style="color: #3d3d3d; ">rateSelection</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">dataFrameBitrate</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">bitrate</span><span style="color: #3d3d3d; ">);
+        *.</span><span style="color: #3d3d3d; ">macModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">absPath</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;.mac&quot;</span><span style="color: #3d3d3d; ">));
+        *.</span><span style="color: #3d3d3d; ">mibModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">absPath</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;.mib&quot;</span><span style="color: #3d3d3d; ">));
+        *.</span><span style="color: #3d3d3d; ">interfaceTableModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">absPath</span><span style="color: #3d3d3d; ">(</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">interfaceTableModule</span><span style="color: #3d3d3d; ">));
+        *.</span><span style="color: #3d3d3d; ">energySourceModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">absPath</span><span style="color: #3d3d3d; ">(</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">energySourceModule</span><span style="color: #3d3d3d; ">));
+    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">upperLayerIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">upperLayerOut</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">radioIn</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@labels</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">IWirelessSignal</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">mib</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ieee80211Mib</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,300;is=s&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">llc</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">opMode</span><span style="color: #3d3d3d; "> == </span><span style="color: #008000; ">&quot;p&quot;</span><span style="color: #3d3d3d; "> ? </span><span style="color: #008000; ">&quot;Ieee80211LlcEpd&quot;</span><span style="color: #3d3d3d; "> : </span><span style="color: #008000; ">&quot;Ieee80211LlcLpd&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee80211Llc</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=300,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">classifier</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;OmittedIeee8021dQosClassifier&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee8021dQosClassifier</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=500,100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">agent</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;Ieee80211AgentSta&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee80211Agent</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=700,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">mgmt</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;Ieee80211MgmtSta&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee80211Mgmt</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=500,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;Ieee80211Mac&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee80211Mac</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=300,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">radio</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;Ieee80211ScalarRadio&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IRadio</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=300,400&quot;</span><span style="color: #3d3d3d; ">);
+        }
+    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">radioIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=s&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">radio</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">radioIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">radio</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">lowerLayerOut</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">radio</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">lowerLayerIn</span><span style="color: #3d3d3d; ">;
+
+        </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">mgmtOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mgmt</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">macIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">mgmtIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mgmt</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">macOut</span><span style="color: #3d3d3d; ">;
+
+        </span><span style="color: #3d3d3d; ">mgmt</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">agentOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">agent</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">mgmtIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">exists</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">agent</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; ">mgmt</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">agentIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">agent</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">mgmtOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">exists</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">agent</span><span style="color: #3d3d3d; ">);
+
+        </span><span style="color: #3d3d3d; ">llc</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">upperLayerOut</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">llc</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">classifier</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">out</span><span style="color: #3d3d3d; ">;
+
+        </span><span style="color: #3d3d3d; ">llc</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">lowerLayerOut</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerIn</span><span style="color: #3d3d3d; ">;
+        </span><span style="color: #3d3d3d; ">llc</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">lowerLayerIn</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mac</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">upperLayerOut</span><span style="color: #3d3d3d; ">;
+
+        </span><span style="color: #3d3d3d; ">classifier</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">in</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">upperLayerIn</span><span style="color: #3d3d3d; ">;
+}
+
+</span></pre>
+File: <a href="src-inet-linklayer-ieee80211-Ieee80211Interface.ned.html">src/inet/linklayer/ieee80211/Ieee80211Interface.ned</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

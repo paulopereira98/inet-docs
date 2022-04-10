@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>NetworkPathVisualizerShowcase.ned</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">NetworkPathVisualizerShowcase.ned</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">NED File showcases/visualizer/canvas/networkpathactivity/NetworkPathVisualizerShowcase.ned</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.visualizer.canvas.networkpathactivity.NetworkPathSimpleShowcase.html">NetworkPathSimpleShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.visualizer.canvas.networkpathactivity.NetworkPathComplexShowcase.html">NetworkPathComplexShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.visualizer.canvas.networkpathactivity.NetworkPathMobileShowcase.html">NetworkPathMobileShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.visualizer.canvas.networkpathactivity.NetworkPathRIPShowcase.html">NetworkPathRIPShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">showcases</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">canvas</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networkpathactivity</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">scenario</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ScenarioManager</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ipv4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">aodv</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethernet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethernet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">WirelessHost</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">AccessPoint</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">physicallayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">wireless</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ieee80211</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">packetlevel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ieee80211ScalarRadioMedium</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">IntegratedVisualizer</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">NetworkRouteVisualizer</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkPathSimpleShowcase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgb=600,250&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">pathVisualizer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">NetworkRouteVisualizer</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,50&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,150&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">source</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=200,125&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">destination</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=500,125&quot;</span><span style="color: #3d3d3d; ">);
+        }
+
+    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">source</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destination</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkPathComplexShowcase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgb=1050,720&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">IntegratedVisualizer</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,50&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,150&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">source1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=250,50&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">source2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=947.52496,110.439995&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">destination1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=749.235,611.185&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">destination2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=131.856,533.856&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">host1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=379.488,49.848&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">videoClient</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=831.336,109.344&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">host2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=894.048,533.856&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">videoServer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=249.24,639.984&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=249.24,160.8&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=947.52496,229.665&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=279.865,515.805&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=731.665,448.03497&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=749.235,230.92&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=249.745,346.38&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=461.496,448.632&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router4</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=575.664,313.56&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=484.008,180.09601&quot;</span><span style="color: #3d3d3d; ">);
+        }
+    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">source1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destination1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">source2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">destination2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">host1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">videoClient</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">host2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">videoServer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkPathMobileShowcase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgb=660,630&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">IntegratedVisualizer</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,50&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,150&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">radioMedium</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ieee80211ScalarRadioMedium</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,250&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">source</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=229,46&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">destination</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=488.832,512.952&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">aodvRouter1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=421.296,295.872&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">aodvRouter2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=273.36002,440.592&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">aodvRouter3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=305.52,188.136&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">aodvRouter4</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=562.8,328.032&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">aodvRouter5</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AodvRouter</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=421.296,77.184&quot;</span><span style="color: #3d3d3d; ">);
+        }
+}
+
+</span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkPathRIPShowcase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgb=1100,680&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">visualizer</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">IntegratedVisualizer</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,50&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">configurator</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ipv4NetworkConfigurator</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,150&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">radioMedium</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Ieee80211ScalarRadioMedium</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,250&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">scenarioManager</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">ScenarioManager</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=100,350&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">wiredSource</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=257.28,535.464&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">wiredDestination</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=802.392,149.544&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">wirelessSource</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">WirelessHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=406.824,80.4&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">wirelessDestination</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">WirelessHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=786.312,567.624&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">host1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=445.41602,535.464&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">host2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">StandardHost</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=993.744,149.544&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">accessPoint0</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AccessPoint</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=319.992,154.368&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">accessPoint1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">AccessPoint</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=876.36,479.184&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=876.36,276.576&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">EthernetSwitch</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=329.64,402&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=383.73126,279.6875&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=633.552,192.96&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=787.60004,404.98752&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">: </span><span style="color: #3d3d3d; ">Router</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=554.76,458.28&quot;</span><span style="color: #3d3d3d; ">);
+        }
+    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">router3</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">pppg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">wiredDestination</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">accessPoint1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">wiredSource</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">router0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">accessPoint0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">host1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch1</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">host2</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">etherSwitch0</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+}
+
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>IntegratedCanvasVisualizer</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">IntegratedCanvasVisualizer</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <p>Package: <a class="reference-ned" href="packages.html#inet_visualizer_canvas_integrated">inet.visualizer.canvas.integrated</a></p>
+<h2 class="comptitle" style="float: left;">IntegratedCanvasVisualizer</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #00ff0040;">
+    <span class="mdl-chip__text">compound module</span>
+</span><div style="clear: both;"/>
+
+<p>This module integrates all canvas visualizers into a single module. It
+supports disabling any submodule visualizer by providing an empty string as
+its type.</p>
+<p>&lt;<a href="src-inet-common-b.html">b</a>&gt;See also:&lt;/<a href="src-inet-common-b.html">b</a>&gt; ~IntegratedOsgVisualizer, ~<a href="inet.visualizer.common.IntegratedVisualizer.html">IntegratedVisualizer</a>, ~<a href="inet.visualizer.contract.IIntegratedVisualizer.html">IIntegratedVisualizer</a>.</p>
+<img src="inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer-type.svg" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.visualizer.contract.ISceneVisualizer.html" title="ISceneVisualizer" alt="ISceneVisualizer" coords="100,120,204,181">
+<area shape="rect" href="inet.visualizer.contract.IPhysicalEnvironmentVisualizer.html" title="IPhysicalEnvironmentVisualizer" alt="IPhysicalEnvironmentVisualizer" coords="50,220,255,281">
+<area shape="rect" href="inet.visualizer.contract.INetworkNodeVisualizer.html" title="INetworkNodeVisualizer" alt="INetworkNodeVisualizer" coords="73,320,232,381">
+<area shape="rect" href="inet.visualizer.contract.INetworkConnectionVisualizer.html" title="INetworkConnectionVisualizer" alt="INetworkConnectionVisualizer" coords="53,420,251,481">
+<area shape="rect" href="inet.visualizer.contract.IMobilityVisualizer.html" title="IMobilityVisualizer" alt="IMobilityVisualizer" coords="91,520,213,581">
+<area shape="rect" href="inet.visualizer.contract.IStatisticVisualizer.html" title="IStatisticVisualizer" alt="IStatisticVisualizer" coords="92,620,213,681">
+<area shape="rect" href="inet.visualizer.contract.IInfoVisualizer.html" title="IInfoVisualizer" alt="IInfoVisualizer" coords="106,720,199,781">
+<area shape="rect" href="inet.visualizer.contract.IEnergyStorageVisualizer.html" title="IEnergyStorageVisualizer" alt="IEnergyStorageVisualizer" coords="70,820,234,881">
+<area shape="rect" href="inet.visualizer.contract.IMediumVisualizer.html" title="IMediumVisualizer" alt="IMediumVisualizer" coords="92,920,213,981">
+<area shape="rect" href="inet.visualizer.contract.ITracingObstacleLossVisualizer.html" title="ITracingObstacleLossVisualizer" alt="ITracingObstacleLossVisualizer" coords="75,1020,229,1081">
+<area shape="rect" href="inet.visualizer.contract.IPacketDropVisualizer.html" title="IPacketDropVisualizer" alt="IPacketDropVisualizer" coords="80,1120,225,1181">
+<area shape="rect" href="inet.visualizer.contract.IPacketFlowVisualizer.html" title="IPacketFlowVisualizer" alt="IPacketFlowVisualizer" coords="81,1220,223,1281">
+<area shape="rect" href="inet.visualizer.contract.IQueueVisualizer.html" title="IQueueVisualizer" alt="IQueueVisualizer" coords="399,120,506,181">
+<area shape="rect" href="inet.visualizer.contract.IGateScheduleVisualizer.html" title="IGateScheduleVisualizer" alt="IGateScheduleVisualizer" coords="374,220,530,281">
+<area shape="rect" href="inet.visualizer.contract.IRadioVisualizer.html" title="IRadioVisualizer" alt="IRadioVisualizer" coords="401,320,503,381">
+<area shape="rect" href="inet.visualizer.contract.IPhysicalLinkVisualizer.html" title="IPhysicalLinkVisualizer" alt="IPhysicalLinkVisualizer" coords="378,420,526,481">
+<area shape="rect" href="inet.visualizer.contract.IInterfaceTableVisualizer.html" title="IInterfaceTableVisualizer" alt="IInterfaceTableVisualizer" coords="370,520,534,581">
+<area shape="rect" href="inet.visualizer.contract.IDataLinkVisualizer.html" title="IDataLinkVisualizer" alt="IDataLinkVisualizer" coords="390,620,515,681">
+<area shape="rect" href="inet.visualizer.contract.ILinkBreakVisualizer.html" title="ILinkBreakVisualizer" alt="ILinkBreakVisualizer" coords="388,720,517,781">
+<area shape="rect" href="inet.visualizer.contract.IIeee80211Visualizer.html" title="IIeee80211Visualizer" alt="IIeee80211Visualizer" coords="385,820,519,881">
+<area shape="rect" href="inet.visualizer.contract.INetworkRouteVisualizer.html" title="INetworkRouteVisualizer" alt="INetworkRouteVisualizer" coords="371,920,533,981">
+<area shape="rect" href="inet.visualizer.contract.IRoutingTableVisualizer.html" title="IRoutingTableVisualizer" alt="IRoutingTableVisualizer" coords="376,1020,528,1081">
+<area shape="rect" href="inet.visualizer.contract.ITransportRouteVisualizer.html" title="ITransportRouteVisualizer" alt="ITransportRouteVisualizer" coords="367,1120,538,1181">
+<area shape="rect" href="inet.visualizer.contract.ITransportConnectionVisualizer.html" title="ITransportConnectionVisualizer" alt="ITransportConnectionVisualizer" coords="349,1220,556,1281">
+<area shape="rect" href="inet.visualizer.contract.IFailureProtectionConfigurationVisualizer.html" title="IFailureProtectionConfigurationVisualizer" alt="IFailureProtectionConfigurationVisualizer" coords="615,120,889,181">
+<area shape="rect" href="inet.visualizer.contract.IStreamRedundancyConfigurationVisualizer.html" title="IStreamRedundancyConfigurationVisualizer" alt="IStreamRedundancyConfigurationVisualizer" coords="609,220,896,281">
+</map>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer-inheritance.svg"></object>
+<h3 class="subtitle">Used in</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.Bgp2RoutersInAS.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.Bgp3Routers.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.BgpAndOspf.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.BgpAndOspfSimple.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.BgpCompleteTest.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.BgpOpen.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.bgpv4.BgpUpdate.BgpNetwork.html">BgpNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.coexistence.CoexistenceShowcase.html">CoexistenceShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.tutorials.configurator.ConfiguratorA.html">ConfiguratorA</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.tutorials.configurator.ConfiguratorB.html">ConfiguratorB</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.tutorials.configurator.ConfiguratorD.html">ConfiguratorD</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.tutorials.configurator.ConfiguratorE.html">ConfiguratorE</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.errorrate.ErrorRateShowcase.html">ErrorRateShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.filtering.FilteringExampleNetwork.html">FilteringExampleNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.handover.HandoverShowcase.html">HandoverShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.hiddennode.HiddenNodeShowcase.html">HiddenNodeShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.wireless.ieee80211levelofdetail.Ieee80211LevelofDetailShowcase.html">Ieee80211LevelofDetailShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.mobility.MobileNetwork.html">MobileNetwork</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.mobility.MobileNetworkWithEnvironment.html">MobileNetworkWithEnvironment</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.examples.openstreetmap.OpenStreetMapExample.html">OpenStreetMapExample</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.power.PowerConsumptionShowcase.html">PowerConsumptionShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.showcases.wireless.ratecontrol.RateControlShowcase.html">RateControlShowcase</a></td>
+      <td><i>network</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Properties</h3>
+<table class="propertiestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="value">Value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td>display</td>
+      <td>i=block/app</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// This module integrates all canvas visualizers into a single module. It
+// supports disabling any submodule visualizer by providing an empty string as
+// its type.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~IntegratedOsgVisualizer, ~IntegratedVisualizer, ~IIntegratedVisualizer.
+//
+</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IntegratedCanvasVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIntegratedVisualizer</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #3d3d3d; ">);
+        *.</span><span style="color: #3d3d3d; ">visualizationTargetModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;^.^&quot;</span><span style="color: #3d3d3d; ">);
+        *.</span><span style="color: #3d3d3d; ">visualizationSubjectModule</span><span style="color: #3d3d3d; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;^.^&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">sceneVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;SceneCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ISceneVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">physicalEnvironmentVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;PhysicalEnvironmentCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IPhysicalEnvironmentVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">networkNodeVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;NetworkNodeCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">INetworkNodeVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">networkConnectionVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;NetworkConnectionCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">INetworkConnectionVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,400&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">mobilityVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;MobilityCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IMobilityVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,500&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">statisticVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;StatisticCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IStatisticVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,600&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">infoVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;InfoCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IInfoVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,700&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">energyStorageVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;EnergyStorageCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEnergyStorageVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,800&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">mediumVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;MediumCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IMediumVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,900&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">obstacleLossVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;TracingObstacleLossCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ITracingObstacleLossVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,1000&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">packetDropVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;PacketDropCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IPacketDropVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,1100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">packetFlowVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;PacketFlowCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IPacketFlowVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=150,1200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">queueVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;QueueCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IQueueVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">gateScheduleVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;GateScheduleCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IGateScheduleVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">radioVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;RadioCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IRadioVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">physicalLinkVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;PhysicalLinkCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IPhysicalLinkVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,400&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">interfaceTableVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;InterfaceTableCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IInterfaceTableVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,500&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">dataLinkVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;DataLinkCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IDataLinkVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,600&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">linkBreakVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;LinkBreakCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ILinkBreakVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,700&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">ieee80211Visualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;Ieee80211CanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IIeee80211Visualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,800&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">networkRouteVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;NetworkRouteCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">INetworkRouteVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,900&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">routingTableVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;RoutingTableCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IRoutingTableVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,1000&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">transportRouteVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;TransportRouteCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ITransportRouteVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,1100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">transportConnectionVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;TransportConnectionCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ITransportConnectionVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=450,1200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">failureProtectionConfigurationVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;FailureProtectionConfigurationCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IFailureProtectionConfigurationVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=750,100&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">streamRedundancyConfigurationVisualizer</span><span style="color: #3d3d3d; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;StreamRedundancyConfigurationCanvasVisualizer&quot;</span><span style="color: #3d3d3d; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IStreamRedundancyConfigurationVisualizer</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+                </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=750,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+}
+
+</span></pre>
+File: <a href="src-inet-visualizer-canvas-integrated-IntegratedCanvasVisualizer.ned.html">src/inet/visualizer/canvas/integrated/IntegratedCanvasVisualizer.ned</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

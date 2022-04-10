@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>InVehicleNetworkShowcase</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">InVehicleNetworkShowcase</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <p>Package: <a class="reference-ned" href="packages.html#inet_showcases_tsn_combiningfeatures_invehicle">inet.showcases.tsn.combiningfeatures.invehicle</a></p>
+<h2 class="comptitle" style="float: left;">InVehicleNetworkShowcase</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #2196f340;">
+    <span class="mdl-chip__text">network</span>
+</span><div style="clear: both;"/>
+<p>(no description)</p>
+<img src="inet.showcases.tsn.combiningfeatures.invehicle.InVehicleNetworkShowcase-type.svg" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.common.packet.recorder.PcapRecorder.html" title="PcapRecorder" alt="PcapRecorder" coords="-54,108,182,153">
+<area shape="rect" href="inet.visualizer.contract.IIntegratedVisualizer.html" title="IIntegratedVisualizer" alt="IIntegratedVisualizer" coords="33,170,96,215">
+<area shape="rect" href="inet.networklayer.configurator.contract.IL3NetworkConfigurator.html" title="IL3NetworkConfigurator" alt="IL3NetworkConfigurator" coords="22,232,106,277">
+<area shape="rect" href="inet.networklayer.configurator.contract.INetworkConfigurator.html" title="INetworkConfigurator" alt="INetworkConfigurator" coords="-50,295,178,340">
+<area shape="rect" href="inet.linklayer.configurator.gatescheduling.contract.IGateScheduleConfigurator.html" title="IGateScheduleConfigurator" alt="IGateScheduleConfigurator" coords="-24,357,152,402">
+<area shape="rect" href="inet.networklayer.configurator.contract.INetworkConfigurator.html" title="INetworkConfigurator" alt="INetworkConfigurator" coords="-43,419,172,464">
+<area shape="rect" href="inet.networklayer.configurator.contract.INetworkConfigurator.html" title="INetworkConfigurator" alt="INetworkConfigurator" coords="-37,482,165,527">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="430,256,509,317">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="509,209,615,270">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="505,297,619,358">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="261,256,333,317">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="186,224,285,285">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="182,287,289,348">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="312,209,350,270">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="291,309,367,370">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="421,209,459,270">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="457,209,512,270">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="417,302,521,363">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="608,256,646,317">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="120,193,227,254">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="568,193,682,254">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="116,333,231,394">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="564,333,686,394">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="203,162,300,223">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="479,162,583,223">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="199,365,304,426">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="475,365,587,426">
+<area shape="rect" href="inet.node.contract.IEthernetNetworkNode.html" title="IEthernetNetworkNode" alt="IEthernetNetworkNode" coords="349,289,434,346">
+</map>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.showcases.tsn.combiningfeatures.invehicle.InVehicleNetworkShowcase-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="inet.showcases.tsn.combiningfeatures.invehicle.InVehicleNetworkShowcase-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="inet.networks.base.TsnNetworkBase.html">TsnNetworkBase</a></td>
+      <td><i>network</i></td>
+      <td>
+<p>This module serves as a network base module for Time-Sensitive Networking (TSN).</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Parameters</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="inherited">
+      <td>recordPcap</td>
+      <td>bool</td>
+      <td>false</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>numPcapRecorders</td>
+      <td>int</td>
+      <td>recordPcap ? 1 : 0</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>hasGlobalArp</td>
+      <td>bool</td>
+      <td>true</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>brokenComponent</td>
+      <td>string</td>
+      <td>"none"</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Properties</h3>
+<table class="propertiestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="value">Value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td>isNetwork</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>class</td>
+      <td>NetworkBase</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>display</td>
+      <td>bgi=background/car;bgb=1280,720</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Unassigned submodule parameters</h3>
+<table class="deepparamstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+      <td>bool</td>
+      <td>true</td>
+      <td>
+<p>whether to log packets on the module output</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+      <td>string</td>
+      <td>""</td>
+      <td>
+<p>the PCAP file to be written</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.fileFormat</td>
+      <td>string</td>
+      <td>"pcapng"</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
+      <td>int</td>
+      <td>65535</td>
+      <td>
+<p>maximum number of bytes to record per packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+      <td>bool</td>
+      <td>true</td>
+      <td>
+<p>enable dump of frames with hasBitError</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+      <td>string</td>
+      <td>"packetSentToLower"</td>
+      <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+      <td>string</td>
+      <td>"packetReceivedFromLower"</td>
+      <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.dumpProtocols</td>
+      <td>string</td>
+      <td>"ethernetmac ppp ieee80211mac"</td>
+      <td>
+<p>space-separated list of protocol names as defined in the <a href="src-inet-common-Protocol.html">Protocol</a> class</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.packetFilter</td>
+      <td>object</td>
+      <td>"*"</td>
+      <td>
+<p>which packets are considered, matches all packets by default</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.helpers</td>
+      <td>string</td>
+      <td>""</td>
+      <td>
+<p>usable <a href="inet.common.packet.recorder.PcapRecorder.html">PcapRecorder</a>::IHelper helpers for accept packettype and store/convert packet as specified linktype
+currently available: "inet::AckingMacToEthernetPcapRecorderHelper"</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.alwaysFlush</td>
+      <td>bool</td>
+      <td>false</td>
+      <td>
+<p>flush the pcapFile after each write to ensure that all packets are captured in case of a crash</p>
+</td>
+   </tr>
+   <tr>
+      <td><a href="inet.common.packet.recorder.PcapRecorder.html">pcapRecorder</a>.displayStringTextFormat</td>
+      <td>string</td>
+      <td>"rec: %n pks"</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontLeftSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontRightSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearLeftSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearRightSwitch</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">obu</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearDisplay</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">hud</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">steering</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">engineActuator</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">lidar</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearLeftCamera</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontLeftCamera</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearRightCamera</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontRightCamera</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearLeftWheel</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontLeftWheel</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">rearRightWheel</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">frontRightWheel</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><a href="inet.node.contract.IEthernetNetworkNode.html">masterClock</a>.numEthInterfaces</td>
+      <td>int</td>
+      <td></td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #800000; font-weight: bold; ">network</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">InVehicleNetworkShowcase</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">TsnNetworkBase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">brokenComponent</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; font-weight: bold; ">@enum</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;none&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;link&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;wheel&quot;</span><span style="color: #3d3d3d; ">,</span><span style="color: #008000; ">&quot;camera&quot;</span><span style="color: #3d3d3d; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;none&quot;</span><span style="color: #3d3d3d; ">);
+        </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;bgi=background/car;bgb=1280,720&quot;</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #800000; font-weight: bold; ">types</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">node</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethernet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; ">
+        {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;ls=,3&quot;</span><span style="color: #3d3d3d; ">);
+        }
+    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=750,350&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontLeftSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=900,275&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontRightSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=900,417&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=475,350&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearLeftSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=375,300&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearRightSwitch</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=375,400&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">obu</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=525,275&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearDisplay</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=525,435&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">hud</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=700,275&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">steering</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=775,275&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">engineActuator</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=750,425&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">lidar</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=1000,350&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearLeftCamera</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=275,250&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontLeftCamera</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=1000,250&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearRightCamera</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=275,475&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontRightCamera</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=1000,475&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearLeftWheel</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=400,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontLeftWheel</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=850,200&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">rearRightWheel</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=400,525&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">frontRightWheel</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=850,525&quot;</span><span style="color: #3d3d3d; ">);
+        }
+        </span><span style="color: #3d3d3d; ">masterClock</span><span style="color: #3d3d3d; ">: &lt;&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">IEthernetNetworkNode</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">typename</span><span style="color: #3d3d3d; "> != </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #3d3d3d; "> {
+            </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;p=625,400;i=device/card&quot;</span><span style="color: #3d3d3d; ">);
+        }
+    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #3d3d3d; ">:
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hud</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=m,40,40,40,40&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; font-weight: bold; ">@display</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">&quot;m=m,60,60,60,60&quot;</span><span style="color: #3d3d3d; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">lidar</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">steering</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">engineActuator</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">obu</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearDisplay</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontLeftWheel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontLeftCamera</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontRightWheel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">frontRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontRightCamera</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth1G</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearLeftCamera</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearLeftSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearLeftWheel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearRightCamera</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">rearRightSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rearRightWheel</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++;
+        </span><span style="color: #3d3d3d; ">masterClock</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Eth100M</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">frontSwitch</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ethg</span><span style="color: #3d3d3d; ">++ </span><span style="color: #800000; font-weight: bold; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">exists</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">masterClock</span><span style="color: #3d3d3d; ">);
+}
+</span></pre>
+File: <a href="showcases-tsn-combiningfeatures-invehicle-InVehicleNetworkShowcase.ned.html">showcases/tsn/combiningfeatures/invehicle/InVehicleNetworkShowcase.ned</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

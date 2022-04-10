@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>GptpPdelayResp</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">GptpPdelayResp</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle" style="float: left;">GptpPdelayResp</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #dedede;">
+    <span class="mdl-chip__text">class</span>
+</span><div style="clear: both;"/>
+<p><a class="reference-cpp" href="../doxy/classinet_1_1_gptp_pdelay_resp.html">C++ definition</a></p>
+<p>(no description)</p>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-linklayer-ieee8021as-GptpPdelayResp-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-linklayer-ieee8021as-GptpPdelayResp-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-GptpBase.html">GptpBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>ieee802.1AS-2020 10.6.2.1, 11.4.2</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Fields</h3>
+<table class="fieldstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="local">
+      <td>messageType</td>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-GptpMessageType.html">GptpMessageType</a></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>chunkLength</td>
+      <td><a class="reference-ned" href="src-inet-common-b.html">b</a></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>messageLengthField</td>
+      <td>uint16_t</td>
+      <td>
+<p>The value is the total number of octets that form the PTP message.</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>requestReceiptTimestamp</td>
+      <td><a class="reference-ned" href="src-inet-clock-contract-clocktime_t.html">clocktime_t</a></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>requestingPortIdentity</td>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-PortIdentity.html">PortIdentity</a></td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>majorSdoId</td>
+      <td>uint8_t</td>
+      <td>
+<p>The value is specified in 8.1 for all transmitted PTP messages of a gPTP domain. The value is specified in
+11.2.17 for all transmitted PTP messages of the Common Mean Link Delay Service. Any PTP message
+received for which the value is not one of the values specified in those subclauses shall be ignored.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>minorVersionPTP</td>
+      <td>uint8_t</td>
+      <td>
+<p>For transmitted messages, the value shall be 1 (see 7.5.4 and 13.3.2.5 of IEEE Std 1588-2019).
+For received messages, the value is ignored.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>versionPTP</td>
+      <td>uint8_t</td>
+      <td>
+<p>For transmitted messages, the value shall be 2 (see 7.5.4 and 13.3.2.4 of IEEE Std 1588-2019). For received
+messages, if the value is not 2, the entire message shall be ignored.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>domainNumber</td>
+      <td>uint8_t</td>
+      <td>
+<p>The domainNumber for Pdelay_Req, Pdelay_Resp, and Pdelay_Resp_Follow_Up messages shall be 0.
+The domainNumber for all other PTP messages is as specified in 10.6.2.2.6.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>minorSdoId</td>
+      <td>uint8_t</td>
+      <td>
+<p>The value is specified in 8.1 for all transmitted PTP messages of a gPTP domain. The value is specified in
+11.2.17 for all transmitted PTP messages of the Common Mean Link Delay Service. Any PTP message
+received for which the value is not one of the values specified in those subclauses shall be ignored.
+Currently unused in INET</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>flags</td>
+      <td>uint16_t</td>
+      <td>
+<p>10.6.2.2.8 flags (Octet2)
+The value of the bits of the array are defined in Table 10-9. For message types where the bit is not defined in
+Table 10-9, the value of the bit is set to FALSE.
+Use ~<a href="src-inet-linklayer-ieee8021as-GptpFlags.html">GptpFlags</a> enums.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>correctionField</td>
+      <td><a class="reference-ned" href="src-inet-clock-contract-clocktime_t.html">clocktime_t</a></td>
+      <td>
+<p>The correctionField is the value of the correction as specified in Table 11-6, measured in nanoseconds and
+multiplied by 2^16. For example, 2.5 ns is represented as 0x0000000000028000.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>messageTypeSpecific</td>
+      <td>uint32_t</td>
+      <td>
+<p>The value of the messageTypeSpecific field varies, based on the value of the messageType field, as described in Table 10-10.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>sourcePortIdentity</td>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-PortIdentity.html">PortIdentity</a></td>
+      <td>
+<p>The value is the PTP Port identity attribute (see 8.5.2) of the PTP Port that transmits the PTP message.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>sequenceId</td>
+      <td>uint16_t</td>
+      <td>
+<p>The sequenceId field is assigned as specified in 10.5.7.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>controlField</td>
+      <td>uint8_t</td>
+      <td>
+<p>The value is 0.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>logMessageInterval</td>
+      <td>uint8_t</td>
+      <td>
+<p>For Sync and Follow_Up messages, the value is the value of currentLogSyncInterval (see 10.2.5.4 and
+10.7.2.3). For Pdelay_Req messages, the value is the value of currentLogPdelayReqInterval. For
+Pdelay_Resp and Pdelay_Resp_Follow_Up messages, the value is transmitted as 0x7F and ignored on
+reception.</p>
+</td>
+   </tr>
+   <tr class="inherited">
+      <td>id</td>
+      <td>int</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>mutable</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>complete</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>correct</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>properlyRepresented</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawBin</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawHex</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>regionTags</td>
+      <td><a class="reference-ned" href="src-inet-common-packet-chunk-SharingRegionTagSet::TagBaseRegionTag.html">SharingRegionTagSet::TagBaseRegionTag</a>[]</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">GptpPdelayResp</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">GptpBase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">messageType</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">GPTPTYPE_PDELAY_RESP</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">chunkLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">GPTP_PDELAY_RESP_PACKET_SIZE</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">messageLengthField</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">GPTP_PDELAY_RESP_PACKET_SIZE</span><span style="color: #3d3d3d; ">).</span><span style="color: #3d3d3d; ">get</span><span style="color: #3d3d3d; ">();
+    </span><span style="color: #3d3d3d; ">clocktime_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requestReceiptTimestamp</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">PortIdentity</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">requestingPortIdentity</span><span style="color: #3d3d3d; ">;
+}
+
+</span></pre>
+File: <a href="src-inet-linklayer-ieee8021as-GptpPacket.msg.html">src/inet/linklayer/ieee8021as/GptpPacket.msg</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

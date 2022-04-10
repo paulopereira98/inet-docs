@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>RtpInnerPacket.msg</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">RtpInnerPacket.msg</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">Msg File src/inet/transportlayer/rtp/RtpInnerPacket.msg</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-rtp-RtpInpType.html">RtpInpType</a></td>
+      <td><i>enum</i></td>
+      <td>
+<p>This enumeration is a list of all possibly types of
+an ~<a href="src-inet-transportlayer-rtp-RtpInnerPacket.html">RtpInnerPacket</a>.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-rtp-RtpInnerPacket.html">RtpInnerPacket</a></td>
+      <td><i>packet</i></td>
+      <td>
+<p>This class is used for communication between submodules of the RTP layer module.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2008 OpenSim Ltd.
+// Copyright (C) 2001 Matthias Oppitz &lt;Matthias.Oppitz@gmx.de&gt;
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">INETDefs</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ipv4</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">RtpSenderControlMessage</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">transportlayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">RtpSenderStatusMessage</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; "> {{
+#</span><span style="color: #3d3d3d; ">include</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">&quot;inet/common/packet/Packet.h&quot;</span><span style="color: #3d3d3d; ">
+#</span><span style="color: #3d3d3d; ">include</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">&quot;inet/transportlayer/rtp/RtpPacket_m.h&quot;</span><span style="color: #3d3d3d; ">
+}}
+
+</span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #808080; font-style: italic; ">//
+// This enumeration is a list of all possibly types of
+// an ~RtpInnerPacket.
+//
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInpType</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">RTP_INP_UNDEF</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_INITIALIZE_PROFILE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_PROFILE_INITIALIZED</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">2</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_INITIALIZE_RTCP</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">3</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_RTCP_INITIALIZED</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_CREATE_SENDER_MODULE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">5</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SENDER_MODULE_CREATED</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">6</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_DELETE_SENDER_MODULE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">7</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SENDER_MODULE_DELETED</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">8</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_INITIALIZE_SENDER_MODULE</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">9</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SENDER_MODULE_INITIALIZED</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">10</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SENDER_MODULE_CONTROL</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">11</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SENDER_MODULE_STATUS</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">12</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_LEAVE_SESSION</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">13</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_SESSION_LEFT</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">14</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_DATA_OUT</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">15</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">RTP_INP_DATA_IN</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">16</span><span style="color: #3d3d3d; ">;
+};
+
+</span><span style="color: #808080; font-style: italic; ">//
+// This class is used for communication between submodules of the RTP layer module.
+//
+</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #808080; font-style: italic; ">// The type of this ~RtpInnerPacket.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">RtpInpType</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">RTP_INP_UNDEF</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The CNAME
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">commonName</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The MTU
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mtu</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The Bandwidth
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bandwidth</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The RTCP percentage
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcpPercentage</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The Ipv4 address
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">UNSPECIFIED_ADDRESS</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The port number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">port</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">PORT_UNDEF</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The SSRC identifier
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The payload type
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">payloadType</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The file name
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">fileName</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The clock rate
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">clockRate</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The RTP time stamp base
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">timeStampBase</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #808080; font-style: italic; ">// The RTP sequence number base
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sequenceNumberBase</span><span style="color: #3d3d3d; ">;
+};
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; ">) {{
+  </span><span style="color: #3d3d3d; ">public</span><span style="color: #3d3d3d; ">:
+    /**
+     * </span><span style="color: #3d3d3d; ">Writes</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">a</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">info</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">into</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">given</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">std</span><span style="color: #3d3d3d; ">::</span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">str</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Writes</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">a</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">longer</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">info</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">into</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">given</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">output</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">stream</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">dump</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">std</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ostream</span><span style="color: #3d3d3d; ">&amp; </span><span style="color: #3d3d3d; ">os</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">after</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">creating</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">profile</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; ">. </span><span style="color: #3d3d3d; ">It</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">informes</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">profile</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">maximum</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">size</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">an</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">can</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">have</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setInitializeProfilePkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mtu</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">profile</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">after</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">it</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">has</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">received</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">initializeProfile</span><span style="color: #3d3d3d; ">()
+     * </span><span style="color: #800000; font-weight: bold; ">message</span><span style="color: #3d3d3d; ">. </span><span style="color: #3d3d3d; ">It</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">informs</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">percentage</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">available</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">bandwidth</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">be</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">used</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">and</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">preferred</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">port</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">for</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">profile</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setProfileInitializedPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcpPercentage</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">port</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inform</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mandatory</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">information</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">for</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">starting</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">session</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setInitializeRTCPPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">commonName</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mtu</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bandwidth</span><span style="color: #3d3d3d; ">,
+            </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcpPercentage</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">port</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">after</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">it</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">has</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">waited</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">for</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">half</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">an</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">interval</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">for</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">incoming</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">messages</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">from</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">other</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">session</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">participants</span><span style="color: #3d3d3d; ">. </span><span style="color: #3d3d3d; ">It</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">informs</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">which</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">later</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">informs</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">application</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">about</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">identifier</span><span style="color: #3d3d3d; ">
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setRtcpInitializedPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setCreateSenderModulePkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">payloadType</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">fileName</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSenderModuleCreatedPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setDeleteSenderModulePkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSenderModuleDeletedPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setInitializeSenderModulePkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">fileName</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">mtu</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSenderModuleInitializedPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">payloadType</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">clockRate</span><span style="color: #3d3d3d; ">,
+            </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">timeStampBase</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sequenceNumberBase</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSenderModuleControlPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">RtpSenderControlMessage</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">msg</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSenderModuleStatusPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">RtpSenderStatusMessage</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">msg</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inform</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">that</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">session</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">should</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">be</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">left</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setLeaveSessionPkt</span><span style="color: #3d3d3d; ">();
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Called</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">by</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">module</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">when</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtcp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">bye</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">has</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">been</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sent</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">network</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSessionLeftPkt</span><span style="color: #3d3d3d; ">();
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Capsulates</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">outgoing</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">into</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">transport</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">it</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">within</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">layer</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setDataOutPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">Packet</span><span style="color: #3d3d3d; "> *</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Capsulates</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">incoming</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">into</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RtpInnerPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">transport</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">it</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">within</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">rtp</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">layer</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setDataInPkt</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">Packet</span><span style="color: #3d3d3d; "> *</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">Ipv4Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">port</span><span style="color: #3d3d3d; ">);
+}}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

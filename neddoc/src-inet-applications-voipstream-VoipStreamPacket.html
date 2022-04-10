@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>VoipStreamPacket</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">VoipStreamPacket</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle" style="float: left;">VoipStreamPacket</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #dedede;">
+    <span class="mdl-chip__text">class</span>
+</span><div style="clear: both;"/>
+
+<p><a href="src-inet-common-packet-Packet.html">Packet</a> type used by VoIPSourceApp and VoIPSinkApp</p>
+<h3 class="subtitle">Usage diagram</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-applications-voipstream-VoipStreamPacket-usage.svg"></object>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-applications-voipstream-VoipStreamPacket-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-packet-chunk-FieldsChunk.html">FieldsChunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Fields</h3>
+<table class="fieldstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="local">
+      <td>headerLength</td>
+      <td>short</td>
+      <td>
+<p>from voipHeaderSize parameter</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>type</td>
+      <td><a class="reference-ned" href="src-inet-applications-voipstream-VoipStreamPacketType.html">VoipStreamPacketType</a></td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>codec</td>
+      <td>int</td>
+      <td>
+<p>FFmpeg identifier of the codec</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>sampleBits</td>
+      <td>short</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>sampleRate</td>
+      <td>int</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>transmitBitrate</td>
+      <td>int</td>
+      <td></td>
+   </tr>
+   <tr class="local">
+      <td>samplesPerPacket</td>
+      <td>int</td>
+      <td>
+</td>
+   </tr>
+   <tr class="local">
+      <td>seqNo</td>
+      <td>uint16_t</td>
+      <td>
+<p>packet sequence number</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>timeStamp</td>
+      <td>uint32_t</td>
+      <td>
+<p>increased with every packet</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>ssrc</td>
+      <td>uint32_t</td>
+      <td>
+<p>currently unused</p>
+</td>
+   </tr>
+   <tr class="local">
+      <td>dataLength</td>
+      <td>uint16_t</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>id</td>
+      <td>int</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>mutable</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>complete</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>correct</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>properlyRepresented</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>chunkLength</td>
+      <td><a class="reference-ned" href="src-inet-common-b.html">b</a></td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawBin</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawHex</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>regionTags</td>
+      <td><a class="reference-ned" href="src-inet-common-packet-chunk-SharingRegionTagSet::TagBaseRegionTag.html">SharingRegionTagSet::TagBaseRegionTag</a>[]</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Packet type used by VoIPSourceApp and VoIPSinkApp
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">VoipStreamPacket</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">FieldsChunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">headerLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;     </span><span style="color: #808080; font-style: italic; ">// from voipHeaderSize parameter
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">VoipStreamPacketType</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">codec</span><span style="color: #3d3d3d; ">;  </span><span style="color: #808080; font-style: italic; ">// FFmpeg identifier of the codec
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sampleBits</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">sampleRate</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">transmitBitrate</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">samplesPerPacket</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">seqNo</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">// packet sequence number
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">timeStamp</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">// increased with every packet
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">uint32_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ssrc</span><span style="color: #3d3d3d; ">;  </span><span style="color: #808080; font-style: italic; ">// currently unused
+</span><span style="color: #3d3d3d; ">
+    </span><span style="color: #000080; font-weight: bold; ">uint16_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">dataLength</span><span style="color: #3d3d3d; ">;
+}
+</span></pre>
+File: <a href="src-inet-applications-voipstream-VoipStreamPacket.msg.html">src/inet/applications/voipstream/VoipStreamPacket.msg</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

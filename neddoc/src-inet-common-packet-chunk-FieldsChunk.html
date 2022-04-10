@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>FieldsChunk</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">FieldsChunk</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle" style="float: left;">FieldsChunk</h2>
+<span class="mdl-chip" style="float: right; margin-top: 6pt; background-color: #dedede;">
+    <span class="mdl-chip__text">class</span>
+</span><div style="clear: both;"/>
+<p><a class="reference-cpp" href="../doxy/classinet_1_1_fields_chunk.html">C++ definition</a></p>
+<p>(no description)</p>
+<h3 class="subtitle">Inheritance diagram</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<object type="image/svg+xml" data="src-inet-common-packet-chunk-FieldsChunk-inheritance.svg"></object>
+<h3 class="subtitle">Extends</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-common-packet-chunk-Chunk.html">Chunk</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+</table>
+<h3 class="subtitle">Known subclasses</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-acking-AckingMacHeader.html">AckingMacHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Packet.html">Packet</a> for ~<a href="inet.linklayer.acking.AckingMac.html">AckingMac</a>. <a href="src-inet-common-packet-Packet.html">Packet</a> size is configurable
+in the MAC layer.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-acknowledgement-AcknowledgeHeader.html">AcknowledgeHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-aodv-AodvControlPacket.html">AodvControlPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base packet for AODV Control Packets</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-base-ApplicationPacket.html">ApplicationPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Generic application packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-apsk-packetlevel-ApskPhyHeader.html">ApskPhyHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-arp-ipv4-ArpPacket.html">ArpPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>ARP packet. This is a specialized version: prepared for IEEE 802 hardware
+addresses and IPv4. <a href="src-inet-common-packet-Packet.html">Packet</a> fields are therefore represented by <a href="inet.examples.ospfv2.fulltest.C.html">C</a>++ classes
+MACAddress and IPv4Address. Also, some ARP protocol header fields are
+not modelled explicitly (their values are implied):</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-bgpv4-bgpmessage-BgpHeader.html">BgpHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents a BGPv4 message header.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-bmac-BMacHeaderBase.html">BMacHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base class for ~<a href="inet.linklayer.bmac.BMac.html">BMac</a> headers.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021d-common-BpduBase.html">BpduBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents a BPDU (Bridge PDU) used by the STP and RSTP protocols,
+as defined in the 802.1D-1998 specification.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-checksum-header-CrcHeader.html">CrcHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-csmaca-CsmaCaMacHeader.html">CsmaCaMacHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-csmaca-CsmaCaMacTrailer.html">CsmaCaMacTrailer</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-selectivity-DestinationL3AddressHeader.html">DestinationL3AddressHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-selectivity-DestinationMacAddressHeader.html">DestinationMacAddressHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-selectivity-DestinationPortHeader.html">DestinationPortHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-dhcp-DhcpMessage.html">DhcpMessage</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents a DHCP message. DHCP (Dynamic <a href="inet.tutorials.protocol.Host.html">Host</a> Configuration <a href="src-inet-common-Protocol.html">Protocol</a>, RFC 2131)
+provides a framework for passing configuration information to hosts on a TCP/IP network.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-dsdv-DsdvHello.html">DsdvHello</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-dymo-DymoPacket.html">DymoPacket</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-common-EchoPacket.html">EchoPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Generic network protocol packet for testing network connectivity.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-eigrp-messages-EigrpMessage.html">EigrpMessage</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>General structure of EIGRP message with header</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-ethernet-EtherAppReq.html">EtherAppReq</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Request.html">Request</a> packet sent by ~<a href="inet.applications.ethernet.EtherAppClient.html">EtherAppClient</a>. Contains the number of bytes to be
+sent back as response; if this value is greater than ~1400, the reply
+will consist of several Ethernet frames. See also ~<a href="src-inet-applications-ethernet-EtherAppResp.html">EtherAppResp</a>.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-ethernet-EtherAppResp.html">EtherAppResp</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Packet.html">Packet</a> sent back by ~<a href="inet.applications.ethernet.EtherAppServer.html">EtherAppServer</a> in response to an ~<a href="src-inet-applications-ethernet-EtherAppReq.html">EtherAppReq</a>.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ethernet-common-EthernetControlFrameBase.html">EthernetControlFrameBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is a base class for all IEEE 802.3 Ethernet control frames defined the
+IEEE Std 802.3-2018, IEEE Standard for Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ethernet-common-EthernetFcs.html">EthernetFcs</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents an Ethernet FCS as defined in the section 3.2.9 Frame
+Check Sequence (FCS) field of the IEEE Std 802.3-2018, IEEE Standard for
+Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ethernet-common-EthernetMacAddressFields.html">EthernetMacAddressFields</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents the source and destination address fields of an IEEE
+802.3 Ethernet MAC header as defined in the sections 3.2.3 Address fields,
+3.2.4 Destination Address field, 3.2.5 Source Address field of the IEEE Std
+802.3-2018, IEEE Standard for Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ethernet-common-EthernetPadding.html">EthernetPadding</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents the variable length padding part of an Ethernet frame
+as defined in the section 3.2.8 Pad field of the IEEE Std 802.3-2018, IEEE
+Standard for Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wired-ethernet-EthernetPhyHeaderBase.html">EthernetPhyHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This is a base class for all IEEE 802.3 Ethernet PHY headers defined the IEEE
+Std 802.3-2018, IEEE Standard for Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ethernet-common-EthernetTypeOrLengthField.html">EthernetTypeOrLengthField</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents the <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> field of an IEEE 802.3 Ethernet MAC header
+as defined in the section 3.2.6 Length/Type field of the IEEE Std 802.3-2018,
+IEEE Standard for Ethernet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-checksum-header-FcsHeader.html">FcsHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-fragmentation-header-FragmentNumberHeader.html">FragmentNumberHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-tcpapp-GenericAppMsg.html">GenericAppMsg</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Message.html">Message</a> class for generic request-reply style applications.
+The client sends a ~<a href="src-inet-applications-tcpapp-GenericAppMsg.html">GenericAppMsg</a> which contains the number of
+bytes the client wants the server to send back as reply.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-gpsr-GpsrBeacon.html">GpsrBeacon</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>The GPSR beacon packet is sent periodically by all GPSR routers to notify
+the neighbors about the router's address and position.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021as-GptpBase.html">GptpBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>ieee802.1AS-2020 10.6.2.1, 11.4.2</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-forwarding-HopLimitHeader.html">HopLimitHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv4-IcmpHeader.html">IcmpHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>ICMP message class</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-icmpv6-Icmpv6Header.html">Icmpv6Header</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an ICMPv6 packet.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mac-Ieee80211MacHeader.html">Ieee80211MacHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>The common part of 802.11 frames.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mac-Ieee80211MacTrailer.html">Ieee80211MacTrailer</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mgmt-Ieee80211MgmtFrame.html">Ieee80211MgmtFrame</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Frame body base class used to hide various frame body types</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mac-Ieee80211MpduSubframeHeader.html">Ieee80211MpduSubframeHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee80211-mac-Ieee80211MsduSubframeHeader.html">Ieee80211MsduSubframeHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-ieee80211-packetlevel-Ieee80211PhyHeader.html">Ieee80211PhyHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-ieee80211-packetlevel-Ieee80211PhyPreamble.html">Ieee80211PhyPreamble</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee802154-Ieee802154MacHeader.html">Ieee802154MacHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>A CSMA mac header format definition</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021ae-Ieee8021aeTagEpdHeader.html">Ieee8021aeTagEpdHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1AE tag header without the TPID field and
+with the following <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> <a href="src-inet-common-Protocol.html">Protocol</a> Discrimination (EPD) in the packet.
+The reason for this shifted representation is that it's often easier to look
+at an 802.1AE tag this way during processing. The typeOrLength field contains
+the <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> as defined in the section 9.2 EtherTypes of the IEEE Std 802-2014,
+IEEE Standard for Local and Metropolitan Area Networks: Overview and Architecture.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021ae-Ieee8021aeTagTpidHeader.html">Ieee8021aeTagTpidHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1AE tag header as defined by the section
+9.3 MAC Security TAG of the IEEE Std 802AE-2018, IEEE Standard for Local and
+metropolitan area networks, Media Access Control (MAC) Security.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021q-Ieee8021qTagEpdHeader.html">Ieee8021qTagEpdHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1Q tag header without the TPID field and
+with the following <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> <a href="src-inet-common-Protocol.html">Protocol</a> Discrimination (EPD) in the packet.
+The reason for this shifted representation is that it's often easier to look
+at a 802.1Q tag this way during processing. The typeOrLength field contains
+the <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> as defined in the section 9.2 EtherTypes of the IEEE Std 802-2014,
+IEEE Standard for Local and Metropolitan Area Networks: Overview and Architecture.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021q-Ieee8021qTagTpidHeader.html">Ieee8021qTagTpidHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1Q tag header as defined by the section
+9.3 Tag format of the IEEE Std 802.1Q-2018, IEEE Standard for Local and
+Metropolitan Area Networks, Bridges and Bridged Networks.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021r-Ieee8021rTagEpdHeader.html">Ieee8021rTagEpdHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1R tag header without the TPID field and
+with the following <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> <a href="src-inet-common-Protocol.html">Protocol</a> Discrimination (EPD) in the packet.
+The reason for this shifted representation is that it's often easier to look
+at a 802.1Q tag this way during processing. The typeOrLength field contains
+the <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> as defined in the section 9.2 EtherTypes of the IEEE Std 802-2014,
+IEEE Standard for Local and Metropolitan Area Networks: Overview and Architecture.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8021r-Ieee8021rTagTpidHeader.html">Ieee8021rTagTpidHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.1R tag header as defined by the section
+7.8 Tag format of the IEEE Std 802.1CB-2017, IEEE Standard for Local and
+Metropolitan Area Networks, Frame Replication and Elimination for Reliability.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8022-Ieee8022LlcHeader.html">Ieee8022LlcHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.2 LLC header as defined by the ANSI/IEEE
+Std 802.2, 1998, IEEE Standard for Information technology, Telecommunications
+and information exchange between systems, Local and metropolitan area networks.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee8022-Ieee8022SnapHeader.html">Ieee8022SnapHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This chunk represents an IEEE 802.2 LLC header SNAP extension as defined by
+the section 9.5 SNAP of the IEEE Std 802-2014, IEEE Standard for Local and
+Metropolitan Area Networks: Overview and Architecture.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ieee802-Ieee802EpdHeader.html">Ieee802EpdHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents an IEEE 802 <a href="src-inet-linklayer-common-EtherType.html">EtherType</a> <a href="src-inet-common-Protocol.html">Protocol</a> Discrimination (EPD)
+header as defined in the section 9.2 EtherTypes of the IEEE Std 802-2014,
+IEEE Standard for Local and Metropolitan Area Networks: Overview and
+Architecture.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv4-IgmpMessage.html">IgmpMessage</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ldp-LdpPacket.html">LdpPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base class for LDP packets</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ted-LinkStateMsg.html">LinkStateMsg</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Packet.html">Packet</a> for disseminating link state information (~<a href="src-inet-networklayer-ted-TeLinkStateInfo.html">TeLinkStateInfo</a>[]) by the
+~<a href="inet.networklayer.ted.LinkStateRouting.html">LinkStateRouting</a> module which implements a minimalistic link state routing
+protocol.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-lmac-LMacHeaderBase.html">LMacHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base class for ~<a href="inet.linklayer.lmac.LMac.html">LMac</a> headers.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-xmipv6-MobilityHeader.html">MobilityHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>extends <a href="src-inet-networklayer-ipv6-Ipv6ExtensionHeader.html">Ipv6ExtensionHeader</a> // TODO check how to define <a href="src-inet-networklayer-xmipv6-MobilityHeader.html">MobilityHeader</a> as subclass of <a href="src-inet-networklayer-ipv6-Ipv6ExtensionHeader.html">Ipv6ExtensionHeader</a></p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-mpls-MplsHeader.html">MplsHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-contract-NetworkHeaderBase.html">NetworkHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-ospf_common-OspfPacketBase.html">OspfPacketBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents an OSPF packet header</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-pim-PimPacket.html">PimPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Header</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ppp-PppHeader.html">PppHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>PPP frame.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-ppp-PppTrailer.html">PppTrailer</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-dispatching-ProtocolHeader.html">ProtocolHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-routing-rip-RipPacket.html">RipPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>RIPv2 packet</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-rsvpte-RsvpMessage.html">RsvpMessage</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>RSVP message common part</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-rtp-RtcpPacket.html">RtcpPacket</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-rtp-RtpHeader.html">RtpHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This class represents an RTP data packet. Real data can either
+be encapsulated, or simulated by adding length.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-rtp-profiles-avprofile-RtpMpegHeader.html">RtpMpegHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-ordering-SequenceNumberHeader.html">SequenceNumberHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-shortcut-ShortcutMacHeader.html">ShortcutMacHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-shortcut-ShortcutPhyHeader.html">ShortcutPhyHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-voip-SimpleVoipPacket.html">SimpleVoipPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents a voice packet used by <a href="inet.applications.voip.SimpleVoipSender.html">SimpleVoipSender</a> / <a href="inet.applications.voip.SimpleVoipReceiver.html">SimpleVoipReceiver</a></p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-protocolelement-aggregation-header-SubpacketLengthHeader.html">SubpacketLengthHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-contract-TransportHeaderBase.html">TransportHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This base class provides an abstraction for different transport layer packets.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-transportlayer-common-TransportPseudoHeader.html">TransportPseudoHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Represents a TCP/UDP pseudo header, used for crc calculation.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-physicallayer-wireless-unitdisk-UnitDiskPhyHeader.html">UnitDiskPhyHeader</a></td>
+      <td><i>class</i></td>
+      <td><i>(no description)</i></td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-applications-voipstream-VoipStreamPacket.html">VoipStreamPacket</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="src-inet-common-packet-Packet.html">Packet</a> type used by VoIPSourceApp and VoIPSinkApp</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-linklayer-xmac-XMacHeaderBase.html">XMacHeaderBase</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>Base class for ~<a href="inet.linklayer.xmac.XMac.html">XMac</a> headers.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Fields</h3>
+<table class="fieldstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr class="inherited">
+      <td>id</td>
+      <td>int</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>mutable</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>complete</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>correct</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>properlyRepresented</td>
+      <td>bool</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>chunkLength</td>
+      <td><a class="reference-ned" href="src-inet-common-b.html">b</a></td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawBin</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>rawHex</td>
+      <td>string[]</td>
+      <td></td>
+   </tr>
+   <tr class="inherited">
+      <td>regionTags</td>
+      <td><a class="reference-ned" href="src-inet-common-packet-chunk-SharingRegionTagSet::TagBaseRegionTag.html">SharingRegionTagSet::TagBaseRegionTag</a>[]</td>
+      <td></td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">FieldsChunk</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Chunk</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@existingClass</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@descriptor</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">readonly</span><span style="color: #3d3d3d; ">);
+}
+
+</span></pre>
+File: <a href="src-inet-common-packet-chunk-Chunk.msg.html">src/inet/common/packet/chunk/Chunk.msg</a>
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>

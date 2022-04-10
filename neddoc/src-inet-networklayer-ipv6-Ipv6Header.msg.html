@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="OMNeT++ NED doc generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="material-icons.css">
+<link rel="stylesheet" href="material.blue-light_blue.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<title>Ipv6Header.msg</title>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div id="top" class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Ipv6Header.msg</span>
+      <div class="mdl-layout-spacer"></div>
+<!--
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="search" />
+          <label class="mdl-textfield__label" for="search">Enter your query...</label>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons">code</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">OMNeT++ Website</li>
+      </ul>
+-->
+    </div>
+  </header>
+
+  <div class="drawer mdl-layout__drawer">
+    <nav id="side-nav" class="mdl-navigation">
+      <div id="nav-tree">
+        <div id="nav-tree-contents">
+          <div id="nav-sync" class="sync"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function(){initNavTree(location.pathname.split("/").slice(-1).toString(),'');});
+  </script>
+
+  <main class="mdl-layout__content">
+    <div id="doc-content">
+
+    <h2 class="comptitle">Msg File src/inet/networklayer/ipv6/Ipv6Header.msg</h2>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv6-Ipv6ExtensionHeader.html">Ipv6ExtensionHeader</a></td>
+      <td><i>class</i></td>
+      <td>
+<p>This serves as the base class for all the <a href="inet.networklayer.ipv6.Ipv6.html">Ipv6</a> extension headers.</p>
+</td>
+   </tr>
+   <tr>
+      <td><a class="reference-ned" href="src-inet-networklayer-ipv6-Ipv6Header.html">Ipv6Header</a></td>
+      <td><i>class</i></td>
+      <td>
+<p><a href="inet.networklayer.ipv6.Ipv6.html">Ipv6</a> datagram. RFC 2460 Section 3.</p>
+</td>
+   </tr>
+</table>
+<h3 class="subtitle">Source code</h3>
+<pre class="src">
+<span style="color: #808080; font-style: italic; ">//
+// Copyright (C) 2018 OpenSim Ltd.
+// Copyright (C) 2005 Wei Yang, Ng
+// Copyright (C) 2005 OpenSim Ltd.
+// Copyright (C) 2001-2004 CTIE, Monash University
+//
+// SPDX-License-Identifier: LGPL-3.0-or-later
+//
+</span><span style="color: #3d3d3d; ">
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">INETDefs</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">common</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">NetworkHeaderBase</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">networklayer</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">contract</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">ipv6</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">Ipv6Address</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; "> {{
+#</span><span style="color: #3d3d3d; ">include</span><span style="color: #3d3d3d; "> &lt;</span><span style="color: #3d3d3d; ">iostream</span><span style="color: #3d3d3d; ">&gt;
+#</span><span style="color: #3d3d3d; ">include</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">&quot;inet/common/ProtocolGroup.h&quot;</span><span style="color: #3d3d3d; ">
+#</span><span style="color: #3d3d3d; ">include</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">&quot;inet/networklayer/contract/ipv6/Ipv6Consts.h&quot;</span><span style="color: #3d3d3d; ">
+}}
+
+</span><span style="color: #800000; font-weight: bold; ">namespace</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">inet</span><span style="color: #3d3d3d; ">;
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; "> {{
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; ">;
+</span><span style="color: #3d3d3d; ">std</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ostream</span><span style="color: #3d3d3d; ">&amp; </span><span style="color: #3d3d3d; ">operator</span><span style="color: #3d3d3d; ">&lt;&lt;(</span><span style="color: #3d3d3d; ">std</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ostream</span><span style="color: #3d3d3d; ">&amp; </span><span style="color: #3d3d3d; ">os</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">eh</span><span style="color: #3d3d3d; ">);
+}}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// This serves as the base class for all the Ipv6 extension headers.
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">cObject</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; font-weight: bold; ">@packetData</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extensionType</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">byteLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; ">(</span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);   </span><span style="color: #808080; font-style: italic; ">// byteLength = n * 8;
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; ">) {{
+  </span><span style="color: #3d3d3d; ">public</span><span style="color: #3d3d3d; ">:
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">getOrder</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+}}
+</span><span style="color: #808080; font-style: italic; ">//
+// Ipv6 datagram. RFC 2460 Section 3.
+//
+// Header fields not explicitly modelled:
+//    - payload length: will be calculated from encapsulated message length
+//      and extension headers' length
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6Header</span><span style="color: #3d3d3d; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">NetworkHeaderBase</span><span style="color: #3d3d3d; ">
+{
+    </span><span style="color: #3d3d3d; ">chunkLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">IPv6_HEADER_BYTES</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">uint8_t</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">version</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">6</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv6Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">srcAddress</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">Ipv6Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">destAddress</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">payloadLength</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; ">(-</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">);    </span><span style="color: #808080; font-style: italic; ">// The size of the payload in octets, including any extension headers. The length is set to zero when a Hop-by-Hop extension header carries a Jumbo Payload option.
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">trafficClass</span><span style="color: #3d3d3d; ">;    </span><span style="color: #808080; font-style: italic; ">// @bits(8) Traffic Class
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// OMNeT++ 6.0:
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// short __dscp @custom @getter(getDscp) @setter(setDscp);  // @bit(6), maps to bits 0-5 of trafficClass
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #808080; font-style: italic; ">// short __ecn @custom @getter(getEcn) @setter(setEcn);  // @bit(2),  maps to bits 6-7 of trafficClass
+</span><span style="color: #3d3d3d; ">
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">flowLabel</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">hopLimit</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">protocolId</span><span style="color: #3d3d3d; "> = </span><span style="color: #3d3d3d; ">IP_PROT_NONE</span><span style="color: #3d3d3d; ">;
+
+    </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">extensionHeader</span><span style="color: #3d3d3d; ">[] </span><span style="color: #3d3d3d; font-weight: bold; ">@owned</span><span style="color: #3d3d3d; ">; </span><span style="color: #808080; font-style: italic; ">// array of extension headers, subclassed from ~Ipv6ExtensionHeader
+</span><span style="color: #3d3d3d; ">}
+
+</span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">Ipv6Header</span><span style="color: #3d3d3d; ">) {{
+  </span><span style="color: #3d3d3d; ">public</span><span style="color: #3d3d3d; ">:
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">getDscp</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setDscp</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">dscp</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">getEcn</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setEcn</span><span style="color: #3d3d3d; ">(</span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ecn</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Returns</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">specified</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">,
+     * </span><span style="color: #3d3d3d; ">or</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">nullptr</span><span style="color: #3d3d3d; ">. </span><span style="color: #3d3d3d; ">If</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">index</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">is</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">then</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">first</span><span style="color: #3d3d3d; ">, </span><span style="color: #3d3d3d; ">if</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">then</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">second</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">is</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">returned</span><span style="color: #3d3d3d; ">. (</span><span style="color: #3d3d3d; ">The</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">datagram</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">might</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">contain</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">two</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Destination</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Options</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; ">.)
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">findExtensionHeaderByTypeForUpdate</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extensionType</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">index</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">);
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">findExtensionHeaderByType</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extensionType</span><span style="color: #3d3d3d; ">, </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">index</span><span style="color: #3d3d3d; "> = </span><span style="color: #008000; ">0</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Adds</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">an</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">to</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">datagram</span><span style="color: #3d3d3d; ">.
+     * </span><span style="color: #3d3d3d; ">The</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">headers</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">are</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">stored</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">in</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">order</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">specified</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">in</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">RFC</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">2460</span><span style="color: #3d3d3d; "> </span><span style="color: #008000; ">4</span><span style="color: #3d3d3d; ">.</span><span style="color: #008000; ">1</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">addExtensionHeader</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">eh</span><span style="color: #3d3d3d; ">);
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Calculates</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">length</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">plus</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">headers</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">calculateHeaderByteLength</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Calculates</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">length</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">unfragmentable</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">part</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">plus</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">headers</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">calculateUnfragmentableHeaderByteLength</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Calculates</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">length</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">payload</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">and</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">headers</span><span style="color: #3d3d3d; ">
+     * </span><span style="color: #3d3d3d; ">after</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Fragment</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Header</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">B</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">calculateFragmentLength</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; ">;
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Removes</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">and</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">returns</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">first</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">of</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">this</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">datagram</span><span style="color: #3d3d3d; ">
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">removeFirstExtensionHeader</span><span style="color: #3d3d3d; ">();
+
+    /**
+     * </span><span style="color: #3d3d3d; ">Removes</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">and</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">returns</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">first</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extension</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">header</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">with</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">the</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">given</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">type</span><span style="color: #3d3d3d; ">.
+     */
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Ipv6ExtensionHeader</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">removeExtensionHeader</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">extensionType</span><span style="color: #3d3d3d; ">);
+
+    </span><span style="color: #808080; font-style: italic; ">// implements NetworkHeaderBase functions:
+</span><span style="color: #3d3d3d; ">    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">getSourceAddress</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">return</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">getSrcAddress</span><span style="color: #3d3d3d; ">()); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setSourceAddress</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">&amp; </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">setSrcAddress</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">toIpv6</span><span style="color: #3d3d3d; ">()); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">getDestinationAddress</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">return</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">getDestAddress</span><span style="color: #3d3d3d; ">()); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setDestinationAddress</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">L3Address</span><span style="color: #3d3d3d; ">&amp; </span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">setDestAddress</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">address</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">toIpv6</span><span style="color: #3d3d3d; ">()); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Protocol</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">getProtocol</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">return</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">ProtocolGroup</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ipprotocol</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">findProtocol</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">getProtocolId</span><span style="color: #3d3d3d; ">()); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">void</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">setProtocol</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">Protocol</span><span style="color: #3d3d3d; "> *</span><span style="color: #3d3d3d; ">protocol</span><span style="color: #3d3d3d; ">) </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">setProtocolId</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">static_cast</span><span style="color: #3d3d3d; ">&lt;</span><span style="color: #3d3d3d; ">IpProtocolId</span><span style="color: #3d3d3d; ">&gt;(</span><span style="color: #3d3d3d; ">ProtocolGroup</span><span style="color: #3d3d3d; ">::</span><span style="color: #3d3d3d; ">ipprotocol</span><span style="color: #3d3d3d; ">.</span><span style="color: #3d3d3d; ">getProtocolNumber</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">protocol</span><span style="color: #3d3d3d; ">))); }
+    </span><span style="color: #3d3d3d; ">virtual</span><span style="color: #3d3d3d; "> </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">isFragment</span><span style="color: #3d3d3d; ">() </span><span style="color: #3d3d3d; ">const</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">override</span><span style="color: #3d3d3d; "> { </span><span style="color: #3d3d3d; ">return</span><span style="color: #3d3d3d; "> </span><span style="color: #3d3d3d; ">findExtensionHeaderByType</span><span style="color: #3d3d3d; ">(</span><span style="color: #3d3d3d; ">IP_PROT_IPv6EXT_FRAGMENT</span><span style="color: #3d3d3d; ">) != </span><span style="color: #008000; ">nullptr</span><span style="color: #3d3d3d; ">; }
+}}
+</span></pre>
+
+<hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.svg"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
+
+
+    </div><!-- doc-content -->
+  </main>
+</div>
+
+<script type="text/javascript" src="material.min.js"></script>
+</body>
+</html>
