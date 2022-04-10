@@ -1,0 +1,25 @@
+var _init_stages_8h =
+[
+    [ "INITSTAGE_APPLICATION_LAYER", "_init_stages_8h.html#ad7e406ed4285eb65004c7845ee0c8905", null ],
+    [ "INITSTAGE_CLOCK", "_init_stages_8h.html#ad5b7a5f7ec57bf7eb40abe4a05c9a9d2", null ],
+    [ "INITSTAGE_GROUP_MOBILITY", "_init_stages_8h.html#a4170f6e973a0f0d7b5809c3de3b67377", null ],
+    [ "INITSTAGE_LAST", "_init_stages_8h.html#a17ae3110f5e9ce87b29cc015a36b173c", null ],
+    [ "INITSTAGE_LINK_LAYER", "_init_stages_8h.html#ac59da13caae127564113d1343d890064", null ],
+    [ "INITSTAGE_LOCAL", "_init_stages_8h.html#a6be747ab6f195055e109f27f8462e52e", null ],
+    [ "INITSTAGE_NETWORK_ADDRESS_ASSIGNMENT", "_init_stages_8h.html#aab83702ae41cd118416a19af3479ac30", null ],
+    [ "INITSTAGE_NETWORK_CONFIGURATION", "_init_stages_8h.html#a958d14c7cf1392392baaa38441d128b5", null ],
+    [ "INITSTAGE_NETWORK_INTERFACE_CONFIGURATION", "_init_stages_8h.html#a94d347d4918a33de4b4d9566ee31265e", null ],
+    [ "INITSTAGE_NETWORK_LAYER", "_init_stages_8h.html#aab979c9efb63d1d231bf289a119eb88e", null ],
+    [ "INITSTAGE_NETWORK_LAYER_PROTOCOLS", "_init_stages_8h.html#a94d913e59c662fec2a321c6507315bad", null ],
+    [ "INITSTAGE_PHYSICAL_ENVIRONMENT", "_init_stages_8h.html#a17e788c693a83a3a5681bfb814e040e6", null ],
+    [ "INITSTAGE_PHYSICAL_LAYER", "_init_stages_8h.html#ae5aa3ce0f5add57892ea2f7bfa30016a", null ],
+    [ "INITSTAGE_PHYSICAL_LAYER_NEIGHBOR_CACHE", "_init_stages_8h.html#a5b2427366d18c21589091e1308055cca", null ],
+    [ "INITSTAGE_PHYSICAL_OBJECT_CACHE", "_init_stages_8h.html#a50668e117de060454574cee8bfce46c5", null ],
+    [ "INITSTAGE_POWER", "_init_stages_8h.html#a8c4c1086338355b97f70de5741a36f3d", null ],
+    [ "INITSTAGE_QUEUEING", "_init_stages_8h.html#ad795c6ca71794d3c40be4a8b20242628", null ],
+    [ "INITSTAGE_ROUTER_ID_ASSIGNMENT", "_init_stages_8h.html#ae6b931622883d5ebacadc1edc72c9ee3", null ],
+    [ "INITSTAGE_ROUTING_PROTOCOLS", "_init_stages_8h.html#ac37adc1fa38f0d174baefa41ab80a9d1", null ],
+    [ "INITSTAGE_SINGLE_MOBILITY", "_init_stages_8h.html#a627172654188e4b8290021a075f32280", null ],
+    [ "INITSTAGE_STATIC_ROUTING", "_init_stages_8h.html#a63a3e0aae07cc4196e02dc159e83f54a", null ],
+    [ "INITSTAGE_TRANSPORT_LAYER", "_init_stages_8h.html#abb074da4e565043d68786e4afc34c7da", null ]
+];

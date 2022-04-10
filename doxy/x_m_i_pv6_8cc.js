@@ -1,0 +1,27 @@
+var x_m_i_pv6_8cc =
+[
+    [ "BRR_RETRIES", "x_m_i_pv6_8cc.html#a32607edcc9ac8e905183b104328921e5", null ],
+    [ "BRR_TIMEOUT_THRESHOLD", "x_m_i_pv6_8cc.html#a9d86571db17029d80fa8bcb0979ecaea", null ],
+    [ "MAX_RR_BINDING_LIFETIME", "x_m_i_pv6_8cc.html#a9fa1369c812375606c7768e2502f0a6a", null ],
+    [ "MAX_TOKEN_LIFETIME", "x_m_i_pv6_8cc.html#ae5ea3bb22603221316429ae901df491f", null ],
+    [ "MK_BC_EXPIRY", "x_m_i_pv6_8cc.html#a2c62677bd8273d2af6b5c1fee292a11c", null ],
+    [ "MK_BUL_EXPIRY", "x_m_i_pv6_8cc.html#a6d95ac743e8277891cc1093a62ab9f18", null ],
+    [ "MK_SEND_PERIODIC_BR", "x_m_i_pv6_8cc.html#aaec02cdb37c69443949e6e975dbf7d6b", null ],
+    [ "MK_SEND_PERIODIC_BU", "x_m_i_pv6_8cc.html#a8af2291e8f5d6f16d0aec604205421be", null ],
+    [ "MK_SEND_TEST_INIT", "x_m_i_pv6_8cc.html#af382622c53488bb0595890e966927e4b", null ],
+    [ "MK_TOKEN_EXPIRY", "x_m_i_pv6_8cc.html#a7ddbba5f6ade92d237a18c29e3cc37a5", null ],
+    [ "SIZE_BACK", "x_m_i_pv6_8cc.html#a60631c4c24bf52df8ed3d83be2a49556", null ],
+    [ "SIZE_BE", "x_m_i_pv6_8cc.html#a273bc5eeb718938cd4da6e7f61fe3dd1", null ],
+    [ "SIZE_BIND_AUTH_DATA", "x_m_i_pv6_8cc.html#af49ffb464649fc08a3a0f413961472e5", null ],
+    [ "SIZE_BRR", "x_m_i_pv6_8cc.html#a236c732f14005bd11f696dcceca3e5e1", null ],
+    [ "SIZE_BU", "x_m_i_pv6_8cc.html#a909c538cb3db668a9317892683fb7078", null ],
+    [ "SIZE_COT", "x_m_i_pv6_8cc.html#a598fa868b1f1f70074ec8d64550c10eb", null ],
+    [ "SIZE_COTI", "x_m_i_pv6_8cc.html#aeefd0c073b8a6c065f08269e6bcb9db6", null ],
+    [ "SIZE_HOA_OPTION", "x_m_i_pv6_8cc.html#a2a87f0f44824cd5a8bee81353adbbc7c", null ],
+    [ "SIZE_HOT", "x_m_i_pv6_8cc.html#aa954b7b9e57b4e3fe036ed1422537044", null ],
+    [ "SIZE_HOTI", "x_m_i_pv6_8cc.html#a61a94eac72de688b6107fe7e2e31595f", null ],
+    [ "SIZE_MOBILITY_HEADER", "x_m_i_pv6_8cc.html#a880ca9c77a441cd3772ffaec528ea4a7", null ],
+    [ "SIZE_NONCE_INDICES", "x_m_i_pv6_8cc.html#ae232f747c44b844277d7a7b6a9fe4054", null ],
+    [ "TEST_INIT_RETRANS_FACTOR", "x_m_i_pv6_8cc.html#a748767a0391754a985501c5be754ea1d", null ],
+    [ "Define_Module", "x_m_i_pv6_8cc.html#aed95ce9ed54facbb4669a3c39d8d88ab", null ]
+];

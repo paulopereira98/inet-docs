@@ -1,0 +1,25 @@
+var classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode =
+[
+    [ "Ieee80211HrDsssMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a9b170aa01591dee7e464181c7f535a73", null ],
+    [ "getBandwidth", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a7f85c00661c490691438ac0a45c6c1bf", null ],
+    [ "getCcaTime", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a8ec245580d042c74d8685ed87b7796ce", null ],
+    [ "getChannelSpacing", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a7d43be247c967cd33a4a8181bc67bb13", null ],
+    [ "getDataMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#aecba99864ac5346fc9deb6c872dbdbb1", null ],
+    [ "getDuration", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a4068cebffb86c11d60d6db3d04a3afad", null ],
+    [ "getHeaderMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a12149915dc927bbbb571657e4e1ffdf1", null ],
+    [ "getLegacyCwMax", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a233776a239dacadfc45e837ec94b07ea", null ],
+    [ "getLegacyCwMin", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#aad8c6635cec42eab102ee08a2ad9c1b0", null ],
+    [ "getMpduMaxLength", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#aef7e77da84257bebe32ef45aeade56cb", null ],
+    [ "getPhyRxStartDelay", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a1ed4cb77105756327c0ef1be1f8e366e", null ],
+    [ "getPlcpHeaderLength", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a4c7f477da2edfe3a4cd0bd13d941d9d1", null ],
+    [ "getPreambleLength", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a0bd84f9a43bea70652589c12230e1112", null ],
+    [ "getPreambleMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#addb6c25a6a35a8c053bb01d9957d7cb3", null ],
+    [ "getRifsTime", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a7cf6e496c23b6b0b88fe4823e3a7a1d8", null ],
+    [ "getRxTxTurnaroundTime", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a88243d8c0c4dbdf36af27e8e78c21036", null ],
+    [ "getSifsTime", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#abd0be8e7bfa9ab76e217af1c34a28f10", null ],
+    [ "getSlotTime", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a7fd71eb64a72d66538bdd763e1801bf9", null ],
+    [ "printToStream", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a26f49fc47bd83a748d7e2c92bdc2cfcd", null ],
+    [ "dataMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#aae76b57a39cfef726df48a55300a05ba", null ],
+    [ "headerMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#a81032404c32444adb92bb7a95068ae81", null ],
+    [ "preambleMode", "classinet_1_1physicallayer_1_1_ieee80211_hr_dsss_mode.html#af7f90f32c4b3808f12038a0ac66f2b5d", null ]
+];

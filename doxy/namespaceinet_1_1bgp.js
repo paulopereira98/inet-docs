@@ -1,0 +1,27 @@
+var namespaceinet_1_1bgp =
+[
+    [ "Bgp", "classinet_1_1bgp_1_1_bgp.html", "classinet_1_1bgp_1_1_bgp" ],
+    [ "BgpAsPathSegment", "classinet_1_1bgp_1_1_bgp_as_path_segment.html", "classinet_1_1bgp_1_1_bgp_as_path_segment" ],
+    [ "BgpConfigReader", "classinet_1_1bgp_1_1_bgp_config_reader.html", "classinet_1_1bgp_1_1_bgp_config_reader" ],
+    [ "BgpHeader", "classinet_1_1bgp_1_1_bgp_header.html", "classinet_1_1bgp_1_1_bgp_header" ],
+    [ "BgpHeaderSerializer", "classinet_1_1bgp_1_1_bgp_header_serializer.html", "classinet_1_1bgp_1_1_bgp_header_serializer" ],
+    [ "BgpKeepAliveMessage", "classinet_1_1bgp_1_1_bgp_keep_alive_message.html", "classinet_1_1bgp_1_1_bgp_keep_alive_message" ],
+    [ "BgpOpenMessage", "classinet_1_1bgp_1_1_bgp_open_message.html", "classinet_1_1bgp_1_1_bgp_open_message" ],
+    [ "BgpOptionalParameterBase", "classinet_1_1bgp_1_1_bgp_optional_parameter_base.html", "classinet_1_1bgp_1_1_bgp_optional_parameter_base" ],
+    [ "BgpOptionalParameterRaw", "classinet_1_1bgp_1_1_bgp_optional_parameter_raw.html", "classinet_1_1bgp_1_1_bgp_optional_parameter_raw" ],
+    [ "BgpRouter", "classinet_1_1bgp_1_1_bgp_router.html", "classinet_1_1bgp_1_1_bgp_router" ],
+    [ "BgpRoutingTableEntry", "classinet_1_1bgp_1_1_bgp_routing_table_entry.html", "classinet_1_1bgp_1_1_bgp_routing_table_entry" ],
+    [ "BgpSession", "classinet_1_1bgp_1_1_bgp_session.html", "classinet_1_1bgp_1_1_bgp_session" ],
+    [ "BgpUpdateMessage", "classinet_1_1bgp_1_1_bgp_update_message.html", "classinet_1_1bgp_1_1_bgp_update_message" ],
+    [ "BgpUpdateNlri", "structinet_1_1bgp_1_1_bgp_update_nlri.html", "structinet_1_1bgp_1_1_bgp_update_nlri" ],
+    [ "BgpUpdatePathAttributes", "classinet_1_1bgp_1_1_bgp_update_path_attributes.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes" ],
+    [ "BgpUpdatePathAttributesAggregator", "classinet_1_1bgp_1_1_bgp_update_path_attributes_aggregator.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_aggregator" ],
+    [ "BgpUpdatePathAttributesAsPath", "classinet_1_1bgp_1_1_bgp_update_path_attributes_as_path.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_as_path" ],
+    [ "BgpUpdatePathAttributesAtomicAggregate", "classinet_1_1bgp_1_1_bgp_update_path_attributes_atomic_aggregate.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_atomic_aggregate" ],
+    [ "BgpUpdatePathAttributesLocalPref", "classinet_1_1bgp_1_1_bgp_update_path_attributes_local_pref.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_local_pref" ],
+    [ "BgpUpdatePathAttributesMultiExitDisc", "classinet_1_1bgp_1_1_bgp_update_path_attributes_multi_exit_disc.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_multi_exit_disc" ],
+    [ "BgpUpdatePathAttributesNextHop", "classinet_1_1bgp_1_1_bgp_update_path_attributes_next_hop.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_next_hop" ],
+    [ "BgpUpdatePathAttributesOrigin", "classinet_1_1bgp_1_1_bgp_update_path_attributes_origin.html", "classinet_1_1bgp_1_1_bgp_update_path_attributes_origin" ],
+    [ "BgpUpdateWithdrawnRoutes", "structinet_1_1bgp_1_1_bgp_update_withdrawn_routes.html", "structinet_1_1bgp_1_1_bgp_update_withdrawn_routes" ],
+    [ "SessionInfo", "structinet_1_1bgp_1_1_session_info.html", "structinet_1_1bgp_1_1_session_info" ]
+];

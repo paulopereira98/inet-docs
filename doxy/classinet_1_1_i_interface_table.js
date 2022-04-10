@@ -1,0 +1,26 @@
+var classinet_1_1_i_interface_table =
+[
+    [ "~IInterfaceTable", "classinet_1_1_i_interface_table.html#ac251491e413fa6412bd7c3a77478378e", null ],
+    [ "addInterface", "classinet_1_1_i_interface_table.html#a7b4f8fe5b096be36b8060c31f63fa4fd", null ],
+    [ "collectMulticastGroups", "classinet_1_1_i_interface_table.html#a0f6d39edb0c2540ff36d90ae4956e487", null ],
+    [ "deleteInterface", "classinet_1_1_i_interface_table.html#aec3278a3b0c304c68c1b13270bbb8660", null ],
+    [ "findFirstLoopbackInterface", "classinet_1_1_i_interface_table.html#a9bc831bdce9be6f4bbb8ded0f2617d8b", null ],
+    [ "findFirstMulticastInterface", "classinet_1_1_i_interface_table.html#a375828667bc4343f01c6276f1d029a85", null ],
+    [ "findFirstNonLoopbackInterface", "classinet_1_1_i_interface_table.html#a31527fe02b33be4b8c8b4e07c5fed023", null ],
+    [ "findInterfaceByAddress", "classinet_1_1_i_interface_table.html#ab9cd40af22a5ea4eb34e62bfbc46523c", null ],
+    [ "findInterfaceById", "classinet_1_1_i_interface_table.html#a6088fb0baf9476d052329dc47cbb4b6e", null ],
+    [ "findInterfaceByInterfaceModule", "classinet_1_1_i_interface_table.html#ab2af1c36d03cf117d976ddcef306041b", null ],
+    [ "findInterfaceByName", "classinet_1_1_i_interface_table.html#a00170daf9500b45f2531e7eafe1986e9", null ],
+    [ "findInterfaceByNodeInputGateId", "classinet_1_1_i_interface_table.html#a03b452dbbc84f84ba6fa2950d1946aa4", null ],
+    [ "findInterfaceByNodeOutputGateId", "classinet_1_1_i_interface_table.html#a63e623f9114f076414937ec67b552655", null ],
+    [ "getBiggestInterfaceId", "classinet_1_1_i_interface_table.html#a6e0896d5694d2e3890aee3aceecf3548", null ],
+    [ "getFullPath", "classinet_1_1_i_interface_table.html#aaf7dc4967b4df3f4f985fc9ad44a808f", null ],
+    [ "getHostModule", "classinet_1_1_i_interface_table.html#a021932c522767bb64452b3ee3c88bcc0", null ],
+    [ "getInterface", "classinet_1_1_i_interface_table.html#a405c8eb436b41dd83ad2b72c380e853d", null ],
+    [ "getInterfaceById", "classinet_1_1_i_interface_table.html#a38c2da2491c6e8deb52b6eb6775a97f3", null ],
+    [ "getNumInterfaces", "classinet_1_1_i_interface_table.html#a39b2f2f3355257ccce4b5d929bd504e6", null ],
+    [ "interfaceChanged", "classinet_1_1_i_interface_table.html#a5e2203eb1226f1f1f94a2b7b1c7bea9c", null ],
+    [ "isLocalAddress", "classinet_1_1_i_interface_table.html#a40aa66d3d320b4f6b99fbd78501e4b5f", null ],
+    [ "isNeighborAddress", "classinet_1_1_i_interface_table.html#a7b6b88d857af7906a28a172cbd727588", null ],
+    [ "NetworkInterface", "classinet_1_1_i_interface_table.html#ab35230e6cee8f196334bff4237ada67c", null ]
+];

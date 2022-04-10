@@ -1,0 +1,25 @@
+var classinet_1_1_ipv4_options_tag_base =
+[
+    [ "Ipv4OptionsTagBase", "classinet_1_1_ipv4_options_tag_base.html#a7abbb1fc03ab61877326de60bbee220e", null ],
+    [ "Ipv4OptionsTagBase", "classinet_1_1_ipv4_options_tag_base.html#a44575be4fd5040de1cfe0478cbfec1d2", null ],
+    [ "~Ipv4OptionsTagBase", "classinet_1_1_ipv4_options_tag_base.html#a74a70c058f84335e28a48a690043fe55", null ],
+    [ "appendOption", "classinet_1_1_ipv4_options_tag_base.html#a75b8119b457f00843356123b0b6adb45", null ],
+    [ "copy", "classinet_1_1_ipv4_options_tag_base.html#a41df8d51304c91d171d5eec44cf4df73", null ],
+    [ "dropOption", "classinet_1_1_ipv4_options_tag_base.html#a33bd41f56c28728fd2b2fde3bcd495a4", null ],
+    [ "dup", "classinet_1_1_ipv4_options_tag_base.html#a37e1534ccee4fb7e135028b89604b064", null ],
+    [ "eraseOption", "classinet_1_1_ipv4_options_tag_base.html#a6b1c7194c5ff6a1f5143e63bd608696c", null ],
+    [ "getOption", "classinet_1_1_ipv4_options_tag_base.html#a4f5dee14c6db036a95fc79d697fee0f2", null ],
+    [ "getOptionArraySize", "classinet_1_1_ipv4_options_tag_base.html#a4ae1c777183a3279d31217eda4f33bcb", null ],
+    [ "getOptionForUpdate", "classinet_1_1_ipv4_options_tag_base.html#aa8aa518d0ddd2427c196f56d694d55b2", null ],
+    [ "insertOption", "classinet_1_1_ipv4_options_tag_base.html#a451fa27f5bf18ed2c0eab944969ec6cb", null ],
+    [ "insertOption", "classinet_1_1_ipv4_options_tag_base.html#a2b5b7396bb79c993fed3a81dc295daed", null ],
+    [ "operator=", "classinet_1_1_ipv4_options_tag_base.html#a3363f9cfea7378cc21521f829e34e033", null ],
+    [ "operator==", "classinet_1_1_ipv4_options_tag_base.html#ab5dcea69efd0f40a961d037357bfb8c5", null ],
+    [ "parsimPack", "classinet_1_1_ipv4_options_tag_base.html#a12c1c9e25907e672f1fd05395d7e2400", null ],
+    [ "parsimUnpack", "classinet_1_1_ipv4_options_tag_base.html#a441bcd5f148d4cfb31dda61f7a8e72d9", null ],
+    [ "removeOption", "classinet_1_1_ipv4_options_tag_base.html#a6c55b124269c20c23d8f12a5b1d17edd", null ],
+    [ "setOption", "classinet_1_1_ipv4_options_tag_base.html#a3e315811dc3ccdd46a92e84f4cc49923", null ],
+    [ "setOptionArraySize", "classinet_1_1_ipv4_options_tag_base.html#a61bd8bd5bf4e8891d955763aed700dde", null ],
+    [ "option", "classinet_1_1_ipv4_options_tag_base.html#ab302dec7c06661430ae3a1de6be1b613", null ],
+    [ "option_arraysize", "classinet_1_1_ipv4_options_tag_base.html#ab2cb1d09f293cb399ec1193d5620c9b2", null ]
+];

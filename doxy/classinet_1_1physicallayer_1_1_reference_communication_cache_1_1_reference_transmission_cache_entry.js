@@ -1,0 +1,4 @@
+var classinet_1_1physicallayer_1_1_reference_communication_cache_1_1_reference_transmission_cache_entry =
+[
+    [ "receptionCacheEntries", "classinet_1_1physicallayer_1_1_reference_communication_cache_1_1_reference_transmission_cache_entry.html#a3a8f532e122e994cf2aa22904fe9632b", null ]
+];

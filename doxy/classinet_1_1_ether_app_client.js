@@ -1,0 +1,37 @@
+var classinet_1_1_ether_app_client =
+[
+    [ "Kinds", "classinet_1_1_ether_app_client.html#a7d8719cb19dbacb7aaf6e652e398c17e", [
+      [ "START", "classinet_1_1_ether_app_client.html#a7d8719cb19dbacb7aaf6e652e398c17eaf7b3445cb0262fb1b0963287546ec058", null ],
+      [ "NEXT", "classinet_1_1_ether_app_client.html#a7d8719cb19dbacb7aaf6e652e398c17ea3dac7494dd1aea1318b71e7a15ea8143", null ]
+    ] ],
+    [ "EtherAppClient", "classinet_1_1_ether_app_client.html#a9d2a676814c8b7bfc690406171c70ef9", null ],
+    [ "~EtherAppClient", "classinet_1_1_ether_app_client.html#a41149a6b6911d46e08c3d6ffbae33c3b", null ],
+    [ "cancelNextPacket", "classinet_1_1_ether_app_client.html#a4a272cfa3fcf6b5463bf44c5a101c593", null ],
+    [ "finish", "classinet_1_1_ether_app_client.html#a6b2840bcc44a5f9ac4ab9ad3c4976aef", null ],
+    [ "handleCrashOperation", "classinet_1_1_ether_app_client.html#a8b856e3964a79d7e51b06c9301845382", null ],
+    [ "handleMessageWhenUp", "classinet_1_1_ether_app_client.html#a44b251e29778ac201af20920ee95254c", null ],
+    [ "handleStartOperation", "classinet_1_1_ether_app_client.html#acacf42f0e9e0dc7db51aef2d59805734", null ],
+    [ "handleStopOperation", "classinet_1_1_ether_app_client.html#a717b026f8d4160ffae443a89c1352140", null ],
+    [ "initialize", "classinet_1_1_ether_app_client.html#a23d7072df5b9982ad5d61fe4706b6e44", null ],
+    [ "isGenerator", "classinet_1_1_ether_app_client.html#a66f4f1122b3e392e2e5d2c9ed6e765c9", null ],
+    [ "numInitStages", "classinet_1_1_ether_app_client.html#a434bc11946e3d9bbbb7b51c232fb7fff", null ],
+    [ "resolveDestMacAddress", "classinet_1_1_ether_app_client.html#af90dd86e211a97164e2bd5dbb8461c50", null ],
+    [ "scheduleNextPacket", "classinet_1_1_ether_app_client.html#aad6f93b16202c15d14e1d570e7661538", null ],
+    [ "sendPacket", "classinet_1_1_ether_app_client.html#a98c9677ec3e3010e6c5f19bd6c93a563", null ],
+    [ "socketClosed", "classinet_1_1_ether_app_client.html#af713a0c049293c18ce2d4b7d7ba44898", null ],
+    [ "socketDataArrived", "classinet_1_1_ether_app_client.html#ad2991b3be27a47e9b04bb0c449e5c82c", null ],
+    [ "destMacAddress", "classinet_1_1_ether_app_client.html#a8b67a5f61546099a0a1351ae3407ee09", null ],
+    [ "interfaceTable", "classinet_1_1_ether_app_client.html#a8659aa12cf99527c6013e8f41aefe42e", null ],
+    [ "llcSocket", "classinet_1_1_ether_app_client.html#a2ed99aaa65dd65b5f54f510524ade730", null ],
+    [ "localSap", "classinet_1_1_ether_app_client.html#ac56d98147dbe92cc1ebfe2fd64de2ed1", null ],
+    [ "packetsReceived", "classinet_1_1_ether_app_client.html#a521355626c3804f8645f03c90ddc52c2", null ],
+    [ "packetsSent", "classinet_1_1_ether_app_client.html#a327f34814df811089653a86b8896ef2c", null ],
+    [ "remoteSap", "classinet_1_1_ether_app_client.html#abf95101d12ee468e0b627479c0c95549", null ],
+    [ "reqLength", "classinet_1_1_ether_app_client.html#afa07c39e58832ee95ff80ed07476886b", null ],
+    [ "respLength", "classinet_1_1_ether_app_client.html#ad66d556204e95b9e609c2520db90533b", null ],
+    [ "sendInterval", "classinet_1_1_ether_app_client.html#aeaa19506a8e83c81f9ba2bf37c38bdb6", null ],
+    [ "seqNum", "classinet_1_1_ether_app_client.html#a7c9f2ed6595b2cbf0cfa2ad78690ed68", null ],
+    [ "startTime", "classinet_1_1_ether_app_client.html#a36d46223371f53733f8891e3c6c653de", null ],
+    [ "stopTime", "classinet_1_1_ether_app_client.html#a2d4a233c623ba216f41f11c820e759a9", null ],
+    [ "timerMsg", "classinet_1_1_ether_app_client.html#a39fad80f1ed75a412b5f8dc6c49699d1", null ]
+];

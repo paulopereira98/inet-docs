@@ -1,0 +1,8 @@
+var _ieee80211_channel__m_8h =
+[
+    [ "INET_API", "_ieee80211_channel__m_8h.html#ad4fa1dc2a221d8f0c1c417d4b993c51a", null ],
+    [ "MSGC_VERSION", "_ieee80211_channel__m_8h.html#a77f5ea746b531cbdbc322a93741e33a6", null ],
+    [ "fromAnyPtr", "_ieee80211_channel__m_8h.html#a3a56b319f49f179ff79054aeff840b69", null ],
+    [ "toAnyPtr", "_ieee80211_channel__m_8h.html#a93a09ad6651a8f300ce821978b47dd2f", null ],
+    [ "toAnyPtr", "_ieee80211_channel__m_8h.html#a51ea3b79a5452e28b15aecc9a8c83046", null ]
+];

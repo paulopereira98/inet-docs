@@ -1,0 +1,26 @@
+var classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer =
+[
+    [ "computePowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#ae2a14ecc5793ed1added24f45dcd1e0d", null ],
+    [ "getEnergySource", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#aef00113b9182378bf2da325958616e42", null ],
+    [ "getPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#abe9a127b26d54ae54754532f4a2493f3", null ],
+    [ "initialize", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a46c62850e212b87a83ae309ff74d3cc6", null ],
+    [ "numInitStages", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a5832109c994a6a877b0832c6876ca203", null ],
+    [ "receiveSignal", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a9a93df9aa6e342c898f11c4aedf5f00b", null ],
+    [ "energySource", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#aa4c15554db865c110c0ec58fe053ee87", null ],
+    [ "offPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a21d730fd7a844740a6598e1644a754be", null ],
+    [ "powerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#ac12f99c61d6488a4c3d7fb48d013aef2", null ],
+    [ "radio", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a786434855a46996e20bf137bfa28045e", null ],
+    [ "receiverBusyPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a1258cd7c370aa0e26937715ec5871a95", null ],
+    [ "receiverIdlePowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a7ed546c9e119c8fab9853b86a78c191c", null ],
+    [ "receiverReceivingDataPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a444e7a09b0dcbcd4fbeeae43a355e380", null ],
+    [ "receiverReceivingHeaderPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a5043fa27ed62685152e5edd5eebbc182", null ],
+    [ "receiverReceivingPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a2d4a1d757c9fcdf62db3edc7430edba5", null ],
+    [ "receiverReceivingPreamblePowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a84783c2f841f1e846b77ee01b7161072", null ],
+    [ "sleepPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a35e77412cc3d714f847d9db2f38f617a", null ],
+    [ "switchingPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#af76a1139191548d227570c17dcdff97a", null ],
+    [ "transmitterIdlePowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a7be8988cf094bf2dcc3997586823a27d", null ],
+    [ "transmitterTransmittingDataPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#adbd1839ea7eaf6f94d01ce4cc9039f1e", null ],
+    [ "transmitterTransmittingHeaderPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#ac8c62e396ee593fd37a9400db4baddf6", null ],
+    [ "transmitterTransmittingPowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#a1ed875c097c987bd539219d25eee4081", null ],
+    [ "transmitterTransmittingPreamblePowerConsumption", "classinet_1_1physicallayer_1_1_state_based_ep_energy_consumer.html#ad1be7f91a3e349e58bf5e7fb89ef59f9", null ]
+];
