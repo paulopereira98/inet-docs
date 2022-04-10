@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>Ad Hoc Routing &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Differentiated Services" href="ch-diffserv.html" />
+    <link rel="prev" title="Internet Routing" href="ch-routing.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">Ad Hoc Routing</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-adhoc-routing.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="ad-hoc-routing">
+<span id="ug-cha-adhoc-routing"></span><h1>Ad Hoc Routing<a class="headerlink" href="#ad-hoc-routing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-adhocrouting-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In ad hoc networks, nodes are not familiar with the topology of their
+networks. Instead, they have to discover it: typically, a new node
+announces its presence and listens for announcements broadcast by its
+neighbors. Each node learns about others nearby and how to reach them,
+and may announce that it too can reach them. The difficulty of routing
+may be compounded by the fact that nodes may be mobile, which results in
+a changing topology.</p>
+<p>Ad hoc routing protocols fall in two broad categories: proactive and
+reactive. <em>Proactive</em> or <em>table-driven</em> protocols maintain fresh lists
+of destinations and their routes by periodically distributing routing
+tables throughout the network. <em>Reactive</em> or <em>on-demand</em> protocols find
+a route on demand by flooding the network with Route Request packets.</p>
+<p>The INET Framework contains the implementation of several ad hoc routing
+protocols including <span class="protocol">AODV</span>, <span class="protocol">DSDV</span>, <span class="protocol">DYMO</span>
+and <span class="protocol">GPSR</span>.</p>
+<p>The easiest way to add routing to an ad hoc network is to use the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> NED type for nodes. <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> contains a
+submodule named <code class="docutils literal notranslate"><span class="pre">routing</span></code> whose type is a parameter, so it can be
+configured to be an AODV router, a DYMO router, or a router of any other
+supported routing protocol. For example, you can configure
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> nodes in the network to use AODV with the following
+ini file line:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.routingApp.typename</span> <span class="o">=</span> <span class="s">&quot;Aodv&quot; </span><span class="c1"># as an application</span>
+<span class="na">**.routing.typename</span> <span class="o">=</span> <span class="s">&quot;Gpsr&quot; </span><span class="c1"># as a routing protocol module</span>
+</pre></div>
+</div>
+<p>There are also NED types called <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.aodv.AodvRouter.html">AodvRouter</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.dymo.DymoRouter.html">DymoRouter</a>,
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.dsdv.DsdvRouter.html">DsdvRouter</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.gpsr.GpsrRouter.html">GpsrRouter</a>, which are all <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a>’s
+with the routing protocol submodule type set appropriately.</p>
+</div>
+<div class="section" id="aodv">
+<span id="ug-sec-adhocrouting-aodv"></span><h2>AODV<a class="headerlink" href="#aodv" title="Permalink to this headline">¶</a></h2>
+<p>AODV (Ad hoc On-Demand Distance Vector Routing) is a routing protocol
+for mobile ad hoc networks and other wireless ad hoc networks. It offers
+quick adaptation to dynamic link conditions, low processing and memory
+overhead, low network utilization, and determines unicast routes to
+destinations within the ad hoc network.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.aodv.Aodv.html">Aodv</a> module type implements AODV, based on RFC 3561.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.aodv.AodvRouter.html">AodvRouter</a> is a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> with the routing module type
+set to <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.aodv.Aodv.html">Aodv</a>.</p>
+</div>
+<div class="section" id="dsdv">
+<span id="ug-sec-adhocrouting-dsdv"></span><h2>DSDV<a class="headerlink" href="#dsdv" title="Permalink to this headline">¶</a></h2>
+<p>DSDV (Destination-Sequenced Distance-Vector Routing) is a table-driven
+routing scheme for ad hoc mobile networks based on the Bellman-Ford
+algorithm.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.dsdv.Dsdv.html">Dsdv</a> module type implements DSDV. It is currently a partial
+implementation.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.dsdv.DsdvRouter.html">DsdvRouter</a> is a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> with the routing module type
+set to <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.dsdv.Dsdv.html">Dsdv</a>.</p>
+</div>
+<div class="section" id="dymo">
+<span id="ug-sec-adhocrouting-dymo"></span><h2>DYMO<a class="headerlink" href="#dymo" title="Permalink to this headline">¶</a></h2>
+<p>The DYMO (Dynamic MANET On-demand) routing protocol is successor to the
+AODV routing protocol. DYMO can work as both a pro-active and as a
+reactive routing protocol, i.e. routes can be discovered just when they
+are needed.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.dymo.Dymo.html">Dymo</a> module type implements DYMO, based on the IETF draft
+<em>draft-ietf-manet-dymo-24</em>.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.dymo.DymoRouter.html">DymoRouter</a> is a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> with the routing module type
+set to <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.dymo.Dymo.html">Dymo</a>.</p>
+</div>
+<div class="section" id="gpsr">
+<span id="ug-sec-adhocrouting-gpsr"></span><h2>GPSR<a class="headerlink" href="#gpsr" title="Permalink to this headline">¶</a></h2>
+<p>GPSR (Greedy Perimeter Stateless Routing) is a routing protocol for
+mobile wireless networks that uses the geographic positions of nodes to
+make packet forwarding decisions.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.gpsr.Gpsr.html">Gpsr</a> module type implements GPSR, based on the paper “GPSR:
+Greedy Perimeter Stateless Routing for Wireless Networks” by Brad Karp
+and H. T. Kung, 2000. The implementation supports both GG and RNG
+planarization algorithms.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.gpsr.GpsrRouter.html">GpsrRouter</a> is a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.ManetRouter.html">ManetRouter</a> with the routing module type
+set to <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.routing.gpsr.Gpsr.html">Gpsr</a>.</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Ad Hoc Routing</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#aodv">AODV</a></li>
+<li><a class="reference internal" href="#dsdv">DSDV</a></li>
+<li><a class="reference internal" href="#dymo">DYMO</a></li>
+<li><a class="reference internal" href="#gpsr">GPSR</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-routing.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Internet Routing</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-diffserv.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>Differentiated Services</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>The Ethernet Model &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Time-Sensitive Networking" href="ch-tsn.html" />
+    <link rel="prev" title="Point-to-Point Links" href="ch-ppp.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">The Ethernet Model</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-ethernet.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="the-ethernet-model">
+<span id="ug-cha-ethernet"></span><h1>The Ethernet Model<a class="headerlink" href="#the-ethernet-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-ethernet-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Ethernet is the most popular wired LAN technology nowadays, and its use
+is also growing in metropolitan area and wide area networks. Since its
+introduction in 1980, Ethernet data transfer rates have increased from
+the original 10Mb/s to the latest 400Gb/s. Originally, The technology
+has changed from using coaxial cables and repeaters to using unshielded
+twisted-pair cables with hubs and switches. Today, switched Ethernet is
+prevalent, and most links operate in full duplex mode. The INET
+Framework contains support for all major Ethernet technologies and
+device types.</p>
+<p>In Ethernet networks containing multiple switches, broadcast storms are
+prevented by use of a spanning tree protocol (STP, RSTP) that disables
+selected links to eliminate cycles from the topology. Ethernet switch
+models in INET contain support for STP and RSTP.</p>
+</div>
+<div class="section" id="nodes">
+<span id="ug-sec-ethernet-nodes"></span><h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
+<p>There are several node models that can be used in an Ethernet network:</p>
+<ul class="simple">
+<li><p>Node models such as <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> and <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.Router.html">Router</a> are
+Ethernet-capable</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.EthernetSwitch.html">EthernetSwitch</a> models an Ethernet switch, i.e. a multiport
+bridging device</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wired.common.WireJunction.html">WireJunction</a> can models the coaxial cable (10BASE2 or 10BASE5 network
+segments) on legacy Ethernet networks, or an Ethernet hub/multiport repeater</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.EthernetHost.html">EthernetHost</a> is a sample node which can be used to generate “raw”
+Ethernet traffic</p></li>
+</ul>
+<div class="section" id="ethernet-switch">
+<span id="ug-sec-ethernet-etherswitch"></span><h3>Ethernet Switch<a class="headerlink" href="#ethernet-switch" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.EthernetSwitch.html">EthernetSwitch</a> models an Ethernet switch. Ethernet switches play an
+important role in modern Ethernet LANs. Unlike passive hubs and
+repeaters that work in the physical layer, the switches operate in the
+data link layer and relay frames between the connected subnets.</p>
+<p>In modern Ethernet LANs, each node is connected to the switch directly
+by full duplex lines, so no collisions are possible. In this case, the
+CSMA/CD is not needed and the channel utilization can be high.</p>
+<p>The <code class="code literal-ini docutils literal notranslate"><span class="pre">duplexMode</span></code> parameters of the MACs must be set according to
+the medium connected to the port; if collisions are possible (it’s a bus
+or hub) it must be set to false, otherwise it can be set to true. By
+default it uses half-duplex MAC with CSMA/CD.</p>
+</div>
+<div class="section" id="ethernet-hub">
+<span id="ug-sec-ethernet-etherhub"></span><h3>Ethernet Hub<a class="headerlink" href="#ethernet-hub" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wired.common.WireJunction.html">WireJunction</a> can model an Ethernet hub. Ethernet hubs are a simple
+broadcast devices. Messages arriving on a port are regenerated and
+broadcast to every other port.</p>
+<p>The connections connected to the hub must have the same data rate. Cable
+lengths should be reflected in the delays of the connections.</p>
+</div>
+<div class="section" id="ethernet-bus">
+<span id="ug-sec-ethernet-etherbus"></span><h3>Ethernet Bus<a class="headerlink" href="#ethernet-bus" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wired.common.WireJunction.html">WireJunction</a> component can also model a connection to a
+common coaxial cable found in early Ethernet LANs. Network nodes
+are attached to the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wired.common.WireJunction.html">WireJunction</a> via a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/ned.DatarateChannel.html">DatarateChannel</a>.
+The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wired.common.WireJunction.html">WireJunction</a> modules are connected to each other via
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/ned.DatarateChannel.html">DatarateChannel</a> as well. When a node sends a signal, it will propagate
+along the cable in both directions at the given propagation speed.</p>
+<p>The speed of the connection can be set on the datarate channels;
+all connected channels must have the same speed.</p>
+</div>
+</div>
+<div class="section" id="the-physical-layer">
+<span id="ug-sec-ethernet-the-physical-layer"></span><h2>The Physical Layer<a class="headerlink" href="#the-physical-layer" title="Permalink to this headline">¶</a></h2>
+<p>Stations on an Ethernet networks are connected by coaxial, twisted pair
+or fibre cables. (Coaxial only has historical importance, but is
+supported by INET anyway.) There are several cable types specified in
+the standard.</p>
+<p>In the INET framework, the cables are represented by connections. The
+connections used in Ethernet LANs must be derived from
+ned::<code class="docutils literal notranslate"><span class="pre">DatarateChannel</span></code> and should have their <code class="code literal-ini docutils literal notranslate"><span class="pre">delay</span></code> and
+<code class="code literal-ini docutils literal notranslate"><span class="pre">datarate</span></code> parameters set. The delay parameter can be used to model
+the distance between the nodes. The datarate parameter can have four
+values:</p>
+<ul class="simple">
+<li><p>10Mbps (classic Ethernet)</p></li>
+<li><p>100Mbps (Fast Ethernet)</p></li>
+<li><p>1Gbps (Gigabit Ethernet, GbE)</p></li>
+<li><p>10Gbps (10 Gigabit Ethernet, 10GbE)</p></li>
+<li><p>40Gbps (40 Gigabit Ethernet, 40GbE)</p></li>
+<li><p>100Gbps (100 Gigabit Ethernet, 100GbE)</p></li>
+</ul>
+<p>There is currently no support for 200Gbps and 400Gbps Ethernet.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth10M.html">Eth10M</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth100M.html">Eth100M</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth1G.html">Eth1G</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth10G.html">Eth10G</a>,
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth40G.html">Eth40G</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.ethernet.Eth100G.html">Eth100G</a></p>
+</div>
+<div class="section" id="ethernet-interface">
+<span id="ug-sec-ethernet-ethernet-interface"></span><h2>Ethernet Interface<a class="headerlink" href="#ethernet-interface" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.EthernetInterface.html">EthernetInterface</a> compound module implements the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.contract.IWiredInterface.html">IWiredInterface</a> interface. Complements <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetCsmaMac.html">EthernetCsmaMac</a> and
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetEncapsulation.html">EthernetEncapsulation</a> with an output queue for QoS and RED support. It also
+has configurable input/output filters as <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.common.IHook.html">IHook</a> components
+similarly to the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ppp.PppInterface.html">PppInterface</a> module.</p>
+<p>The Ethernet MAC (Media Access Control) layer transmits the Ethernet
+frames on the physical media. This is a sublayer within the data link
+layer. Because encapsulation/decapsulation is not always needed (e.g.
+switches does not do encapsulation/decapsulation), it is implemented in
+a separate modules (e.g. <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetEncapsulation.html">EthernetEncapsulation</a>) that are part
+of the LLC layer.</p>
+<p>Nowadays almost all Ethernet networks operate using full-duplex
+point-to-point connections between hosts and switches. This means that
+there are no collisions, and the behaviour of the MAC component is much
+simpler than in classic Ethernet that used coaxial cables and hubs. The
+INET framework contains two MAC modules for Ethernet: the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetMac.html">EthernetMac</a> is simpler to understand and easier to extend,
+because it supports only full-duplex connections. The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetCsmaMac.html">EthernetCsmaMac</a>
+module implements the full MAC functionality including CSMA/CD, it can
+operate both half-duplex and full-duplex mode.</p>
+</div>
+<div class="section" id="components">
+<span id="ug-sec-ethernet-components"></span><h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>The following components are present in the model:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetMac.html">EthernetMac</a></p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetCsmaMac.html">EthernetCsmaMac</a></p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetEncapsulation.html">EthernetEncapsulation</a></p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.common.MacRelayUnit.html">MacRelayUnit</a></p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.common.MacForwardingTable.html">MacForwardingTable</a></p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee8021d.relay.Ieee8021dRelay.html">Ieee8021dRelay</a></p></li>
+</ul>
+<div class="section" id="ethernetmac">
+<span id="ug-sec-ethernet-ethermacfullduplex"></span><h3>EthernetMac<a class="headerlink" href="#ethernetmac" title="Permalink to this headline">¶</a></h3>
+<p>From the two MAC implementation <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetMac.html">EthernetMac</a> is the simpler
+one, it operates only in full-duplex mode (its <code class="code literal-ini docutils literal notranslate"><span class="pre">duplexEnabled</span></code>
+parameter fixed to <code class="docutils literal notranslate"><span class="pre">true</span></code> in its NED definition). This module does
+not need to implement CSMA/CD, so there is no collision detection,
+retransmission with exponential backoff, carrier extension and frame
+bursting.</p>
+</div>
+<div class="section" id="ethernetcsmamac">
+<span id="ug-sec-ethernet-ethermac"></span><h3>EthernetCsmaMac<a class="headerlink" href="#ethernetcsmamac" title="Permalink to this headline">¶</a></h3>
+<p>Ethernet MAC layer implementing CSMA/CD. It supports both half-duplex
+and full-duplex operations; in full-duplex mode it behaves as
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetMac.html">EthernetMac</a>. In half-duplex mode it detects collisions,
+sends jam messages and retransmit frames upon collisions using the
+exponential backoff algorithm. In Gigabit Ethernet networks it supports
+carrier extension and frame bursting. Carrier extension can be turned
+off by setting the <code class="code literal-ini docutils literal notranslate"><span class="pre">carrierExtension</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div>
+<div class="section" id="ethernetencapsulation">
+<span id="ug-sec-ethernet-etherencap"></span><h3>EthernetEncapsulation<a class="headerlink" href="#ethernetencapsulation" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.basic.EthernetEncapsulation.html">EthernetEncapsulation</a> module performs Ethernet II or Ethernet with SNAP
+encapsulation/decapsulation.</p>
+</div>
+<div class="section" id="macrelayunit">
+<span id="ug-sec-ethernet-macrelayunit"></span><h3>MacRelayUnit<a class="headerlink" href="#macrelayunit" title="Permalink to this headline">¶</a></h3>
+<p>INET framework ethernet switches are built from <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.contract.IMacRelayUnit.html">IMacRelayUnit</a>
+components. Each relay unit has N input and output gates for
+sending/receiving Ethernet frames. They should be connected to
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.EthernetInterface.html">EthernetInterface</a> modules.</p>
+<p>The relay unit holds a table for the destination address -&gt; output port
+mapping in a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.common.MacForwardingTable.html">MacForwardingTable</a> module. When the relay unit receives
+a data frame, it updates the table with the source address-&gt;input port.</p>
+<p>If the destination address is not found in the table, the frame is
+broadcast. The frame is not sent to the same port it was received from,
+because then the target should already have received the original frame.</p>
+<p>A simple scheme for sending PAUSE frames is built in (although users
+will probably change it). When the buffer level goes above a high
+watermark, PAUSE frames are sent on all ports. The watermark and the
+pause time is configurable; use zero values to disable the PAUSE
+feature.</p>
+</div>
+<div class="section" id="macforwardingtable">
+<span id="ug-sec-ethernet-macforwardingtable"></span><h3>MacForwardingTable<a class="headerlink" href="#macforwardingtable" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.common.MacForwardingTable.html">MacForwardingTable</a> module stores the mapping between ports and
+MAC addresses. Entries are deleted if their age exceeds a certain limit.</p>
+<p>If needed, address tables can be pre-loaded from text files at the
+beginning of the simulation; this controlled by the
+<code class="code literal-ini docutils literal notranslate"><span class="pre">forwardingTableFile</span></code> module parameter. In the file, each line
+contains a literal 0 (reserved for VLAN id), a hexadecimal MAC address
+and a decimal port number, separated by tabs. Comment lines beginning
+with ’#’ are also allowed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>    <span class="mi">01</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span>    <span class="mi">0</span>
+<span class="mi">0</span>    <span class="mi">00</span><span class="o">-</span><span class="n">ff</span><span class="o">-</span><span class="n">ff</span><span class="o">-</span><span class="n">ee</span><span class="o">-</span><span class="n">d1</span>    <span class="mi">1</span>
+<span class="mi">0</span>    <span class="mi">0</span><span class="n">A</span><span class="p">:</span><span class="n">AA</span><span class="p">:</span><span class="n">BC</span><span class="p">:</span><span class="n">DE</span><span class="p">:</span><span class="n">FF</span>    <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Entries are deleted if their age exceeds the duration given as the
+<code class="code literal-ini docutils literal notranslate"><span class="pre">agingTime</span></code> parameter.</p>
+</div>
+<div class="section" id="ieee8021drelay">
+<span id="ug-sec-ethernet-ieee8021drelay"></span><h3>Ieee8021dRelay<a class="headerlink" href="#ieee8021drelay" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee8021d.relay.Ieee8021dRelay.html">Ieee8021dRelay</a> is a MAC relay unit that should be used instead of
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ethernet.common.MacRelayUnit.html">MacRelayUnit</a> that when STP or RSTP is needed.</p>
+</div>
+<div class="section" id="stp">
+<span id="ug-sec-ethernet-stp"></span><h3>Stp<a class="headerlink" href="#stp" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee8021d.stp.Stp.html">Stp</a> module type implements Spanning Tree Protocol (STP). STP
+is a network protocol that builds a loop-free logical topology for
+Ethernet networks. The basic function of STP is to prevent bridge loops
+and the broadcast radiation that results from them.</p>
+<p>STP creates a spanning tree within a network of connected layer-2
+bridges, and disables those links that are not part of the spanning
+tree, leaving a single active path between any two network nodes.</p>
+</div>
+<div class="section" id="rstp">
+<span id="ug-sec-ethernet-rstp"></span><h3>Rstp<a class="headerlink" href="#rstp" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee8021d.rstp.Rstp.html">Rstp</a> implements Rapid Spanning Tree Protocol (RSTP), an improved
+version of STP. RSTP provides significantly faster recovery in response
+to network changes or failures.</p>
+</div>
+</div>
+<div class="section" id="implemented-standards">
+<span id="ug-sec-ethernet-implemented-standards"></span><h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Permalink to this headline">¶</a></h2>
+<p>The Ethernet model operates according to the following standards:</p>
+<ul class="simple">
+<li><p>Ethernet: IEEE 802.3-1998</p></li>
+<li><p>Fast Ethernet: IEEE 802.3u-1995</p></li>
+<li><p>Full-Duplex Ethernet with Flow Control: IEEE 802.3x-1997</p></li>
+<li><p>Gigabit Ethernet: IEEE 802.3z-1998</p></li>
+</ul>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">The Ethernet Model</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li><a class="reference internal" href="#ethernet-switch">Ethernet Switch</a></li>
+<li><a class="reference internal" href="#ethernet-hub">Ethernet Hub</a></li>
+<li><a class="reference internal" href="#ethernet-bus">Ethernet Bus</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-physical-layer">The Physical Layer</a></li>
+<li><a class="reference internal" href="#ethernet-interface">Ethernet Interface</a></li>
+<li><a class="reference internal" href="#components">Components</a><ul>
+<li><a class="reference internal" href="#ethernetmac">EthernetMac</a></li>
+<li><a class="reference internal" href="#ethernetcsmamac">EthernetCsmaMac</a></li>
+<li><a class="reference internal" href="#ethernetencapsulation">EthernetEncapsulation</a></li>
+<li><a class="reference internal" href="#macrelayunit">MacRelayUnit</a></li>
+<li><a class="reference internal" href="#macforwardingtable">MacForwardingTable</a></li>
+<li><a class="reference internal" href="#ieee8021drelay">Ieee8021dRelay</a></li>
+<li><a class="reference internal" href="#stp">Stp</a></li>
+<li><a class="reference internal" href="#rstp">Rstp</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#implemented-standards">Implemented Standards</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-ppp.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Point-to-Point Links</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-tsn.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>Time-Sensitive Networking</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

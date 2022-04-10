@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>The 802.11 Model &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The 802.15.4 Model" href="ch-802154.html" />
+    <link rel="prev" title="Time-Sensitive Networking" href="ch-tsn.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">The 802.11 Model</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-80211.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="the-802-11-model">
+<span id="ug-cha-80211"></span><h1>The 802.11 Model<a class="headerlink" href="#the-802-11-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-80211-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>IEEE 802.11 a.k.a. WiFi is the most widely used and universal wireless
+networking standard. Specifications are updated every few years, adding
+more features and ever increasing bit rates.</p>
+<p>In INET, nodes become WiFi-enabled by adding a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.Ieee80211Interface.html">Ieee80211Interface</a>
+to them. (As mentioned earlier, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.WirelessHost.html">WirelessHost</a> and <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.AdhocHost.html">AdhocHost</a>
+already contain one in their default configuration.) APs are represented
+with the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.wireless.AccessPoint.html">AccessPoint</a> node type. WiFi networks require a matching
+transmission medium module to be present in the network, which is
+usually a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium.html">Ieee80211ScalarRadioMedium</a>.</p>
+<p>Operation mode (infrastructure vs ad hoc) is determined by the
+ingredients of the wireless interface. <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.Ieee80211Interface.html">Ieee80211Interface</a> has the
+following submodules (incomplete list):</p>
+<ol class="arabic simple">
+<li><p><em>management</em>: performs association/disassociation with access points,
+channel scanning, beaconing</p></li>
+<li><p><em>agent</em>: initiates actions such as channel scanning and connecting to
+and disconnecting from access points</p></li>
+<li><p><em>MAC</em>: transmits and receives frames according to the IEEE 802.11
+medium access procedure</p></li>
+<li><p><em>PHY</em>: represents the radio</p></li>
+</ol>
+<p>The management component has several implementations which differ in
+their role and level of detail:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc.html">Ieee80211MgmtAdhoc</a>: for ad hoc mode stations</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtStaSimplified.html">Ieee80211MgmtStaSimplified</a>: for
+infrastructure mode stations</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAp.html">Ieee80211MgmtAp</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtApSimplified.html">Ieee80211MgmtApSimplified</a>: for access
+points</p></li>
+</ul>
+<p>The “simplified” ones assume that stations are statically associated to
+an access point for the entire duration of the simulation (the
+scan-authenticate-associate process is not simulated), so they cannot be
+used e.g. in experiments involving handover.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a> is does not take any action by itself, it
+requires an agent (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta.html">Ieee80211AgentSta</a> or a custom one) to initiate
+actions.</p>
+<p>The following sections examine the above components.</p>
+</div>
+<div class="section" id="mac">
+<span id="ug-sec-80211-mac"></span><h2>MAC<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mac.Ieee80211Mac.html">Ieee80211Mac</a> module type represents the IEEE 802.11 MAC. The
+implementation is entirely based on the standard IEEE 802.11-2012 Part
+11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY)
+Specifications.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mac.Ieee80211Mac.html">Ieee80211Mac</a> performs transmission of frames according to the
+CSMA/CA protocol. It receives data and management frames from the upper
+layers, and transmits them.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mac.Ieee80211Mac.html">Ieee80211Mac</a> was designed to be modular to facilitate
+experimenting with new policies, features and algorithms within the MAC
+layer. Users can easily replace individual components with their own
+implementations. Policies, which most likely to be experimented with,
+are extracted into their own modules.</p>
+<p>The model has the following replaceable built-in policies:</p>
+<ul class="simple">
+<li><p>ACK policy</p></li>
+<li><p>RTS/CTS policy</p></li>
+<li><p>Originator and recipient block ACK agreement policies</p></li>
+<li><p>MSDU aggregation policy</p></li>
+<li><p>Fragmentation policy</p></li>
+</ul>
+<p>The new model also separates the following components:</p>
+<ul class="simple">
+<li><p>Coordination functions</p></li>
+<li><p>Channel access methods</p></li>
+<li><p>MAC data services</p></li>
+<li><p>Aggregation and deaggregation</p></li>
+<li><p>Fragmentation and defragmentation</p></li>
+<li><p>Block ACK agreements and reordering</p></li>
+<li><p>Frame exchange sequences</p></li>
+<li><p>Duplicate removal</p></li>
+<li><p>Rate selection</p></li>
+<li><p>Rate control</p></li>
+<li><p>Protection mechanisms</p></li>
+<li><p>Recovery procedure</p></li>
+<li><p>Contention</p></li>
+<li><p>Frame queues</p></li>
+<li><p>TX/RX</p></li>
+</ul>
+</div>
+<div class="section" id="physical-layer">
+<span id="ug-sec-80211-physical-layer"></span><h2>Physical Layer<a class="headerlink" href="#physical-layer" title="Permalink to this headline">¶</a></h2>
+<p><em>The physical layer</em> modules (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211Radio.html">Ieee80211Radio</a>) deal with modelling
+transmission and reception of frames. They model the characteristics of
+the radio channel, and determine if a frame was received correctly (that
+is, it did not suffer bit errors due to low signal power or interference
+in the radio channel). Frames received correctly are passed up to the
+MAC.</p>
+<p>On the physical layer, one can choose from several radios with different
+levels of detail. The various radio types (with the matching
+transmission medium types in parentheses) are:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio.html">Ieee80211ScalarRadio</a> (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadioMedium.html">Ieee80211ScalarRadioMedium</a>)</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211DimensionalRadio.html">Ieee80211DimensionalRadio</a>
+(<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211DimensionalRadioMedium.html">Ieee80211DimensionalRadioMedium</a>)</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211UnitDiskRadio.html">Ieee80211UnitDiskRadio</a> (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.physicallayer.wireless.unitdisk.UnitDiskRadioMedium.html">UnitDiskRadioMedium</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="management">
+<span id="ug-sec-80211-management"></span><h2>Management<a class="headerlink" href="#management" title="Permalink to this headline">¶</a></h2>
+<p><em>The management layer</em> exchanges management frames via the MAC with its
+peer management entities in other STAs and APs. Beacon, Probe
+Request/Response, Authentication, Association Request/Response etc
+frames are generated and interpreted by management entities, and
+transmitted/received via the MAC layer. During scanning, it is the
+management entity that periodically switches channels, and collects
+information from received beacons and probe responses.</p>
+<p>The management layer has several implementations which differ in their
+role (STA/AP/ad-hoc) and level of detail: <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc.html">Ieee80211MgmtAdhoc</a>,
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAp.html">Ieee80211MgmtAp</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtApSimplified.html">Ieee80211MgmtApSimplified</a>,
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtStaSimplified.html">Ieee80211MgmtStaSimplified</a>. The
+..Simplified ones differ from the others in that they do not model the
+scan-authenticate-associate process, so they cannot be used in
+experiments involving handover.</p>
+</div>
+<div class="section" id="agent">
+<span id="ug-sec-80211-agent"></span><h2>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
+<p>The agent is what instructs the management layer to perform scanning,
+authentication and association. The management layer itself just carries
+out these commands by performing the scanning, authentication and
+association procedures, and reports back the results to the agent.</p>
+<p>The agent component is currently only needed with the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a> module. The managament entities in other NIC
+variants do not have as much freedom as to need an agent to control
+them.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSta.html">Ieee80211MgmtSta</a> requires a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.linklayer.ieee80211.mgmt.Ieee80211AgentSta.html">Ieee80211AgentSta</a> or a custom
+agent. By modifying or replacing the agent, one can alter the dynamic
+behaviour of STAs in the network, for example implement different
+handover strategies.</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">The 802.11 Model</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#mac">MAC</a></li>
+<li><a class="reference internal" href="#physical-layer">Physical Layer</a></li>
+<li><a class="reference internal" href="#management">Management</a></li>
+<li><a class="reference internal" href="#agent">Agent</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-tsn.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Time-Sensitive Networking</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-802154.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>The 802.15.4 Model</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

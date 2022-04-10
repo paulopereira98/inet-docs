@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>Other Network Protocols &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Internet Routing" href="ch-routing.html" />
+    <link rel="prev" title="IPv6 and Mobile IPv6" href="ch-ipv6.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">Other Network Protocols</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-other-network-protocols.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="other-network-protocols">
+<span id="ug-cha-other-network-protocols"></span><h1>Other Network Protocols<a class="headerlink" href="#other-network-protocols" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-networkprotocols-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Network layer protocols in INET are not restricted to IPv4 and IPv6.
+INET nodes such as <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.Router.html">Router</a> and <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> can be
+configured to use an alternative network layer protocols instead of, or
+in addition to, IPv4 and IPv6.</p>
+<p>Node models contain three optional network layers that can be
+individually turned on or off:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="n">ipv4</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Ipv4NetworkLayer&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">INetworkLayer</span> <span class="k">if</span> <span class="n">hasIpv4</span><span class="p">;</span>
+<span class="n">ipv6</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Ipv6NetworkLayer&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">INetworkLayer</span> <span class="k">if</span> <span class="n">hasIpv6</span><span class="p">;</span>
+<span class="n">generic</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">INetworkLayer</span> <span class="k">if</span> <span class="n">hasGn</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In the default configuration, only IPv4 is turned on. If you want to use
+an alternative network layer protocol instead of IPv4/IPv6, your
+configuration will look something like this:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.hasIpv4</span> <span class="o">=</span> <span class="s">false</span>
+<span class="na">**.hasIpv6</span> <span class="o">=</span> <span class="s">false</span>
+<span class="na">**.hasGn</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">**.generic.typename</span> <span class="o">=</span> <span class="s">&quot;WiseRouteNetworkLayer&quot;</span>
+</pre></div>
+</div>
+<p>The list of alternative network layers includes:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.common.SimpleNetworkLayer.html">SimpleNetworkLayer</a> is a generic network layer where the
+concrete protocol type is a parameter</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.nexthop.NextHopNetworkLayer.html">NextHopNetworkLayer</a> is a network layer specialized for the
+“Next-Hop Forwarding Protocol”, an abstract implementation of the
+next-hop routing concept</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.wiseroute.WiseRouteNetworkLayer.html">WiseRouteNetworkLayer</a> is specialized for the Wise Route
+protocol</p></li>
+</ul>
+<p>The list of network layer protocols that can be plugged into
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.common.SimpleNetworkLayer.html">SimpleNetworkLayer</a> includes:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.flooding.Flooding.html">Flooding</a> implements controlled flooding</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.wiseroute.WiseRoute.html">WiseRoute</a> implements Wise Route, a convergecasting protocol
+for wireless sensor networks</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.probabilistic.ProbabilisticBroadcast.html">ProbabilisticBroadcast</a> implements a multi-hop ad-hoc data
+dissemination protocol</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.probabilistic.AdaptiveProbabilisticBroadcast.html">AdaptiveProbabilisticBroadcast</a> is a variant of the previous
+one</p></li>
+</ul>
+<p>In addition to the network layer protocol, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.common.SimpleNetworkLayer.html">SimpleNetworkLayer</a>
+includes an instance of <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.arp.ipv4.GlobalArp.html">GlobalArp</a> for address resolution, and an
+instance of <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.common.EchoProtocol.html">EchoProtocol</a>, a module type that implements a simple
+<em>ping</em>-like protocol.</p>
+<p>All the above network protocols can work with IPv4 addresses, IPv6
+addresses, use MAC address as network address (this is sometimes useful
+in WSNs), or use sythetic addresses that only make sense within the
+simulation.  <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<p>In apps, you need to specify which network layer protocol you want to
+use. For example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.app[*].networkProtocol</span> <span class="o">=</span> <span class="s">&quot;flood&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="protocols">
+<span id="ug-sec-networkprotocols-protocols"></span><h2>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="flooding">
+<span id="ug-sec-networkprotocols-flooding"></span><h3>Flooding<a class="headerlink" href="#flooding" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.flooding.Flooding.html">Flooding</a> is a simple flooding protocol for network-level
+broadcast. It remembers already broadcast messages, and does not
+rebroadcast them if it gets another copy of that message.</p>
+</div>
+<div class="section" id="probabilisticbroadcast">
+<span id="ug-sec-networkprotocols-probabilisticbroadcast"></span><h3>ProbabilisticBroadcast<a class="headerlink" href="#probabilisticbroadcast" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.probabilistic.ProbabilisticBroadcast.html">ProbabilisticBroadcast</a> is a multi-hop ad-hoc data dissemination
+protocol based on probabilistic broadcast.</p>
+<p>This method reduces the number of packets sent on the channel (reducing
+the broadcast storm problem) at the risk of some nodes not receiving the
+data. It is particularly interesting for mobile networks.</p>
+<p>The transmission probability for each attempt, the time between two
+transmission attempts, the maximum number of broadcast transmissions of
+a packet, and some other settings are parameters.</p>
+</div>
+<div class="section" id="adaptiveprobabilisticbroadcast">
+<span id="ug-sec-networkprotocols-adaptiveprobabilisticbroadcast"></span><h3>AdaptiveProbabilisticBroadcast<a class="headerlink" href="#adaptiveprobabilisticbroadcast" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.probabilistic.AdaptiveProbabilisticBroadcast.html">AdaptiveProbabilisticBroadcast</a> is a variant of
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.probabilistic.ProbabilisticBroadcast.html">ProbabilisticBroadcast</a> that automatically adjusts transmission
+probabilities depending on the estimated number of neighbours.</p>
+</div>
+<div class="section" id="wiseroute">
+<span id="ug-sec-networkprotocols-wiseroute"></span><h3>WiseRoute<a class="headerlink" href="#wiseroute" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.wiseroute.WiseRoute.html">WiseRoute</a> implements Wise Route, a simple loop-free routing
+algorithm that builds a routing tree from a central network point,
+designed for sensor networks and convergecast traffic (WIreless SEnsor
+routing).</p>
+<p>The sink (the device at the center of the network) broadcasts a route
+building message. Each network node that receives it selects the sink as
+parent in the routing tree, and rebroadcasts the route building message.
+This procedure maximizes the probability that all network nodes can join
+the network, and avoids loops.</p>
+<p>The <code class="code literal-ini docutils literal notranslate"><span class="pre">sinkAddress</span></code> parameter specifies the sink network address,
+<code class="code literal-ini docutils literal notranslate"><span class="pre">rssiThreshold</span></code> is a threshold to avoid using bad links (with too
+low RSSI values) for routing, and <code class="code literal-ini docutils literal notranslate"><span class="pre">routeFloodsInterval</span></code> should be
+set to zero for all nodes except the sink. Each
+<code class="code literal-ini docutils literal notranslate"><span class="pre">routeFloodsInterval</span></code>, the sink restarts the tree building
+procedure. Set it to a large value if you do not want the tree to be
+rebuilt.</p>
+</div>
+<div class="section" id="nexthopforwarding">
+<span id="ug-sec-networkprotocols-nexthopforwarding"></span><h3>NextHopForwarding<a class="headerlink" href="#nexthopforwarding" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.nexthop.NextHopForwarding.html">NextHopForwarding</a> module is an implementation of the next-hop
+forwarding concept. (It can be thought of as an abstracted version of
+IP.)</p>
+<p>The protocol needs an additional module, a <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.nexthop.NextHopRoutingTable.html">NextHopRoutingTable</a>
+for its operation. The routing table module is included in the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.nexthop.NextHopNetworkLayer.html">NextHopNetworkLayer</a> compound module.</p>
+</div>
+</div>
+<div class="section" id="address-types">
+<span id="ug-sec-networkprotocols-address-types"></span><h2>Address Types<a class="headerlink" href="#address-types" title="Permalink to this headline">¶</a></h2>
+<p>The following address types are available:</p>
+<ul class="simple">
+<li><p>IPv4 address</p></li>
+<li><p>IPv6 address</p></li>
+<li><p>MAC address</p></li>
+<li><p>module ID</p></li>
+<li><p>module path</p></li>
+</ul>
+<p>Protocols described in this chapter work with “generic” L3 addresses,
+they can use any address type.</p>
+<p>When choosing IPv4 addresses, an <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator.html">Ipv4NetworkConfigurator</a> global
+instance can be used to assign addresses to network interfaces. (Note
+that <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator.html">Ipv4NetworkConfigurator</a> also needs a per-node instance of
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.configurator.ipv4.Ipv4NodeConfigurator.html">Ipv4NodeConfigurator</a> for it to work.)</p>
+</div>
+<div class="section" id="address-resolution">
+<span id="ug-sec-networkprotocols-address-resolution"></span><h2>Address Resolution<a class="headerlink" href="#address-resolution" title="Permalink to this headline">¶</a></h2>
+<p>Address resolution is done by <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.arp.ipv4.GlobalArp.html">GlobalArp</a>. If the address type is
+IPv4, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.arp.ipv4.Arp.html">Arp</a> can be used instead of <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.arp.ipv4.GlobalArp.html">GlobalArp</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is possible because the implementation of these modules simply
+use the <code class="code literal-cpp docutils literal notranslate"><span class="pre">L3Address</span></code> C++ class, which is a variant type capable
+of holding several types of L3 addresses.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Other Network Protocols</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#protocols">Protocols</a><ul>
+<li><a class="reference internal" href="#flooding">Flooding</a></li>
+<li><a class="reference internal" href="#probabilisticbroadcast">ProbabilisticBroadcast</a></li>
+<li><a class="reference internal" href="#adaptiveprobabilisticbroadcast">AdaptiveProbabilisticBroadcast</a></li>
+<li><a class="reference internal" href="#wiseroute">WiseRoute</a></li>
+<li><a class="reference internal" href="#nexthopforwarding">NextHopForwarding</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#address-types">Address Types</a></li>
+<li><a class="reference internal" href="#address-resolution">Address Resolution</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-ipv6.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>IPv6 and Mobile IPv6</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-routing.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>Internet Routing</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

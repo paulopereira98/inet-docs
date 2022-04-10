@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>Network Nodes &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Network Interfaces" href="ch-network-interfaces.html" />
+    <link rel="prev" title="Networks" href="ch-networks.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">Network Nodes</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-network-nodes.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transport.html">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="network-nodes">
+<span id="ug-cha-network-nodes"></span><h1>Network Nodes<a class="headerlink" href="#network-nodes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-nodes-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Hosts, routers, switches, access points, mobile phones, and other
+network nodes are represented in INET with compound modules. The
+previous chapter has introduced a few node types like
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.Router.html">Router</a>, and showed how to put together
+networks from them. In this chapter, we look at the internals of such
+node models, in order to provide a deeper understanding of their
+customization possibilities and to give some guidance on how custom
+nodes models can be assembled.</p>
+</div>
+<div class="section" id="ingredients">
+<span id="ug-sec-nodes-ingredients"></span><h2>Ingredients<a class="headerlink" href="#ingredients" title="Permalink to this headline">¶</a></h2>
+<p>Node models are assembled from other modules which represent
+applications, communication protocols, network interfaces, routing
+tables, mobility models, energy models, and other functionality. These
+modules fall into the following broad categories:</p>
+<ul class="simple">
+<li><p><em>Applications</em> often model the user behavior as well as the
+application program (e.g., browser), and the application layer
+protocol (e.g., <span class="protocol">HTTP</span>). Applications typically use
+transport layer protocols (e.g., <span class="protocol">TCP</span> and/or
+<span class="protocol">UDP</span>), but they may also directly use lower layer
+protocols (e.g., <span class="protocol">IP</span> or <span class="protocol">Ethernet</span>) via sockets.</p></li>
+<li><p><em>Routing protocols</em> are provided as separate modules:
+<span class="protocol">OSPF</span>, <span class="protocol">BGP</span>, or <span class="protocol">AODV</span> for MANET
+routing. These modules use <span class="protocol">TCP</span>, <span class="protocol">UDP</span>, and
+<span class="protocol">IPv4</span>, and manipulate routes in the
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4RoutingTable.html">Ipv4RoutingTable</a> module.</p></li>
+<li><p><em>Transport layer protocols</em> are connected to applications and network
+layer protocols. They are most often represented by simple modules,
+currently <span class="protocol">TCP</span>, <span class="protocol">UDP</span>, and <span class="protocol">SCTP</span> are
+supported. <span class="protocol">TCP</span> has several implementations: <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a> is
+the OMNeT++ native implementation; <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_lwip.TcpLwip.html">TcpLwip</a> module wraps the
+lwIP <span class="protocol">TCP</span> stack; and <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a> module wraps the
+Network Simulation Cradle library.</p></li>
+<li><p><em>Network layer protocols</em> are connected to transport layer protocols
+and network interfaces. They are usually modeled as compound modules:
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4NetworkLayer.html">Ipv4NetworkLayer</a> for <span class="protocol">IPv4</span>, and
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv6.Ipv6NetworkLayer.html">Ipv6NetworkLayer</a> for <span class="protocol">IPv6</span>. The
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4NetworkLayer.html">Ipv4NetworkLayer</a> module contains several protocol modules:
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4.html">Ipv4</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.arp.ipv4.Arp.html">Arp</a>, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Icmp.html">Icmp</a> and <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.icmpv6.Icmpv6.html">Icmpv6</a>.</p></li>
+<li><p><em>Network interfaces</em> are represented by compound modules which are
+connected to the network layer protocols and other network interfaces
+in the wired case. They are often modeled as compound modules
+containing separate modules for queues, classifiers, MAC, and PHY
+protocols.</p></li>
+<li><p><em>Link layer protocols</em> are usually simple modules sitting in network
+interface modules. Some protocols, for example <span class="protocol">IEEE 802.11 MAC</span>,
+are modeled as a compound module themselves due to the complexity of the
+protocol.</p></li>
+<li><p><em>Physical layer protocols</em> are compound modules also being part of
+network interface modules.</p></li>
+<li><p><em>Interface table</em> maintains the set of network interfaces (e.g.
+<code class="docutils literal notranslate"><span class="pre">eth0</span></code>, <code class="docutils literal notranslate"><span class="pre">wlan0</span></code>) in the network node. Interfaces are registered
+dynamically during initialization of network interfaces.</p></li>
+<li><p><em>Routing tables</em> maintain the list of routes for the corresponding
+network protocol (e.g., <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4RoutingTable.html">Ipv4RoutingTable</a> for <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.networklayer.ipv4.Ipv4.html">Ipv4</a>).
+Routes are added by automatic network configurators or routing
+protocols. Network protocols use the routing tables to find out the
+best matching route for datagrams.</p></li>
+<li><p><em>Mobility modules</em> are responsible for moving around the network node
+in the simulated scene. The mobility model is mandatory for
+wireless simulations even if the network node is stationary. The
+mobility module stores the location of the network node which is
+needed to compute wireless propagation and path loss. Different
+mobility models are provided as different modules. Network nodes
+define their mobility submodule with a parametric type, so the
+mobility model can be changed in the configuration.</p></li>
+<li><p><em>Energy modules</em> model energy storage mechanisms, energy consumption
+of devices and software processes, energy generation of devices, and
+energy management processes which shutdown and startup network nodes.</p></li>
+<li><p><em>Status</em> (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.common.lifecycle.NodeStatus.html">NodeStatus</a>) keeps track of the status of the network
+node (up, down, etc.)</p></li>
+<li><p><em>Other modules</em> with particular functionality such as
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.common.packet.recorder.PcapRecorder.html">PcapRecorder</a> are also available.</p></li>
+</ul>
+</div>
+<div class="section" id="node-architecture">
+<span id="ug-sec-nodes-node-architecture"></span><h2>Node Architecture<a class="headerlink" href="#node-architecture" title="Permalink to this headline">¶</a></h2>
+<p>Within network nodes, OMNeT++ connections are used to represent
+communication opportunities between protocols. Packets and messages sent
+on these connections represent software or hardware activity.</p>
+<p>Although protocols may also be connected to each other directly, in most
+cases they are connected via <em>dispatcher modules</em>. Dispatchers
+(<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.common.MessageDispatcher.html">MessageDispatcher</a>) are small, low-overhead modules that allow
+protocol components to be connected in one-to-many and many-to-many
+fashion, and ensure that messages and packets sent from one component
+end up being delivered to the correct component. Dispatchers need no
+manual configuration, as they use discovery and peek into packets.</p>
+<p>In there pre-assembled node models, dispatchers allow arbitrary protocol
+components to talk directly to each other, i.e. not only to ones in
+neighboring layers.</p>
+</div>
+<div class="section" id="customizing-nodes">
+<span id="ug-sec-nodes-customizing-nodes"></span><h2>Customizing Nodes<a class="headerlink" href="#customizing-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The built-in network nodes are written to be as versatile and
+customizable as possible. This is achieved in several ways:</p>
+<div class="section" id="submodule-and-gate-vectors">
+<h3>Submodule and Gate Vectors<a class="headerlink" href="#submodule-and-gate-vectors" title="Permalink to this headline">¶</a></h3>
+<p>One way is the use of gate vectors and submodule vectors. The sizes of
+vectors may come from parameters or derived by the number of external
+connections to the network node. For example, a host may have an
+arbitrary number of wireless interfaces, and it will automatically have
+as many <span class="protocol">Ethernet</span> interfaces as the number of
+<span class="protocol">Ethernet</span> devices connected to it.</p>
+<p>For example, wireless interfaces for hosts are defined like this:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="n">wlan</span><span class="p">[</span><span class="n">numWlanInterfaces</span><span class="p">]</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">snip</span><span class="o">&gt;</span> <span class="c1">// wlan interfaces in StandardHost etc al.</span>
+</pre></div>
+</div>
+<p>Where <code class="code literal-ini docutils literal notranslate"><span class="pre">numWlanInterfaces</span></code> is a module parameter that defaults to
+either 0 or 1 (this is different for e.g. <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> and
+<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.WirelessHost.html">WirelessHost</a>.) To configure a host to have two interfaces, add
+the following line to the ini file:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.hostA.numWlanInterfaces</span> <span class="o">=</span> <span class="s">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditional-submodules">
+<h3>Conditional Submodules<a class="headerlink" href="#conditional-submodules" title="Permalink to this headline">¶</a></h3>
+<p>Submodules that are not vectors are often conditional. For example, the
+<span class="protocol">TCP</span> protocol module in hosts is conditional on the
+<code class="docutils literal notranslate"><span class="pre">hasTcp</span></code> parameter. Thus, to disable <span class="protocol">TCP</span> support in a
+host (it is enabled by default), use the following ini file line:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.hostA.hasTcp</span> <span class="o">=</span> <span class="s">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametric-types">
+<h3>Parametric Types<a class="headerlink" href="#parametric-types" title="Permalink to this headline">¶</a></h3>
+<p>Another often used way of customization is parametric types, that is,
+the type of a submodule (or a channel) may be specified as a string
+parameter. Almost all submodules in the built-in node types have
+parametric types. For example, the <span class="protocol">TCP</span> protocol module is
+defined like this:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="n">tcp</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Tcp&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">ITcp</span> <span class="k">if</span> <span class="n">hasTcp</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">typename</span></code> parameter of the tcp submodule defaults to the default
+implementation, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a>. To use another implementation instead, add the
+following line to the ini file:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.host*.tcp.typename</span> <span class="o">=</span> <span class="s">&quot;TcpLwip&quot;  </span><span class="c1"># use lwIP&#39;s TCP implementation</span>
+</pre></div>
+</div>
+<p>Submodule vectors with parametric types are defined without the use of a
+module parameter to allow elements have different types. An example is
+how applications are defined in hosts:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="p">[</span><span class="n">numApps</span><span class="p">]</span><span class="o">:</span> <span class="o">&lt;&gt;</span> <span class="k">like</span> <span class="n">IApp</span><span class="p">;</span>  <span class="c1">// applications in StandardHost et al.</span>
+</pre></div>
+</div>
+<p>And applications can be added in the following way:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.hostA.numApps</span> <span class="o">=</span> <span class="s">2</span>
+<span class="na">**.hostA.apps[0].typename</span> <span class="o">=</span> <span class="s">&quot;UdpBasicApp&quot;</span>
+<span class="na">**.hostA.apps[1].typename</span> <span class="o">=</span> <span class="s">&quot;PingApp&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+<p>Inheritance can be use to derive new, specialized node types from
+existing ones. A derived NED type may add new parameters, gates,
+submodules or connections, and may set inherited unassigned parameters
+to specific values.</p>
+<p>For example, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.WirelessHost.html">WirelessHost</a> is derived from <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> in
+the following way:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="k">module</span> <span class="n">WirelessHost</span> <span class="k">extends</span> <span class="n">StandardHost</span>
+<span class="p">{</span>
+    <span class="nb">@display</span><span class="p">(</span><span class="s">&quot;i=device/wifilaptop&quot;</span><span class="p">);</span>
+    <span class="n">numWlanInterfaces</span> <span class="o">=</span> <span class="k">default</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="custom-network-nodes">
+<span id="ug-sec-nodes-custom-network-nodes"></span><h2>Custom Network Nodes<a class="headerlink" href="#custom-network-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Despite the many pre-assembled network nodes and the several available
+customization options, sometimes it is just easier to build a network
+node from scratch. The following example shows how easy it is to build a
+simple network node.</p>
+<p>This network node already contains a configurable application and
+several standard protocols. It also demonstrates how to use the packet
+dispatching mechanism which is required to connect multiple protocols in
+a many-to-many relationship.</p>
+<div class="highlight-ned notranslate" id="network-node-example"><div class="highlight"><pre><span></span><span class="k">module</span> <span class="n">NetworkNodeExample</span>
+<span class="p">{</span>
+    <span class="k">parameters</span><span class="o">:</span>
+    <span class="k">gates</span><span class="o">:</span>
+        <span class="kt">inout</span> <span class="n">ethg</span><span class="p">;</span> <span class="c1">// ethernet interface connector</span>
+        <span class="kt">input</span> <span class="n">radioIn</span><span class="p">;</span> <span class="c1">// incoming radio frames from physical medium</span>
+    <span class="k">submodules</span><span class="o">:</span>
+        <span class="n">app</span><span class="o">:</span> <span class="o">&lt;&gt;</span> <span class="k">like</span> <span class="n">IApp</span><span class="p">;</span> <span class="c1">// configurable application</span>
+        <span class="n">tcp</span><span class="o">:</span> <span class="n">Tcp</span><span class="p">;</span> <span class="c1">// standard TCP protocol</span>
+        <span class="n">ip</span><span class="o">:</span> <span class="n">Ipv4</span><span class="p">;</span> <span class="c1">// standard IP protocol</span>
+        <span class="n">md</span><span class="o">:</span> <span class="n">MessageDispatcher</span><span class="p">;</span> <span class="c1">// connects multiple interfaces to IP</span>
+        <span class="n">wlan</span><span class="o">:</span> <span class="n">Ieee80211Interface</span><span class="p">;</span> <span class="c1">// standard wifi interface</span>
+        <span class="n">eth</span><span class="o">:</span> <span class="n">EthernetInterface</span><span class="p">;</span> <span class="c1">// standard ethernet interface</span>
+        <span class="n">interfaceTable</span><span class="o">:</span> <span class="n">InterfaceTable</span><span class="p">;</span>
+    <span class="k">connections</span><span class="o">:</span> <span class="c1">// network node internal connections</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">socketOut</span> <span class="k">--&gt;</span> <span class="n">tcp</span><span class="p">.</span><span class="n">appIn</span><span class="p">;</span> <span class="c1">// application sends data stream</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">socketIn</span> <span class="k">&lt;--</span> <span class="n">tcp</span><span class="p">.</span><span class="n">appOut</span><span class="p">;</span> <span class="c1">// application receives data stream</span>
+        <span class="n">tcp</span><span class="p">.</span><span class="n">ipOut</span> <span class="k">--&gt;</span> <span class="n">ip</span><span class="p">.</span><span class="n">transportIn</span><span class="p">;</span> <span class="c1">// TCP sends segments</span>
+        <span class="n">tcp</span><span class="p">.</span><span class="n">ipIn</span> <span class="k">&lt;--</span> <span class="n">ip</span><span class="p">.</span><span class="n">transportOut</span><span class="p">;</span> <span class="c1">// TCP receives segments</span>
+        <span class="n">ip</span><span class="p">.</span><span class="n">queueOut</span> <span class="k">--&gt;</span> <span class="n">md</span><span class="p">.</span><span class="n">in</span><span class="o">++</span><span class="p">;</span> <span class="c1">// IP sends datagrams</span>
+        <span class="n">ip</span><span class="p">.</span><span class="n">queueIn</span> <span class="k">&lt;--</span> <span class="n">md</span><span class="p">.</span><span class="n">out</span><span class="o">++</span><span class="p">;</span> <span class="c1">// IP receives datagrams</span>
+        <span class="n">md</span><span class="p">.</span><span class="n">out</span><span class="o">++</span> <span class="k">--&gt;</span> <span class="n">wlan</span><span class="p">.</span><span class="n">upperLayerIn</span><span class="p">;</span>
+        <span class="n">md</span><span class="p">.</span><span class="n">in</span><span class="o">++</span> <span class="k">&lt;--</span> <span class="n">wlan</span><span class="p">.</span><span class="n">upperLayerOut</span><span class="p">;</span>
+        <span class="n">md</span><span class="p">.</span><span class="n">out</span><span class="o">++</span> <span class="k">--&gt;</span> <span class="n">eth</span><span class="p">.</span><span class="n">upperLayerIn</span><span class="p">;</span>
+        <span class="n">md</span><span class="p">.</span><span class="n">in</span><span class="o">++</span> <span class="k">&lt;--</span> <span class="n">eth</span><span class="p">.</span><span class="n">upperLayerOut</span><span class="p">;</span>
+        <span class="n">eth</span><span class="p">.</span><span class="n">phys</span> <span class="k">&lt;--&gt;</span> <span class="n">ethg</span><span class="p">;</span> <span class="c1">// Ethernet sends frames to cable</span>
+        <span class="n">radioIn</span> <span class="k">--&gt;</span> <span class="n">wlan</span><span class="p">.</span><span class="n">radioIn</span><span class="p">;</span> <span class="c1">// IEEE 802.11 sends frames to medium</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Network Nodes</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#ingredients">Ingredients</a></li>
+<li><a class="reference internal" href="#node-architecture">Node Architecture</a></li>
+<li><a class="reference internal" href="#customizing-nodes">Customizing Nodes</a><ul>
+<li><a class="reference internal" href="#submodule-and-gate-vectors">Submodule and Gate Vectors</a></li>
+<li><a class="reference internal" href="#conditional-submodules">Conditional Submodules</a></li>
+<li><a class="reference internal" href="#parametric-types">Parametric Types</a></li>
+<li><a class="reference internal" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-network-nodes">Custom Network Nodes</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-networks.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Networks</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-network-interfaces.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>Network Interfaces</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

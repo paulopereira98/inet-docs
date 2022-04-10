@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240922-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240922-3');
+</script>
+    
+    <title>Transport Protocols &#8212; INET 4.3.0 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The IPv4 Protocol Family" href="ch-ipv4.html" />
+    <link rel="prev" title="Applications" href="ch-apps.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header  ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link" href="index.html">User’s Guide</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active">Transport Protocols</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="../search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="../_sources/users-guide/ch-transport.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="../_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-usage.html">Using the INET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-networks.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-nodes.html">Network Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-interfaces.html">Network Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-queueing.html">Queueing Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-apps.html">Applications</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transport Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv4.html">The IPv4 Protocol Family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ipv6.html">IPv6 and Mobile IPv6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-other-network-protocols.html">Other Network Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-routing.html">Internet Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-adhoc-routing.html">Ad Hoc Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-diffserv.html">Differentiated Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mpls.html">The MPLS Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ppp.html">Point-to-Point Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-ethernet.html">The Ethernet Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-tsn.html">Time-Sensitive Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-80211.html">The 802.11 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-802154.html">The 802.15.4 Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-sensor-macs.html">MAC Protocols for Wireless Sensor Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-clock.html">Clock Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-physicallayer.html">The Physical Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-transmission-medium.html">The Transmission Medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-environment.html">The Physical Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-mobility.html">Node Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-power.html">Modeling Power Consumption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-emulation.html">Network Emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-network-autoconfig.html">Network Autoconfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-scenario-scripting.html">Scenario Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-lifecycle.html">Modeling Node Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-packetfilter.html">Packet Filter Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-collecting-results.html">Collecting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-instrument-figures.html">Instrument Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch-history.html">History</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers-guide/index.html">Developer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-packets.html">Working with Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-sockets.html">Using Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers-guide/ch-authors-guide.html">Appendix: Author’s Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration-guide/index.html">Migrating Code from INET 3.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://omnetpp.org/doc/inet/api-current/neddoc/">NED Reference</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://inet.omnetpp.org">← Back to the INET Site</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content">
+        
+  <div class="section" id="transport-protocols">
+<span id="ug-cha-transport-protocols"></span><h1>Transport Protocols<a class="headerlink" href="#transport-protocols" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<span id="ug-sec-transport-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In the OSI reference model, the protocols of the transport layer provide
+host-to-host communication services for applications. They provide
+services such as connection-oriented communication, reliability, flow
+control, and multiplexing.</p>
+<p>INET currently provides support for the <span class="protocol">TCP</span>, <span class="protocol">UDP</span>,
+<span class="protocol">SCTP</span> and <span class="protocol">RTP</span> transport layer protocols.
+INET nodes like <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> contain optional and replaceable
+instances of these protocols, like this:</p>
+<div class="highlight-ned notranslate"><div class="highlight"><pre><span></span><span class="n">tcp</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Tcp&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">ITcp</span> <span class="k">if</span> <span class="n">hasTcp</span><span class="p">;</span>
+<span class="n">udp</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Udp&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">IUdp</span> <span class="k">if</span> <span class="n">hasUdp</span><span class="p">;</span>
+<span class="n">sctp</span><span class="o">:</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">(</span><span class="s">&quot;Sctp&quot;</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">like</span> <span class="n">ISctp</span> <span class="k">if</span> <span class="n">hasSctp</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>As RTP is more specialized that the other ones (multimedia streaming),
+INET provides a separate node type, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.rtp.RtpHost.html">RtpHost</a>, for modeling RTP
+traffic.</p>
+</div>
+<div class="section" id="tcp">
+<span id="ug-sec-transport-tcp"></span><h2>TCP<a class="headerlink" href="#tcp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ug-sec-transport-tcp-overview">
+<span id="id1"></span><h3>Overview<a class="headerlink" href="#ug-sec-transport-tcp-overview" title="Permalink to this headline">¶</a></h3>
+<p>TCP protocol is the most widely used protocol of the Internet. It
+provides reliable, ordered delivery of stream of bytes from one
+application on one computer to another application on another computer.
+The baseline TCP protocol is described in RFC793, but other tens of RFCs
+contains modifications and extensions to the TCP. As a result, TCP is a
+complex protocol and sometimes it is hard to see how the different
+requirements interact with each other.</p>
+<p>INET contains three implementations of the TCP protocol:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a> is the primary implementation, designed for readability,
+extensibility, and experimentation.</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_lwip.TcpLwip.html">TcpLwip</a> is a wrapper around the lwIP (Lightweight IP) library,
+a widely used open source TCP/IP stack designed for embedded systems.</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a> wraps Network Simulation Cradle (NSC), a library that
+allows real world TCP/IP network stacks to be used inside a network
+simulator.</p></li>
+</ul>
+<p>All three module types implement the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.contract.ITcp.html">ITcp</a> interface and
+communicate with other layers through the same interface, so they can be
+interchanged and also mixed in the same network.</p>
+</div>
+<div class="section" id="ug-sec-transport-tcpcore">
+<span id="id2"></span><h3>Tcp<a class="headerlink" href="#ug-sec-transport-tcpcore" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a> simple module is the main implementation of the TCP
+protocol in the INET framework.</p>
+<p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a> implements the following:</p>
+<ul class="simple">
+<li><p>TCP state machine</p></li>
+<li><p>initial sequence number selection according to the system clock.</p></li>
+<li><p>window-based flow control</p></li>
+<li><p>Window Scale option</p></li>
+<li><p>Persistence timer</p></li>
+<li><p>Keepalive timer</p></li>
+<li><p>Transmission policies</p></li>
+<li><p>RTT measurement for retransmission timeout (RTO) computation</p></li>
+<li><p>Delayed ACK algorithm</p></li>
+<li><p>Nagle’s algorithm</p></li>
+<li><p>Silly window avoidance</p></li>
+<li><p>Timestamp option</p></li>
+<li><p>Congestion control schemes: Tahoe, Reno, New Reno, Westwood, Vegas,
+etc.</p></li>
+<li><p>Slow Start and Congestion Avoidance</p></li>
+<li><p>Fast Retransmit and Fast Recovery</p></li>
+<li><p>Loss Recovery Using Limited Transmit</p></li>
+<li><p>Selective Acknowledgments (SACK)</p></li>
+<li><p>SACK based loss recovery</p></li>
+</ul>
+<p>Several protocol features can be turned on/off with parameters like
+<code class="code literal-ini docutils literal notranslate"><span class="pre">delayedAcksEnabled</span></code>, <code class="code literal-ini docutils literal notranslate"><span class="pre">nagleEnabled</span></code>,
+<code class="code literal-ini docutils literal notranslate"><span class="pre">limitedTransmitEnabled</span></code>, <code class="code literal-ini docutils literal notranslate"><span class="pre">increasedIWEnabled</span></code>,
+<code class="code literal-ini docutils literal notranslate"><span class="pre">sackSupport</span></code>, <code class="code literal-ini docutils literal notranslate"><span class="pre">windowScalingSupport</span></code>, or
+<code class="code literal-ini docutils literal notranslate"><span class="pre">timestampSupport</span></code>.</p>
+<p>The congestion control algorithm can be selected with the
+<code class="code literal-ini docutils literal notranslate"><span class="pre">tcpAlgorithmClass</span></code> parameter. For example, the following ini file
+fragment selects TCP Vegas:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">**.tcp.tcpAlgorithmClass</span> <span class="o">=</span> <span class="s">&quot;TcpVegas&quot;</span>
+</pre></div>
+</div>
+<p>Values like <code class="docutils literal notranslate"><span class="pre">&quot;TcpVegas&quot;</span></code> name C++ classes. Indeed, <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp.Tcp.html">Tcp</a> can
+be extended with new congestion control schemes by implementing and
+registering them in C++.</p>
+</div>
+<div class="section" id="tcplwip">
+<span id="ug-sec-transport-tcplwip"></span><h3>TcpLwip<a class="headerlink" href="#tcplwip" title="Permalink to this headline">¶</a></h3>
+<p><em>lwIP</em> is a light-weight implementation of the TCP/IP protocol suite
+that was originally written by Adam Dunkels of the Swedish Institute of
+Computer Science. The current development homepage is
+<a class="reference external" href="http://savannah.nongnu.org/projects/lwip/">http://savannah.nongnu.org/projects/lwip/</a>.</p>
+<p>The implementation targets embedded devices: it has very limited
+resource usage (it works “with tens of kilobytes of RAM and around 40
+kilobytes of ROM”), and does not require an underlying OS.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_lwip.TcpLwip.html">TcpLwip</a> simple module is based on the 1.3.2 version of the
+lwIP sources.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>delayed ACK</p></li>
+<li><p>Nagle’s algorithm</p></li>
+<li><p>round trip time estimation</p></li>
+<li><p>adaptive retransmission timeout</p></li>
+<li><p>SWS avoidance</p></li>
+<li><p>slow start threshold</p></li>
+<li><p>fast retransmit</p></li>
+<li><p>fast recovery</p></li>
+<li><p>persist timer</p></li>
+<li><p>keep-alive timer</p></li>
+</ul>
+<div class="section" id="limitations">
+<h4>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>only MSS and TS TCP options are supported. The TS option is turned
+off by default, but can be enabled by defining LWIP_TCP_TIMESTAMPS to
+1 in <code class="file docutils literal notranslate"><span class="pre">lwipopts.h</span></code>.</p></li>
+<li><p><code class="code literal-cpp docutils literal notranslate"><span class="pre">fork</span></code> must be <code class="docutils literal notranslate"><span class="pre">true</span></code> in the passive open command</p></li>
+<li><p>The status request command (TCP_C_STATUS) only reports the local and
+remote addresses/ports of the connection and the MSS, SND.NXT,
+SND.WND, SND.WL1, SND.WL2, RCV.NXT, RCV.WND variables.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tcpnsc">
+<span id="ug-sec-transport-tcpnsc"></span><h3>TcpNsc<a class="headerlink" href="#tcpnsc" title="Permalink to this headline">¶</a></h3>
+<p>Network Simulation Cradle (NSC) is a tool that allow real-world TCP/IP
+network stacks to be used in simulated networks. The NSC project is
+created by Sam Jansen and available on
+<a class="reference external" href="http://research.wand.net.nz/software/nsc.php">http://research.wand.net.nz/software/nsc.php</a>. NSC currently contains
+Linux, FreeBSD, OpenBSD and lwIP network stacks, although on 64-bit
+systems only Linux implementations can be built.</p>
+<p>To use the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a> module you should download the
+<code class="file docutils literal notranslate"><span class="pre">nsc-0.5.2.tar.bz2</span></code> package and follow the instructions in the
+<code class="file docutils literal notranslate"><span class="pre">&lt;inet_root&gt;/3rdparty/README</span></code> file to build it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before generating the INET module, check that the <code class="docutils literal notranslate"><span class="pre">opp_makemake</span></code> call
+in the make file (<code class="file docutils literal notranslate"><span class="pre">&lt;inet_root&gt;/Makefile</span></code>) includes the
+<code class="docutils literal notranslate"><span class="pre">-DWITH_TCP_NSC</span></code> argument. Without this option the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a>
+module is not built. If you build the INET library from the IDE, it is enough
+to enable the <em>TCP (NSC)</em> project feature.</p>
+</div>
+<div class="section" id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<p>The module has the following parameters:</p>
+<ul class="simple">
+<li><p><code class="code literal-ini docutils literal notranslate"><span class="pre">stackName</span></code>: the name of the TCP implementation to be used.
+Possible values are: <code class="docutils literal notranslate"><span class="pre">liblinux2.6.10.so</span></code>,
+<code class="docutils literal notranslate"><span class="pre">liblinux2.6.18.so</span></code>, <code class="docutils literal notranslate"><span class="pre">liblinux2.6.26.so</span></code>,
+<code class="docutils literal notranslate"><span class="pre">libopenbsd3.5.so</span></code>, <code class="docutils literal notranslate"><span class="pre">libfreebsd5.3.so</span></code> and
+<code class="docutils literal notranslate"><span class="pre">liblwip.so</span></code>. (On the 64 bit systems, the
+<code class="docutils literal notranslate"><span class="pre">liblinux2.6.26.so</span></code> and <code class="docutils literal notranslate"><span class="pre">liblinux2.6.16.so</span></code> are available
+only).</p></li>
+<li><p><code class="code literal-ini docutils literal notranslate"><span class="pre">stackBufferSize</span></code>: the size of the receive and send buffer of
+one connection for selected TCP implementation. The NSC sets the
+<code class="code literal-cpp docutils literal notranslate"><span class="pre">wmem_max</span></code>, <code class="code literal-cpp docutils literal notranslate"><span class="pre">rmem_max</span></code>, <code class="code literal-cpp docutils literal notranslate"><span class="pre">tcp_rmem</span></code>, <code class="code literal-cpp docutils literal notranslate"><span class="pre">tcp_wmem</span></code>
+parameters to this value on linux TCP implementations. For details,
+you can see the NSC documentation.</p></li>
+</ul>
+</div>
+<div class="section" id="limitations-1">
+<span id="id3"></span><h4>Limitations<a class="headerlink" href="#limitations-1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Because the kernel code is not reentrant, NSC creates a record
+containing the global variables of the stack implementation. By
+default there is room for 50 instance in this table, so you can not
+create more then 50 instance of <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a>. You can increase the
+<code class="code literal-cpp docutils literal notranslate"><span class="pre">NUM_STACKS</span></code> constant in <code class="file docutils literal notranslate"><span class="pre">num_stacks.h</span></code> and recompile
+NSC to overcome this limitation.</p></li>
+<li><p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.tcp_nsc.TcpNsc.html">TcpNsc</a> module does not supprt TCP_TRANSFER_OBJECT data
+transfer mode.</p></li>
+<li><p>The MTU of the network stack fixed to 1500, therefore MSS is 1460.</p></li>
+<li><p>TCP_C_STATUS command reports only local/remote addresses/ports and
+current window of the connection.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="udp">
+<span id="ug-sec-transport-udp"></span><h2>UDP<a class="headerlink" href="#udp" title="Permalink to this headline">¶</a></h2>
+<p>The UDP protocol is a very simple datagram transport protocol, which
+basically makes the services of the network layer available to the
+applications. It performs packet multiplexing and demultiplexing to
+ports and some basic error detection only.</p>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.udp.Udp.html">Udp</a> simple module implements the UDP protocol. There is a
+module interface (<a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.contract.IUdp.html">IUdp</a>) that defines the gates of the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.udp.Udp.html">Udp</a>
+component. In the <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.node.inet.StandardHost.html">StandardHost</a> node, the UDP component can be any
+module implementing that interface.</p>
+</div>
+<div class="section" id="sctp">
+<span id="ug-sec-transport-sctp"></span><h2>SCTP<a class="headerlink" href="#sctp" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.sctp.Sctp.html">Sctp</a> module implements the Stream Control Transmission
+Protocol (SCTP). Like TCP, SCTP provides reliable ordered data delivery
+over an ureliable network. The most prominent feature of SCTP is the
+capability of transmitting multiple streams of data at the same time
+between two end points that have established a connection.</p>
+</div>
+<div class="section" id="rtp">
+<span id="ug-sec-transport-rtp"></span><h2>RTP<a class="headerlink" href="#rtp" title="Permalink to this headline">¶</a></h2>
+<p>The Real-time Transport Protocol (RTP) is a transport layer protocol for
+delivering audio and video over IP networks. RTP is used extensively in
+communication and entertainment systems that involve streaming media,
+such as telephony, video teleconference applications including WebRTC,
+television services and web-based push-to-talk features.</p>
+<p>The RTP Control Protocol (RTCP) is a sister protocol of the Real-time
+Transport Protocol (RTP). RTCP provides out-of-band statistics and
+control information for an RTP session.</p>
+<p>INET provides the following modules:</p>
+<ul class="simple">
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.rtp.Rtp.html">Rtp</a> implements the RTP protocol</p></li>
+<li><p><a class="reference-ned reference external" href="https://doc.omnetpp.org/inet/api-current/neddoc/inet.transportlayer.rtp.Rtcp.html">Rtcp</a> implements the RTCP protocol</p></li>
+</ul>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Transport Protocols</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#tcp">TCP</a><ul>
+<li><a class="reference internal" href="#ug-sec-transport-tcp-overview">Overview</a></li>
+<li><a class="reference internal" href="#ug-sec-transport-tcpcore">Tcp</a></li>
+<li><a class="reference internal" href="#tcplwip">TcpLwip</a><ul>
+<li><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tcpnsc">TcpNsc</a><ul>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#limitations-1">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#udp">UDP</a></li>
+<li><a class="reference internal" href="#sctp">SCTP</a></li>
+<li><a class="reference internal" href="#rtp">RTP</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="ch-apps.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Applications</div>
+         </div>
+     </a>
+     <a id="button-next" href="ch-ipv4.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>The IPv4 Protocol Family</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>
